@@ -1,0 +1,91 @@
+﻿
+
+
+<div class="b-available">
+    <h3 class="b-title">Розничные магазины</h3>
+        <table class="b-table">
+        <colgroup>
+            <col width="*"/>
+            <col width="140"/>
+            <col width="100"/>
+        </colgroup>
+        <thead class="b-table-group b-table-group_type_heading">
+        <tr class="b-table-row">
+            <td class="b-cell">Наличие в городе: <strong class="b-available-city"></strong></td>
+            <td class="b-cell">Режим работы:</td>
+            <td class="b-cell">Контакты:</td>
+        </tr>
+        </thead>
+        <tbody class="b-table-group">
+            
+        <tr class="b-table-row">
+            <td class="b-cell">
+                                <a class="b-link" onclick="javascript: showMap( 'г. Краснодар, ул. Стасова, д.1/Cелезнева, д.178', '№31 Краснодар Стасова', '(861) 299-11-17', '10:00-21:00', 'http://xn--d1aigoeoc.xn--p1ai/upload/resize_cache/iblock/476/640_480_18fb0db8985ac1cbccb5e9b36abeb195c/47633985e8b110c5cea71295f1fd46e5.jpg', '80', '60', '', '' );" href="javascript:void( true );" title="г. Краснодар, ул. Стасова, д.1/Cелезнева, д.178">г. Краснодар, ул. Стасова, д.1/Cелезнева, д.178</a>
+                            </td>
+            <td class="b-cell">10:00-21:00</td>
+            <td class="b-cell b-nw">(861) 299-11-17</td>
+        </tr>
+                    </tbody>
+    </table>
+    
+                <div class="b-note">* — без перерывов и выходных</div>
+    </div>
+<script type="text/javascript">
+var myMap;
+function showMap( address, title, phone, work, pic, pic_width, pic_height, lat, lng){
+    if( $( "#yandex_map" ).css( "display" ) == "none" ) {
+        var myGeocoder = ymaps.geocode( address, { results: 1 } );
+        myGeocoder.then( function( res ) {
+            $( '#yandex_map' ).show();
+                $( '#yandex_map' ).find( ".b-map-address" ).text( address );
+            var point = res.geoObjects.get( 0 );
+            
+       		var $ymapHolder = $("#yandex_map");
+       		var pointCoords = null;
+
+		 if(lat && lng) {
+		 	
+			pointCoords = [Number(lat), Number(lng)];
+			
+		 }
+            
+            myMap = new ymaps.Map( "yandex_map_content", {
+                center: pointCoords ? pointCoords : point.geometry.getCoordinates(),
+                zoom: 14
+            } );
+
+            myMap.controls.add( "mapTools" ).add( "zoomControl" ).add( "typeSelector" );
+            
+            myMap.panTo( pointCoords ? pointCoords : point.geometry.getCoordinates() );
+            pic_width = pic_width ? pic_width : 79;
+            pic_height = pic_height ? pic_height : 79;
+            pic = pic ? pic : "http://xn--d1aigoeoc.xn--p1ai/bitrix_personal/templates/tdpoisk/images/bg/company_noimage_80_80.jpg";
+            myPlacemark = new ymaps.Placemark( pointCoords ? pointCoords : point.geometry.getCoordinates(), {
+                balloonContent: '<div class=\"b-map-tooltip\">'+
+                '<div class=\"b-map-tooltip__pic\">' +
+                '<img class=\"b-map-tooltip__image\" width=\"' + pic_width + '\" height=\"' + pic_height + '\" src=\"' + pic + '\">'+
+                '</div><div class=\"b-map-tooltip__desc\"><p><strong>Адрес:</strong>' +
+                address +
+                '</p><p><strong>Режим работы:</strong>' +
+                work +
+                '</p><p><strong>Телефон:</strong>' +
+                phone +
+                '</p></div></div>'
+            }, {
+               hideIconOnBalloonOpen: true,
+               balloonShadow: false
+            } );
+            myMap.geoObjects.add( myPlacemark );
+//            myMap.panTo( point.geometry.getCoordinates() );
+        } );
+        $( "#yandex_map_top" ).css( 'top', $( window ).scrollTop() + ( $( "#yandex_map").height() / 2 - 248 ) + 'px' );
+    } else {
+        $( '#yandex_map' ).hide();
+        $( '#yandex_map' ).find( ".b-map-address" ).text( "" );
+        $( '#yandex_map' ).find( ".yandex_map_content" ).html( "" );
+    }
+}
+$( document ).ready( function() {
+    $( "#detail_preloader" ).hide( 0, onPreloaderHide );
+} );
+</script>

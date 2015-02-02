@@ -1,0 +1,707 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AF96A839-5E90-4806-8C86-8F2BCC336BEC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Chia.WebParsing.Parsers.Tests.Unit</RootNamespace>
+    <AssemblyName>Chia.WebParsing.Parsers.Tests.Unit</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EnterpriseLibrary.UnitTesting.MsTest, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\binaries\EnterpriseLibrary.UnitTesting.MsTest.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.4.9.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\HtmlAgilityPack.1.4.9\lib\Net40\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Moq">
+      <HintPath>..\..\packages\Moq.4.2.1409.1722\lib\net40\Moq.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.XML" />
+  </ItemGroup>
+  <ItemGroup>
+    <CodeAnalysisDependentAssemblyPaths Condition=" '$(VS100COMNTOOLS)' != '' " Include="$(VS100COMNTOOLS)..\IDE\PrivateAssemblies">
+      <Visible>False</Visible>
+    </CodeAnalysisDependentAssemblyPaths>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CentrBtRu\CentrBtRuWebPageContentParserUnitTest.cs" />
+    <Compile Include="CitilinkRu\CitilinkRuWebPageContentParserUnitTest.cs" />
+    <Compile Include="CorpCentreRu\CorpCentreRuWebPageContentParserUnitTest.cs" />
+    <Compile Include="DnsShopRu\DnsShopRuWebPageContentParserUnitTest.cs" />
+    <Compile Include="DomoRu\DomoRuWebPageContentParserUnitTest.cs" />
+    <Compile Include="DostavkaRu\DostavkaRuWebPageContentParserUnitTest.cs" />
+    <Compile Include="EldoradoRu\EldoradoRuWebPageContentParserUnitTest.cs" />
+    <Compile Include="ElectrovenikRu\ElectrovenikRuWebPageContentParserUnitTest.cs" />
+    <Compile Include="EurosetRu\EurosetRuWebPageContentParserUnitTest.cs" />
+    <Compile Include="HolodilnikRu\HolodilnikRuWebPageContentParserUnitTest.cs" />
+    <Compile Include="KeyRu\KeyRuWebPageContentParserUnitTest.cs" />
+    <Compile Include="Nord24Ru\Nord24RuWebPageContentParserUnitTest.cs" />
+    <Compile Include="OzonRu\OzonRuWebPageContentParserUnitTest.cs" />
+    <Compile Include="SvyaznoyRu\SvyaznoyRuWebPageContentParserUnitTest.cs" />
+    <Compile Include="TdPoiskRu\TdPoiskRuWebPageContentParserUnitTest.cs" />
+    <Compile Include="TechnonetRu\TechnonetRuWebPageContentParserUnitTest.cs" />
+    <Compile Include="TehnoparkRu\TehnoparkRuWebPageContentParserUnitTest.cs" />
+    <Compile Include="TehnoshokRu\TehnoshokRuWebPageContentParserUnitTest.cs" />
+    <Compile Include="TehnosilaRu\TehnosilaRuWebPageContentParserUnitTest.cs" />
+    <Compile Include="TelemaksRu\TelemaksRuWebPageContentParserUnitTest.cs" />
+    <Compile Include="TenIRu\TenIRuCatalogPageContentParserTest.cs" />
+    <Compile Include="TenIRu\TenIRuProductPageContentParserTest.cs" />
+    <Compile Include="TenIRu\TenIRuRazdelPageContentParserTest.cs" />
+    <Compile Include="TenIRu\TenIRuWebPageContentParserUnitTest.cs" />
+    <Compile Include="TenIRu\TenIRuMainPageContentParserTest.cs" />
+    <Compile Include="AssertEx.cs" />
+    <Compile Include="CentrBtRu\CentrBtRuCatalogPageContentParserTest.cs" />
+    <Compile Include="CentrBtRu\CentrBtRuHtmlPageContentParserTest.cs" />
+    <Compile Include="CentrBtRu\CentrBtRuMainPageContentParserTest.cs" />
+    <Compile Include="CentrBtRu\CentrBtRuProductPageContentParserTest.cs" />
+    <Compile Include="CentrBtRu\CentrBtRuRazdelPageContentParserTest.cs" />
+    <Compile Include="CitilinkRu\CitilinkRuCatalogPageContentParserTest.cs" />
+    <Compile Include="CitilinkRu\CitilinkRuHtmlPageContentParserTest.cs" />
+    <Compile Include="CitilinkRu\CitilinkRuMainPageContentParserTest.cs" />
+    <Compile Include="CitilinkRu\CitilinkRuProductPageContentParserTest.cs" />
+    <Compile Include="CitilinkRu\CitilinkRuRazdelPageContentParserTest.cs" />
+    <Compile Include="CorpCentreRu\CorpCentreRuRazdelPageContentParserTest.cs" />
+    <Compile Include="CorpCentreRu\CorpCentreRuRazdelsListPageContentParserTest.cs" />
+    <Compile Include="CorpCentreRu\CorpCentreRuHtmlPageContentParserTest.cs" />
+    <Compile Include="CorpCentreRu\CorpCentreRuMainPageContentParserTest.cs" />
+    <Compile Include="CorpCentreRu\CorpCentreRuProductPageContentParserTest.cs" />
+    <Compile Include="CorpCentreRu\CorpCentreRuCatalogPageContentParserTest.cs" />
+    <Compile Include="CorpCentreRu\CorpCentreRuShopsListPageContentParserTest.cs" />
+    <Compile Include="DnsShopRu\DnsShopRuRazdelPageContentParserTest.cs" />
+    <Compile Include="DnsShopRu\DnsShopRuHtmlPageContentParserTest.cs" />
+    <Compile Include="DnsShopRu\DnsShopRuMainPageContentParserTest.cs" />
+    <Compile Include="DnsShopRu\DnsShopRuProductPageContentParserTest.cs" />
+    <Compile Include="DnsShopRu\DnsShopRuShopPageContentParserTest.cs" />
+    <Compile Include="DnsShopRu\DnsShopRuShopsListPageContentParserTest.cs" />
+    <Compile Include="DnsShopRu\DnsShopRuCatalogPageContentParserTest.cs" />
+    <Compile Include="DomoRu\DomoRuRazdelPageContentParserTest.cs" />
+    <Compile Include="DomoRu\DomoRuHtmlPageContentParserTest.cs" />
+    <Compile Include="DomoRu\DomoRuMainPageContentParserTest.cs" />
+    <Compile Include="DomoRu\DomoRuProductPageContentParserTest.cs" />
+    <Compile Include="DomoRu\DomoRuCatalogAjaxPageContentParserTest.cs" />
+    <Compile Include="DomoRu\DomoRuCatalogPageContentParserTest.cs" />
+    <Compile Include="DostavkaRu\DostavkaRuCatalogPageContentParserTest.cs" />
+    <Compile Include="DostavkaRu\DostavkaRuProductPageContentParserTest.cs" />
+    <Compile Include="DostavkaRu\DostavkaRuRazdelPageContentParserTest.cs" />
+    <Compile Include="DostavkaRu\DostavkaRuMainPageContentParserTest.cs" />
+    <Compile Include="EldoradoRu\EldoradoRuRazdelPageContentParserTest.cs" />
+    <Compile Include="EldoradoRu\EldoradoRuHtmlPageContentParserTest.cs" />
+    <Compile Include="EldoradoRu\EldoradoRuMainPageContentParserTest.cs" />
+    <Compile Include="EldoradoRu\EldoradoRuCatalogPageContentParserTest.cs" />
+    <Compile Include="EldoradoRu\EldoradoRuProductPageContentParserTest.cs" />
+    <Compile Include="EldoradoRu\EldoradoRuShopsListPageContentParserTest.cs" />
+    <Compile Include="ElectrovenikRu\ElectrovenikRuProductPageContentParserTest.cs" />
+    <Compile Include="ElectrovenikRu\ElectrovenikRuCatalogPageContentParserTest.cs" />
+    <Compile Include="ElectrovenikRu\ElectrovenikRuMainPageContentParserTest.cs" />
+    <Compile Include="ElectrovenikRu\ElectrovenikRuHtmlPageContentParserTest.cs" />
+    <Compile Include="ElectrovenikRu\ElectrovenikRuRazdelPageContentParserTest.cs" />
+    <Compile Include="EnterRu\EnterRuHtmlPageContentParserTest.cs" />
+    <Compile Include="EnterRu\EnterRuMainPageContentParserTest.cs" />
+    <Compile Include="EnterRu\EnterRuProductPageContentParserTest.cs" />
+    <Compile Include="EnterRu\EnterRuCatalogPageContentParserTest.cs" />
+    <Compile Include="EnterRu\EnterRuRazdelPageContentParserTest.cs" />
+    <Compile Include="EnterRu\EnterRuWebPageContentParserUnitTest.cs" />
+    <Compile Include="EnumerableExtensions.cs" />
+    <Compile Include="EurosetRu\EurosetRuRazdelPageContentParserTest.cs" />
+    <Compile Include="EurosetRu\EurosetRuHtmlPageContentParserTest.cs" />
+    <Compile Include="EurosetRu\EurosetRuMainPageContentParserTest.cs" />
+    <Compile Include="EurosetRu\EurosetRuProductPageContentParserTest.cs" />
+    <Compile Include="EurosetRu\EurosetRuCatalogPageContentParserTest.cs" />
+    <Compile Include="HolodilnikRu\HolodilnikRuProductPageContentParserTest.cs" />
+    <Compile Include="HolodilnikRu\HolodilnikRuCatalogPageContentParserTest.cs" />
+    <Compile Include="HolodilnikRu\HolodilnikRuRazdelPageContentParserTest.cs" />
+    <Compile Include="HolodilnikRu\HolodilnikRuMainPageContentParserTest.cs" />
+    <Compile Include="HolodilnikRu\HolodilnikRuHtmlPageContentParserTest.cs" />
+    <Compile Include="IonRu\IonRuCatalogPageContentParserTest.cs" />
+    <Compile Include="IonRu\IonRuWebPageContentParserUnitTest.cs" />
+    <Compile Include="IonRu\IonRuMainPageContentParserTest.cs" />
+    <Compile Include="IonRu\IonRuProductPageContentParserTest.cs" />
+    <Compile Include="IonRu\IonRuShopsListPageContentParserTest.cs" />
+    <Compile Include="JustRu\JustRuProductPageContentParserTest.cs" />
+    <Compile Include="JustRu\JustRuMainPageContentParserTest.cs" />
+    <Compile Include="JustRu\JustRuWebPageContentParserUnitTest.cs" />
+    <Compile Include="JustRu\JustRuHtmlPageContentParserTest.cs" />
+    <Compile Include="JustRu\JustRuCatalogPageContentParserTest.cs" />
+    <Compile Include="KeyRu\KeyRuRazdelPageContentParserTest.cs" />
+    <Compile Include="KeyRu\KeyRuMainPageContentParserTest.cs" />
+    <Compile Include="KeyRu\KeyRuCatalogAjaxPageContentParserTest.cs" />
+    <Compile Include="KeyRu\KeyRuCatalogPageContentParserTest.cs" />
+    <Compile Include="KeyRu\KeyRuHtmlPageContentParserTest.cs" />
+    <Compile Include="KeyRu\KeyRuProductPageContentParserTest.cs" />
+    <Compile Include="KeyRu\KeyRuShopsListPageContentParserTest.cs" />
+    <Compile Include="LogoRu\LogoRuWebPageContentParserUnitTest.cs" />
+    <Compile Include="LogoRu\LogoRuHtmlPageContentParserTest.cs" />
+    <Compile Include="LogoRu\LogoRuMainPageContentParserTest.cs" />
+    <Compile Include="LogoRu\LogoRuRazdelPageContentParserTest.cs" />
+    <Compile Include="LogoRu\LogoRuCatalogPageContentParserTest.cs" />
+    <Compile Include="LogoRu\LogoRuProductPageContentParserTest.cs" />
+    <Compile Include="MockedWebSite.cs" />
+    <Compile Include="MtsRu\MtsRuCatalogPageContentParserTest.cs" />
+    <Compile Include="MtsRu\MtsRuProductPageContentParserTest.cs" />
+    <Compile Include="MtsRu\MtsRuMainPageContentParserTest.cs" />
+    <Compile Include="MtsRu\MtsRuRazdelPageContentParserTest.cs" />
+    <Compile Include="MtsRu\MtsRuWebPageContentParserUnitTest.cs" />
+    <Compile Include="MtsRu\MtsRuHtmlPageContentParserTest.cs" />
+    <Compile Include="MvideoRu\MvideoRuMainPageContentParserTest.cs" />
+    <Compile Include="MvideoRu\MvideoRuCatalogPageContentParserTest.cs" />
+    <Compile Include="MvideoRu\MvideoRuProductPageContentParserTest.cs" />
+    <Compile Include="MvideoRu\MvideoRuRazdelPageContentParserTest.cs" />
+    <Compile Include="MvideoRu\MvideoRuRazdelsListPageContentParserTest.cs" />
+    <Compile Include="MvideoRu\MvideoRuShopsListPageContentParserTest.cs" />
+    <Compile Include="MvideoRu\MvideoRuHtmlPageContentParserTest.cs" />
+    <Compile Include="MvideoRu\MvideoRuWebPageContentParserUnitTest.cs" />
+    <Compile Include="NewmansRu\NewmansRuProductPageContentParserTest.cs" />
+    <Compile Include="NewmansRu\NewmansRuCatalogPageContentParserTest.cs" />
+    <Compile Include="NewmansRu\NewmansRuMainPageContentParserTest.cs" />
+    <Compile Include="NotikRu\NotikRuProductPageContentParserTest.cs" />
+    <Compile Include="NotikRu\NotikRuCatalogPageContentParserTest.cs" />
+    <Compile Include="NotikRu\NotikRuRazdelPageContentParserTest.cs" />
+    <Compile Include="NotikRu\NotikRuMainPageContentParserTest.cs" />
+    <Compile Include="NotikRu\NotikRuHtmlPageContentParserTest.cs" />
+    <Compile Include="NewmansRu\NewmansRuRazdelPageContentParserTest.cs" />
+    <Compile Include="NewmansRu\NewmansRuWebPageContentParserUnitTest.cs" />
+    <Compile Include="Nord24Ru\Nord24RuHtmlPageContentParserTest.cs" />
+    <Compile Include="Nord24Ru\Nord24RuRazdelPageContentParserTest.cs" />
+    <Compile Include="Nord24Ru\Nord24RuMainPageContentParserTest.cs" />
+    <Compile Include="Nord24Ru\Nord24RuProductPageContentParserTest.cs" />
+    <Compile Include="Nord24Ru\Nord24RuCatalogPageContentParserTest.cs" />
+    <Compile Include="NotikRu\NotikRuWebPageContentParserUnitTest.cs" />
+    <Compile Include="OldiRu\OldiRuProductPageContentParserTest.cs" />
+    <Compile Include="OldiRu\OldiRuCatalogPageContentParserTest.cs" />
+    <Compile Include="OldiRu\OldiRuRazdelPageContentParserTest.cs" />
+    <Compile Include="OldiRu\OldiRuMainPageContentParserTest.cs" />
+    <Compile Include="OldiRu\OldiRuHtmlPageContentParserTest.cs" />
+    <Compile Include="OldiRu\OldiRuWebPageContentParserUnitTest.cs" />
+    <Compile Include="OnlinetradeRu\OnlinetradeRuCatalogPageContentParserTest.cs" />
+    <Compile Include="OnlinetradeRu\OnlinetradeRuProductPageContentParserTest.cs" />
+    <Compile Include="OnlinetradeRu\OnlinetradeRuRazdelPageContentParserTest.cs" />
+    <Compile Include="OnlinetradeRu\OnlinetradeRuRazdelsListPageContentParserTest.cs" />
+    <Compile Include="OnlinetradeRu\OnlinetradeRuWebPageContentParserUnitTest.cs" />
+    <Compile Include="OnlinetradeRu\OnlinetradeRuHtmlPageContentParserTest.cs" />
+    <Compile Include="OnlinetradeRu\OnlinetradeRuMainPageContentParserTest.cs" />
+    <Compile Include="Oo3Ru\Oo3RuProductPageContentParserTest.cs" />
+    <Compile Include="Oo3Ru\Oo3RuCatalogPageContentParserTest.cs" />
+    <Compile Include="Oo3Ru\Oo3RuMainPageContentParserTest.cs" />
+    <Compile Include="Oo3Ru\Oo3RuHtmlPageContentParserTest.cs" />
+    <Compile Include="Oo3Ru\Oo3RuWebPageContentParserUnitTest.cs" />
+    <Compile Include="OzonRu\OzonRuCatalogPageContentParserTest.cs" />
+    <Compile Include="OzonRu\OzonRuMainPageContentParserTest.cs" />
+    <Compile Include="OzonRu\OzonRuRazdelPageContentParserTest.cs" />
+    <Compile Include="OzonRu\OzonRuProductPageContentParserTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PultRu\PultRuRazdelPageContentParserTest.cs" />
+    <Compile Include="PultRu\PultRuHtmlPageContentParserTest.cs" />
+    <Compile Include="PultRu\PultRuMainPageContentParserTest.cs" />
+    <Compile Include="PultRu\PultRuProductPageContentParserTest.cs" />
+    <Compile Include="PultRu\PultRuCatalogPageContentParserTest.cs" />
+    <Compile Include="PultRu\PultRuWebPageContentParserUnitTest.cs" />
+    <Compile Include="RbtRu\RbtRuHtmlPageContentParserTest.cs" />
+    <Compile Include="RbtRu\RbtRuRazdelContentPageParserTest.cs" />
+    <Compile Include="RbtRu\RbtRuMainPageContentParserTest.cs" />
+    <Compile Include="TechportRu\TechportRuHtmlPageContentParserTest.cs" />
+    <Compile Include="TechportRu\TechportRuProductPageContentParserTest.cs" />
+    <Compile Include="RbtRu\RbtRuCatalogPageContentParserTest.cs" />
+    <Compile Include="RbtRu\RbtRuWebPageContentParserUnitTest.cs" />
+    <Compile Include="RegardRu\RegardRuCatalogPageContentParserTest.cs" />
+    <Compile Include="RegardRu\RegardRuProductPageContentParserTest.cs" />
+    <Compile Include="RegardRu\RegardRuMainPageContentParserTest.cs" />
+    <Compile Include="RegardRu\RegardRuWebPageContentParserUnitTest.cs" />
+    <Compile Include="TechportRu\TechportRuCatalogPageContentParserTest.cs" />
+    <Compile Include="TechportRu\TechportRuMainPageContentParserTest.cs" />
+    <Compile Include="UlmartRu\UlmartRuShopPageContentParserTest.cs" />
+    <Compile Include="UtinetRu\UlmartRuMainPageContentParserTest.cs" />
+    <Compile Include="UtinetRu\UtinetRuRazdelPageContentParserTest.cs" />
+    <Compile Include="UtinetRu\UtinetRuCatalogPageContentParserTest.cs" />
+    <Compile Include="UtinetRu\UtinetRuHtmlPageContentParserTest.cs" />
+    <Compile Include="UtinetRu\UtinetRuWebPageContentParserUnitTest.cs" />
+    <Compile Include="UtinetRu\UtinetRuProductPageContentParserTest.cs" />
+    <Compile Include="VLazerCom\VLazerComCatalogPageContentParserTest.cs" />
+    <Compile Include="VLazerCom\VLazerComMainPageContentParserTest.cs" />
+    <Compile Include="VLazerCom\VLazerComProductPageContentParserTest.cs" />
+    <Compile Include="VLazerCom\VLazerComWebPageContentParserUnitTest.cs" />
+    <Compile Include="VLazerCom\VLazerComHtmlPageContentParserTest.cs" />
+    <Compile Include="TechportRu\TechportRuWebPageContentParserUnitTest.cs" />
+    <Compile Include="UlmartRu\UlmartRuRazdelPageContentParserTest.cs" />
+    <Compile Include="UlmartRu\UlmartRuWebPageContentParserUnitTest.cs" />
+    <Compile Include="WebPageContentParserUnitTest.cs" />
+    <Compile Include="SvyaznoyRu\SvyaznoyRuRazdelPageContentParserTest.cs" />
+    <Compile Include="SvyaznoyRu\SvyaznoyRuHtmlPageContentParserTest.cs" />
+    <Compile Include="SvyaznoyRu\SvyaznoyRuMainPageContentParserTest.cs" />
+    <Compile Include="SvyaznoyRu\SvyaznoyRuProductPageContentParserTest.cs" />
+    <Compile Include="SvyaznoyRu\SvyaznoyRuCatalogPageContentParserTest.cs" />
+    <Compile Include="TdPoiskRu\TdPoiskRuRazdelPageContentParserTest.cs" />
+    <Compile Include="TdPoiskRu\TdPoiskRuHtmlPageContentParserTest.cs" />
+    <Compile Include="TdPoiskRu\TdPoiskRuMainPageContentParserTest.cs" />
+    <Compile Include="TdPoiskRu\TdPoiskRuProductPageContentParserTest.cs" />
+    <Compile Include="TdPoiskRu\TdPoiskRuCatalogPageContentParserTest.cs" />
+    <Compile Include="TdPoiskRu\TdPoiskRuShopsListPageContentParserTest.cs" />
+    <Compile Include="TechnonetRu\TechnonetRuProductPageContentParserTest.cs" />
+    <Compile Include="TechnonetRu\TechnonetRuCatalogPageContentParserTest.cs" />
+    <Compile Include="TechnonetRu\TechnonetRuRazdelPageContentParserTest.cs" />
+    <Compile Include="TechnonetRu\TechnonetRuMainPageContentParserTest.cs" />
+    <Compile Include="TechnonetRu\TechnonetRuHtmlPageContentParserTest.cs" />
+    <Compile Include="TechnonetRu\TechnonetRuShopsListContentParserTest.cs" />
+    <Compile Include="TehnoparkRu\TehnoparkRuRazdelPageContentParserTest.cs" />
+    <Compile Include="TehnoparkRu\TehnoparkRuHtmlPageContentParserTest.cs" />
+    <Compile Include="TehnoparkRu\TehnoparkRuMainPageContentParserTest.cs" />
+    <Compile Include="TehnoparkRu\TehnoparkRuProductPageContentParserTest.cs" />
+    <Compile Include="TehnoparkRu\TehnoparkRuCatalogPageContentParserTest.cs" />
+    <Compile Include="TehnoshokRu\TehnoshokRuRazdelPageContentParserTest.cs" />
+    <Compile Include="TehnoshokRu\TehnoshokRuMainPageContentParserTest.cs" />
+    <Compile Include="TehnoshokRu\TehnoshokRuProductPageContentParserTest.cs" />
+    <Compile Include="TehnoshokRu\TehnoshokRuHtmlPageContentParserTest.cs" />
+    <Compile Include="TehnoshokRu\TehnoshokRuCatalogPageContentParserTest.cs" />
+    <Compile Include="TehnoshokRu\TehnoshokRuShopsListPageContentParserTest.cs" />
+    <Compile Include="TehnosilaRu\TehnosilaRuRazdelPageContentParserTest.cs" />
+    <Compile Include="TehnosilaRu\TehnosilaRuCatalogPageContentParserTest.cs" />
+    <Compile Include="TehnosilaRu\TehnosilaRuShopsListPageContentParserTest.cs" />
+    <Compile Include="TehnosilaRu\TehnosilaRuHtmlPageContentParserTest.cs" />
+    <Compile Include="TehnosilaRu\TehnosilaRuMainPageContentParserTest.cs" />
+    <Compile Include="TehnosilaRu\TehnosilaRuProductPageContentParserTest.cs" />
+    <Compile Include="TelemaksRu\TelemaksRuRazdelPageContentParserTest.cs" />
+    <Compile Include="TelemaksRu\TelemaksRuHtmlPageContentParserTest.cs" />
+    <Compile Include="TelemaksRu\TelemaksRuMainPageContentParserTest.cs" />
+    <Compile Include="TelemaksRu\TelemaksRuProductPageContentParserTest.cs" />
+    <Compile Include="TelemaksRu\TelemaksRuCatalogPageContentParserTest.cs" />
+    <Compile Include="TelemaksRu\TelemaksRuShopsListPageContentParserTest.cs" />
+    <Compile Include="UlmartRu\UlmartRuHtmlPageContentParserTest.cs" />
+    <Compile Include="UlmartRu\UlmartRuMainPageContentParserTest.cs" />
+    <Compile Include="UlmartRu\UlmartRuProductPageContentParserTest.cs" />
+    <Compile Include="UlmartRu\UlmartRuCatalogPageContentParserTest.cs" />
+    <Compile Include="UlmartRu\UlmartRuShopsListPageContentParserTest.cs" />
+    <Compile Include="UriAsserts.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DnsShopRu\Pages\razdel_empty_name.mht" />
+    <None Include="DomoRu\Pages\catalog_single_page.mht" />
+    <None Include="MvideoRu\Pages\razdels_list.mht" />
+    <None Include="TechportRu\pages\catalog_out_of_stock.mht" />
+    <None Include="TechportRu\pages\product_out_of_stock.mht" />
+    <None Include="TehnosilaRu\Pages\product_out_of_stock_2.mht" />
+    <None Include="TenIRu\pages\catalog.mht" />
+    <None Include="TenIRu\pages\catalog_last_page.mht" />
+    <None Include="TenIRu\pages\main.mht" />
+    <None Include="TenIRu\pages\product.mht" />
+    <None Include="TenIRu\pages\razdel.mht" />
+    <None Include="CentrBtRu\pages\catalog.mht" />
+    <None Include="CentrBtRu\pages\catalog_last_page.mht" />
+    <None Include="CentrBtRu\pages\catalog_next_page.mht" />
+    <None Include="CentrBtRu\pages\main.mht" />
+    <None Include="CentrBtRu\pages\product.mht" />
+    <None Include="CentrBtRu\pages\razdel.mht" />
+    <None Include="CitilinkRu\pages\catalog.mht" />
+    <None Include="CitilinkRu\pages\catalog_last_page.mht" />
+    <None Include="CitilinkRu\pages\main.mht" />
+    <None Include="CitilinkRu\pages\product.mht" />
+    <None Include="CitilinkRu\pages\product_out_of_stock.mht" />
+    <None Include="CitilinkRu\pages\razdel.mht" />
+    <None Include="CorpCentreRu\Pages\razdel.mht" />
+    <None Include="CorpCentreRu\Pages\razdels_list.mht" />
+    <None Include="CorpCentreRu\Pages\main.mht" />
+    <None Include="CorpCentreRu\Pages\product.mht" />
+    <None Include="CorpCentreRu\Pages\catalog.mht" />
+    <None Include="CorpCentreRu\Pages\catalog_daily_hit.mht" />
+    <None Include="CorpCentreRu\Pages\catalog_last_page.mht" />
+    <None Include="CorpCentreRu\Pages\catalog_next_page.mht" />
+    <None Include="CorpCentreRu\Pages\catalog_online_only.mht" />
+    <None Include="CorpCentreRu\Pages\catalog_out_of_stock.mht" />
+    <None Include="CorpCentreRu\Pages\product_availability_in_shops_order.mht" />
+    <None Include="CorpCentreRu\Pages\product_daily_hit.mht" />
+    <None Include="CorpCentreRu\Pages\product_no_article.mht" />
+    <None Include="CorpCentreRu\Pages\product_online_only.mht" />
+    <None Include="CorpCentreRu\Pages\product_out_of_stock.mht" />
+    <None Include="CorpCentreRu\Pages\shops_list.mht" />
+    <None Include="DnsShopRu\Pages\razdel.mht" />
+    <None Include="DnsShopRu\Pages\category.mht" />
+    <None Include="DnsShopRu\Pages\main.mht" />
+    <None Include="DnsShopRu\Pages\product.mht" />
+    <None Include="DnsShopRu\Pages\catalog_last_page.mht" />
+    <None Include="DnsShopRu\Pages\catalog_next_page.mht" />
+    <None Include="DnsShopRu\Pages\catalog_no_shops.mht" />
+    <None Include="DnsShopRu\Pages\catalog_out_of_stock.mht" />
+    <None Include="DnsShopRu\Pages\product_discounted_price.mht" />
+    <None Include="DnsShopRu\Pages\product_no_shops.mht" />
+    <None Include="DnsShopRu\Pages\catalog.mht" />
+    <None Include="DnsShopRu\Pages\product_out_of_stock.mht" />
+    <None Include="DnsShopRu\Pages\shop.mht" />
+    <None Include="DomoRu\Pages\razdel.mht" />
+    <None Include="DomoRu\Pages\main.mht" />
+    <None Include="DomoRu\Pages\product.mht" />
+    <None Include="DomoRu\Pages\catalog.mht" />
+    <None Include="DomoRu\Pages\catalog_last_page.mht" />
+    <None Include="DomoRu\Pages\catalog_next_page.mht" />
+    <None Include="DomoRu\Pages\catalog_out_of_stock.mht" />
+    <None Include="DomoRu\Pages\product_out_of_stock.mht" />
+    <None Include="DostavkaRu\pages\catalog.mht" />
+    <None Include="DostavkaRu\pages\catalog_last_page.mht" />
+    <None Include="DostavkaRu\pages\main.mht" />
+    <None Include="DostavkaRu\pages\product.mht" />
+    <None Include="DostavkaRu\pages\product_out_of_stock.mht" />
+    <None Include="DostavkaRu\pages\razdel.mht" />
+    <None Include="EldoradoRu\Pages\razdel.mht" />
+    <None Include="EldoradoRu\Pages\main.mht" />
+    <None Include="EldoradoRu\Pages\product.mht" />
+    <None Include="EldoradoRu\Pages\catalog.mht" />
+    <None Include="EldoradoRu\Pages\catalog_comming_soon.mht" />
+    <None Include="EldoradoRu\Pages\catalog_last_page.mht" />
+    <None Include="EldoradoRu\Pages\catalog_next_page.mht" />
+    <None Include="EldoradoRu\Pages\catalog_out_of_stock.mht" />
+    <None Include="EldoradoRu\Pages\catalog_only_in_shops.mht" />
+    <None Include="EldoradoRu\Pages\product_availability_in_shops.mht" />
+    <None Include="EldoradoRu\Pages\product_availability_in_shops_no_one.mht" />
+    <None Include="EldoradoRu\Pages\product_comming_soon.mht" />
+    <None Include="EldoradoRu\Pages\catalog_empty.mht" />
+    <None Include="EldoradoRu\Pages\catalog_empty_2.mht" />
+    <None Include="EldoradoRu\Pages\product_out_of_stock.mht" />
+    <None Include="EldoradoRu\Pages\product_only_in_shops.mht" />
+    <None Include="EldoradoRu\Pages\shops_list.mht" />
+    <None Include="ElectrovenikRu\pages\catalog.mht" />
+    <None Include="EnterRu\Pages\catalog.mht" />
+    <None Include="EnterRu\Pages\catalog_empty.mht" />
+    <None Include="EnterRu\Pages\razdel.mht" />
+    <None Include="EnterRu\Pages\catalog_categories.mht" />
+    <None Include="HolodilnikRu\pages\catalog_empty.mht" />
+    <None Include="ElectrovenikRu\pages\catalog_last_page.mht" />
+    <None Include="ElectrovenikRu\pages\main.mht" />
+    <None Include="ElectrovenikRu\pages\product.mht" />
+    <None Include="ElectrovenikRu\pages\razdel.mht" />
+    <None Include="EnterRu\Pages\main.mht" />
+    <None Include="EnterRu\Pages\product.mht" />
+    <None Include="EnterRu\Pages\catalog_last_page.mht" />
+    <None Include="EnterRu\Pages\catalog_next_page.mht" />
+    <None Include="EnterRu\Pages\product_empty_model.mht" />
+    <None Include="EurosetRu\Pages\razdel.mht" />
+    <None Include="EurosetRu\Pages\main.mht" />
+    <None Include="EurosetRu\Pages\product.mht" />
+    <None Include="EurosetRu\Pages\catalog.mht" />
+    <None Include="EurosetRu\Pages\catalog_last_page.mht" />
+    <None Include="EurosetRu\Pages\catalog_next_page.mht" />
+    <None Include="EurosetRu\Pages\catalog_no_price.mht" />
+    <None Include="EurosetRu\Pages\catalog_out_of_stock.mht" />
+    <None Include="EurosetRu\Pages\product_out_of_stock.mht" />
+    <None Include="HolodilnikRu\pages\catalog.mht" />
+    <None Include="HolodilnikRu\pages\catalog_last_page.mht" />
+    <None Include="HolodilnikRu\pages\catalog_out_of_stock.mht" />
+    <None Include="HolodilnikRu\pages\main.mht" />
+    <None Include="HolodilnikRu\pages\product.mht" />
+    <None Include="HolodilnikRu\pages\product_out_of_stock.mht" />
+    <None Include="HolodilnikRu\pages\razdel.mht" />
+    <None Include="IonRu\pages\availability_in_shops.mht" />
+    <None Include="IonRu\pages\catalog.mht" />
+    <None Include="IonRu\pages\catalog_empty.mht" />
+    <None Include="IonRu\pages\catalog_last_page.mht" />
+    <None Include="IonRu\pages\catalog_variants.mht" />
+    <None Include="IonRu\pages\main.mht" />
+    <None Include="IonRu\pages\product.mht" />
+    <None Include="IonRu\pages\product_online_only.mht" />
+    <None Include="IonRu\pages\product_out_of_stock.mht" />
+    <None Include="IonRu\pages\product_retail_only.mht" />
+    <None Include="IonRu\pages\shops_list.mht" />
+    <None Include="JustRu\pages\catalog.mht" />
+    <None Include="JustRu\pages\catalog_discounted.mht" />
+    <None Include="JustRu\pages\catalog_last_page.mht" />
+    <None Include="JustRu\pages\main.mht" />
+    <None Include="JustRu\pages\product.mht" />
+    <None Include="KeyRu\Pages\razdel.mht" />
+    <None Include="KeyRu\Pages\main.mht" />
+    <None Include="KeyRu\Pages\product.mht" />
+    <None Include="KeyRu\Pages\catalog.mht" />
+    <None Include="KeyRu\Pages\catalog_empty.mht" />
+    <None Include="KeyRu\Pages\product_action.mht" />
+    <None Include="KeyRu\Pages\product_availability_in_shops.mht" />
+    <None Include="KeyRu\Pages\product_characteristics.mht" />
+    <None Include="KeyRu\Pages\product_characteristics_manufacturer_code.mht" />
+    <None Include="KeyRu\Pages\product_legals_only.mht" />
+    <None Include="KeyRu\Pages\shops_list.mht" />
+    <None Include="LogoRu\pages\catalog.mht" />
+    <None Include="LogoRu\pages\catalog_last_page.mht" />
+    <None Include="LogoRu\pages\catalog_out_of_stock.mht" />
+    <None Include="LogoRu\pages\main.mht" />
+    <None Include="LogoRu\pages\product.mht" />
+    <None Include="LogoRu\pages\product_out_of_stock.mht" />
+    <None Include="LogoRu\pages\razdel.mht" />
+    <None Include="MtsRu\pages\catalog.mht" />
+    <None Include="MtsRu\pages\catalog_last_page.mht" />
+    <None Include="MtsRu\pages\catalog_out_of_stock.mht" />
+    <None Include="MtsRu\pages\main.mht" />
+    <None Include="MtsRu\pages\product.mht" />
+    <None Include="MtsRu\pages\product_out_of_stock.mht" />
+    <None Include="MtsRu\pages\razdel.mht" />
+    <None Include="MvideoRu\Pages\catalog_empty.mht" />
+    <None Include="MvideoRu\Pages\catalog.mht" />
+    <None Include="MvideoRu\Pages\catalog_action.mht" />
+    <None Include="MvideoRu\Pages\catalog_last_page.mht" />
+    <None Include="MvideoRu\Pages\catalog_next_page.mht" />
+    <None Include="MvideoRu\Pages\catalog_out_of_stock.mht" />
+    <None Include="MvideoRu\Pages\catalog_long_name.mht" />
+    <None Include="MvideoRu\Pages\catalog_retail_only.mht" />
+    <None Include="MvideoRu\Pages\main.mht" />
+    <None Include="MvideoRu\Pages\product.mht" />
+    <None Include="MvideoRu\Pages\catalog_unavailable_for_buy_on_site.mht" />
+    <None Include="MvideoRu\Pages\product_action.mht" />
+    <None Include="MvideoRu\Pages\catalog_unavailable_for_buy.mht" />
+    <None Include="MvideoRu\Pages\product_out_of_stock.mht" />
+    <None Include="MvideoRu\Pages\product_unavailable_for_buy.mht" />
+    <None Include="MvideoRu\Pages\product_retail_only.mht" />
+    <None Include="MvideoRu\Pages\product_unavailable_for_buy_on_site.mht" />
+    <None Include="MvideoRu\Pages\razdel.mht" />
+    <None Include="MvideoRu\Pages\shops_list.mht" />
+    <None Include="MvideoRu\Pages\shops_list_last_page.mht" />
+    <None Include="NewmansRu\pages\catalog.mht" />
+    <None Include="NewmansRu\pages\catalog_empty_name.mht" />
+    <None Include="NewmansRu\pages\catalog_last_page.mht" />
+    <None Include="NewmansRu\pages\catalog_out_of_stock.mht" />
+    <None Include="NewmansRu\pages\main.mht" />
+    <None Include="NewmansRu\pages\product.mht" />
+    <None Include="NewmansRu\pages\product_empty_name.mht" />
+    <None Include="NewmansRu\pages\product_out_of_stock.mht" />
+    <None Include="NewmansRu\pages\razdel.mht" />
+    <None Include="Nord24Ru\Pages\razdel.mht" />
+    <None Include="Nord24Ru\Pages\main.mht" />
+    <None Include="Nord24Ru\Pages\product.mht" />
+    <None Include="Nord24Ru\Pages\catalog.mht" />
+    <None Include="Nord24Ru\Pages\catalog_last_page.mht" />
+    <None Include="Nord24Ru\Pages\catalog_next_page.mht" />
+    <None Include="NotikRu\pages\catalog.mht" />
+    <None Include="NotikRu\pages\catalog_empty.mht" />
+    <None Include="NotikRu\pages\catalog_last_page.mht" />
+    <None Include="NotikRu\pages\main.mht" />
+    <None Include="NotikRu\pages\product.mht" />
+    <None Include="NotikRu\pages\product_no_article.mht" />
+    <None Include="NotikRu\pages\razdel.mht" />
+    <None Include="OldiRu\pages\catalog.mht" />
+    <None Include="OldiRu\pages\catalog_empty.mht" />
+    <None Include="OldiRu\pages\catalog_last_page.mht" />
+    <None Include="OldiRu\pages\main.mht" />
+    <None Include="OldiRu\pages\product.mht" />
+    <None Include="OldiRu\pages\product_online_only.mht" />
+    <None Include="OldiRu\pages\razdel.mht" />
+    <None Include="OnlinetradeRu\pages\catalog.mht" />
+    <None Include="OnlinetradeRu\pages\catalog_last_page.mht" />
+    <None Include="OnlinetradeRu\pages\main.mht" />
+    <None Include="OnlinetradeRu\pages\product.mht" />
+    <None Include="OnlinetradeRu\pages\razdel.mht" />
+    <None Include="OnlinetradeRu\pages\razdels_list.mht" />
+    <None Include="Oo3Ru\pages\catalog.mht" />
+    <None Include="Oo3Ru\pages\catalog_categories.mht" />
+    <None Include="Oo3Ru\pages\catalog_last_page.mht" />
+    <None Include="Oo3Ru\pages\main.mht" />
+    <None Include="Oo3Ru\pages\product.mht" />
+    <None Include="Oo3Ru\pages\product_no_article.mht" />
+    <None Include="Oo3Ru\pages\product_no_price.mht" />
+    <None Include="Oo3Ru\pages\product_out_of_stock.mht" />
+    <None Include="OzonRu\pages\catalog.mht" />
+    <None Include="OzonRu\pages\catalog_categories.mht" />
+    <None Include="OzonRu\pages\catalog_empty.mht" />
+    <None Include="OzonRu\pages\catalog_last_page.mht" />
+    <None Include="OzonRu\pages\catalog_next_page.mht" />
+    <None Include="OzonRu\pages\main.mht" />
+    <None Include="OzonRu\pages\product.mht" />
+    <None Include="OzonRu\pages\razdel.mht" />
+    <None Include="packages.config" />
+    <None Include="PultRu\pages\razdel.mht" />
+    <None Include="PultRu\pages\main.mht" />
+    <None Include="PultRu\pages\product.mht" />
+    <None Include="PultRu\pages\catalog.mht" />
+    <None Include="PultRu\pages\catalog_last_page.mht" />
+    <None Include="PultRu\pages\product_error_404.mht" />
+    <None Include="PultRu\pages\product_no_article.mht" />
+    <None Include="PultRu\pages\product_no_price.mht" />
+    <None Include="PultRu\pages\product_under_order.mht" />
+    <None Include="RbtRu\Pages\catalog_long_name.mht" />
+    <None Include="RbtRu\Pages\razdel.mht" />
+    <None Include="RbtRu\Pages\main.mht" />
+    <None Include="RbtRu\Pages\product.mht" />
+    <None Include="RbtRu\Pages\catalog.mht" />
+    <None Include="RbtRu\Pages\catalog_last_page.mht" />
+    <None Include="RbtRu\Pages\catalog_next_page.mht" />
+    <None Include="RegardRu\pages\catalog.mht" />
+    <None Include="RegardRu\pages\catalog_last_page.mht" />
+    <None Include="RegardRu\pages\main.mht" />
+    <None Include="RegardRu\pages\product.mht" />
+    <None Include="RegardRu\pages\product_out_of_stock.mht" />
+    <None Include="SvyaznoyRu\Pages\razdel_1.mht" />
+    <None Include="SvyaznoyRu\Pages\razdel_2.mht" />
+    <None Include="SvyaznoyRu\Pages\main.mht" />
+    <None Include="SvyaznoyRu\Pages\product.mht" />
+    <None Include="SvyaznoyRu\Pages\catalog.mht" />
+    <None Include="SvyaznoyRu\Pages\catalog_last_page.mht" />
+    <None Include="SvyaznoyRu\Pages\catalog_next_page.mht" />
+    <None Include="SvyaznoyRu\Pages\product_coming_soon.mht" />
+    <None Include="TdPoiskRu\Pages\razdel.mht" />
+    <None Include="TdPoiskRu\Pages\main.mht" />
+    <None Include="TdPoiskRu\Pages\product.mht" />
+    <None Include="TdPoiskRu\Pages\catalog.mht" />
+    <None Include="TdPoiskRu\Pages\catalog_last_page.mht" />
+    <None Include="TdPoiskRu\Pages\catalog_long_name.mht" />
+    <None Include="TdPoiskRu\Pages\catalog_next_page.mht" />
+    <None Include="TdPoiskRu\Pages\catalog_retail_only.mht" />
+    <None Include="TdPoiskRu\Pages\product_no_price.mht" />
+    <None Include="TdPoiskRu\Pages\product_retail_only.mht" />
+    <None Include="TdPoiskRu\Pages\shops_list.mht" />
+    <None Include="TechnonetRu\pages\razdel.mht" />
+    <None Include="TechnonetRu\pages\main.mht" />
+    <None Include="TechnonetRu\pages\product.mht" />
+    <None Include="TechnonetRu\pages\catalog.mht" />
+    <None Include="TechnonetRu\pages\catalog_empty.mht" />
+    <None Include="TechnonetRu\pages\catalog_last_page.mht" />
+    <None Include="TechnonetRu\pages\catalog_next_page.mht" />
+    <None Include="TechnonetRu\pages\shops_list.mht" />
+    <None Include="TechportRu\pages\catalog.mht" />
+    <None Include="TechportRu\pages\catalog_categories.mht" />
+    <None Include="TechportRu\pages\catalog_empty.mht" />
+    <None Include="TechportRu\pages\catalog_last_page.mht" />
+    <None Include="TechportRu\pages\main.mht" />
+    <None Include="TechportRu\pages\product.mht" />
+    <None Include="TehnoparkRu\Pages\razdel.mht" />
+    <None Include="TehnoparkRu\Pages\main.mht" />
+    <None Include="TehnoparkRu\Pages\product.mht" />
+    <None Include="TehnoparkRu\Pages\catalog.mht" />
+    <None Include="TehnoparkRu\Pages\catalog_last_page.mht" />
+    <None Include="TehnoparkRu\Pages\catalog_next_page.mht" />
+    <None Include="TehnoparkRu\Pages\catalog_out_of_stock.mht" />
+    <None Include="TehnoparkRu\Pages\product_out_of_stock.mht" />
+    <None Include="TehnoshokRu\Pages\razdel.mht" />
+    <None Include="TehnoshokRu\Pages\main.mht" />
+    <None Include="TehnoshokRu\Pages\product.mht" />
+    <None Include="TehnoshokRu\Pages\catalog.mht" />
+    <None Include="TehnoshokRu\Pages\catalog_empty.mht" />
+    <None Include="TehnoshokRu\Pages\catalog_last_page.mht" />
+    <None Include="TehnoshokRu\Pages\catalog_next_page.mht" />
+    <None Include="TehnoshokRu\Pages\product_availability_in_shops.mht" />
+    <None Include="TehnoshokRu\Pages\product_availability_in_shops_2.mht" />
+    <None Include="TehnoshokRu\Pages\product_not_found.mht" />
+    <None Include="TehnoshokRu\Pages\product_out_of_stock.mht" />
+    <None Include="TehnoshokRu\Pages\shops_list.mht" />
+    <None Include="TehnosilaRu\Pages\razdel.mht" />
+    <None Include="TehnosilaRu\Pages\main.mht" />
+    <None Include="TehnosilaRu\Pages\product.mht" />
+    <None Include="TehnosilaRu\Pages\catalog.mht" />
+    <None Include="TehnosilaRu\Pages\catalog_last_page.mht" />
+    <None Include="TehnosilaRu\Pages\catalog_long_name.mht" />
+    <None Include="TehnosilaRu\Pages\catalog_next_page.mht" />
+    <None Include="TehnosilaRu\Pages\catalog_out_of_stock.mht" />
+    <None Include="TehnosilaRu\Pages\product_not_available_in_shops.mht" />
+    <None Include="TehnosilaRu\Pages\product_out_of_stock.mht" />
+    <None Include="TehnosilaRu\Pages\product_pre_order.mht" />
+    <None Include="TehnosilaRu\Pages\shops_list.mht" />
+    <None Include="TelemaksRu\Pages\razdel.mht" />
+    <None Include="TelemaksRu\Pages\main.mht" />
+    <None Include="TelemaksRu\Pages\product.mht" />
+    <None Include="TelemaksRu\Pages\catalog.mht" />
+    <None Include="TelemaksRu\Pages\catalog_empty.mht" />
+    <None Include="TelemaksRu\Pages\catalog_last_page.mht" />
+    <None Include="TelemaksRu\Pages\catalog_next_page.mht" />
+    <None Include="TelemaksRu\Pages\catalog_retail_only.mht" />
+    <None Include="TelemaksRu\Pages\product_no_shops.mht" />
+    <None Include="TelemaksRu\Pages\product_retail_only.mht" />
+    <None Include="TelemaksRu\Pages\shops_list.mht" />
+    <None Include="UlmartRu\Pages\catalog_empty.mht" />
+    <None Include="UlmartRu\Pages\catalog_next_page.mht" />
+    <None Include="UlmartRu\Pages\main.mht" />
+    <None Include="UlmartRu\Pages\product.mht" />
+    <None Include="UlmartRu\Pages\catalog.mht" />
+    <None Include="UlmartRu\Pages\product_out_of_stock.mht" />
+    <None Include="UlmartRu\Pages\product_shops.mht" />
+    <None Include="UlmartRu\Pages\razdel.mht" />
+    <None Include="UlmartRu\Pages\shop.mht" />
+    <None Include="UlmartRu\Pages\shops_list.mht" />
+    <None Include="UlmartRu\Pages\shops_list_central_shops.mht" />
+    <None Include="UlmartRu\Pages\shops_list_single_central_shop.mht" />
+    <None Include="UtinetRu\pages\catalog.mht" />
+    <None Include="UtinetRu\pages\catalog_last_page.mht" />
+    <None Include="UtinetRu\pages\catalog_manufacturer_code_inside_name.mht" />
+    <None Include="UtinetRu\pages\main.mht" />
+    <None Include="UtinetRu\pages\product.mht" />
+    <None Include="UtinetRu\pages\product_manufacturer_code_inside_name.mht" />
+    <None Include="UtinetRu\pages\product_out_of_stock.mht" />
+    <None Include="UtinetRu\pages\razdel.mht" />
+    <None Include="VLazerCom\pages\catalog.mht" />
+    <None Include="VLazerCom\pages\catalog_categories.mht" />
+    <None Include="VLazerCom\pages\catalog_empty.mht" />
+    <None Include="VLazerCom\pages\catalog_last_page.mht" />
+    <None Include="VLazerCom\pages\main.mht" />
+    <None Include="VLazerCom\pages\product.mht" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Chia.WebParsing.Companies\Chia.WebParsing.Companies.csproj">
+      <Project>{6EC6F3B5-D601-4A54-AD31-35A8DDA4E4B8}</Project>
+      <Name>Chia.WebParsing.Companies</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Chia.WebParsing.Parsers\Chia.WebParsing.Parsers.csproj">
+      <Project>{12111EBA-2EB8-4A92-ADA5-3F4A8586468D}</Project>
+      <Name>Chia.WebParsing.Parsers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\WebParsingFramework\WebParsingFramework.csproj">
+      <Project>{6D7FA2EB-0AEB-407A-87BB-3C277592D27E}</Project>
+      <Name>WebParsingFramework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DomoRu\Pages\catalog_ajax_last_page.html" />
+    <Content Include="DomoRu\Pages\main_ajax.html" />
+    <Content Include="DomoRu\Pages\catalog_ajax.html" />
+    <Content Include="EldoradoRu\Pages\prices_json.txt" />
+    <Content Include="EldoradoRu\Pages\product_availability_in_shops_failed.html" />
+    <Content Include="KeyRu\Pages\catalog_ajax.html" />
+    <Content Include="KeyRu\Pages\catalog_ajax_last_page.html" />
+    <Content Include="MvideoRu\Pages\availability_in_shops.html" />
+    <Content Include="TdPoiskRu\Pages\product_availability_in_shops.html" />
+    <Content Include="TehnosilaRu\Pages\product_availability_in_shops.html" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

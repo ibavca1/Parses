@@ -1,0 +1,343 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6EC6F3B5-D601-4A54-AD31-35A8DDA4E4B8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Chia.WebParsing.Companies</RootNamespace>
+    <AssemblyName>Chia.WebParsing.Companies</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <CodeContractsAssemblyMode>1</CodeContractsAssemblyMode>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;CONTRACTS_FULL</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeContractsEnableRuntimeChecking>True</CodeContractsEnableRuntimeChecking>
+    <CodeContractsRuntimeOnlyPublicSurface>False</CodeContractsRuntimeOnlyPublicSurface>
+    <CodeContractsRuntimeThrowOnFailure>True</CodeContractsRuntimeThrowOnFailure>
+    <CodeContractsRuntimeCallSiteRequires>False</CodeContractsRuntimeCallSiteRequires>
+    <CodeContractsRuntimeSkipQuantifiers>False</CodeContractsRuntimeSkipQuantifiers>
+    <CodeContractsRunCodeAnalysis>False</CodeContractsRunCodeAnalysis>
+    <CodeContractsNonNullObligations>True</CodeContractsNonNullObligations>
+    <CodeContractsBoundsObligations>True</CodeContractsBoundsObligations>
+    <CodeContractsArithmeticObligations>True</CodeContractsArithmeticObligations>
+    <CodeContractsEnumObligations>True</CodeContractsEnumObligations>
+    <CodeContractsRedundantAssumptions>True</CodeContractsRedundantAssumptions>
+    <CodeContractsAssertsToContractsCheckBox>True</CodeContractsAssertsToContractsCheckBox>
+    <CodeContractsRedundantTests>True</CodeContractsRedundantTests>
+    <CodeContractsMissingPublicRequiresAsWarnings>True</CodeContractsMissingPublicRequiresAsWarnings>
+    <CodeContractsMissingPublicEnsuresAsWarnings>False</CodeContractsMissingPublicEnsuresAsWarnings>
+    <CodeContractsInferRequires>True</CodeContractsInferRequires>
+    <CodeContractsInferEnsures>False</CodeContractsInferEnsures>
+    <CodeContractsInferObjectInvariants>False</CodeContractsInferObjectInvariants>
+    <CodeContractsSuggestAssumptions>False</CodeContractsSuggestAssumptions>
+    <CodeContractsSuggestAssumptionsForCallees>False</CodeContractsSuggestAssumptionsForCallees>
+    <CodeContractsSuggestRequires>False</CodeContractsSuggestRequires>
+    <CodeContractsNecessaryEnsures>True</CodeContractsNecessaryEnsures>
+    <CodeContractsSuggestObjectInvariants>False</CodeContractsSuggestObjectInvariants>
+    <CodeContractsSuggestReadonly>True</CodeContractsSuggestReadonly>
+    <CodeContractsRunInBackground>True</CodeContractsRunInBackground>
+    <CodeContractsShowSquigglies>True</CodeContractsShowSquigglies>
+    <CodeContractsUseBaseLine>False</CodeContractsUseBaseLine>
+    <CodeContractsEmitXMLDocs>False</CodeContractsEmitXMLDocs>
+    <CodeContractsCustomRewriterAssembly />
+    <CodeContractsCustomRewriterClass />
+    <CodeContractsLibPaths />
+    <CodeContractsExtraRewriteOptions />
+    <CodeContractsExtraAnalysisOptions />
+    <CodeContractsSQLServerOption />
+    <CodeContractsBaseLineFile />
+    <CodeContractsCacheAnalysisResults>True</CodeContractsCacheAnalysisResults>
+    <CodeContractsSkipAnalysisIfCannotConnectToCache>False</CodeContractsSkipAnalysisIfCannotConnectToCache>
+    <CodeContractsFailBuildOnWarnings>False</CodeContractsFailBuildOnWarnings>
+    <CodeContractsBeingOptimisticOnExternal>True</CodeContractsBeingOptimisticOnExternal>
+    <CodeContractsRuntimeCheckingLevel>Full</CodeContractsRuntimeCheckingLevel>
+    <CodeContractsReferenceAssembly>DoNotBuild</CodeContractsReferenceAssembly>
+    <CodeContractsAnalysisWarningLevel>0</CodeContractsAnalysisWarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;CONTRACTS_FULL</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeContractsEnableRuntimeChecking>True</CodeContractsEnableRuntimeChecking>
+    <CodeContractsRuntimeOnlyPublicSurface>False</CodeContractsRuntimeOnlyPublicSurface>
+    <CodeContractsRuntimeThrowOnFailure>True</CodeContractsRuntimeThrowOnFailure>
+    <CodeContractsRuntimeCallSiteRequires>False</CodeContractsRuntimeCallSiteRequires>
+    <CodeContractsRuntimeSkipQuantifiers>False</CodeContractsRuntimeSkipQuantifiers>
+    <CodeContractsRunCodeAnalysis>False</CodeContractsRunCodeAnalysis>
+    <CodeContractsNonNullObligations>True</CodeContractsNonNullObligations>
+    <CodeContractsBoundsObligations>True</CodeContractsBoundsObligations>
+    <CodeContractsArithmeticObligations>True</CodeContractsArithmeticObligations>
+    <CodeContractsEnumObligations>True</CodeContractsEnumObligations>
+    <CodeContractsRedundantAssumptions>True</CodeContractsRedundantAssumptions>
+    <CodeContractsAssertsToContractsCheckBox>True</CodeContractsAssertsToContractsCheckBox>
+    <CodeContractsRedundantTests>True</CodeContractsRedundantTests>
+    <CodeContractsMissingPublicRequiresAsWarnings>True</CodeContractsMissingPublicRequiresAsWarnings>
+    <CodeContractsMissingPublicEnsuresAsWarnings>False</CodeContractsMissingPublicEnsuresAsWarnings>
+    <CodeContractsInferRequires>True</CodeContractsInferRequires>
+    <CodeContractsInferEnsures>False</CodeContractsInferEnsures>
+    <CodeContractsInferObjectInvariants>False</CodeContractsInferObjectInvariants>
+    <CodeContractsSuggestAssumptions>False</CodeContractsSuggestAssumptions>
+    <CodeContractsSuggestAssumptionsForCallees>False</CodeContractsSuggestAssumptionsForCallees>
+    <CodeContractsSuggestRequires>False</CodeContractsSuggestRequires>
+    <CodeContractsNecessaryEnsures>True</CodeContractsNecessaryEnsures>
+    <CodeContractsSuggestObjectInvariants>False</CodeContractsSuggestObjectInvariants>
+    <CodeContractsSuggestReadonly>True</CodeContractsSuggestReadonly>
+    <CodeContractsRunInBackground>True</CodeContractsRunInBackground>
+    <CodeContractsShowSquigglies>True</CodeContractsShowSquigglies>
+    <CodeContractsUseBaseLine>False</CodeContractsUseBaseLine>
+    <CodeContractsEmitXMLDocs>False</CodeContractsEmitXMLDocs>
+    <CodeContractsCustomRewriterAssembly />
+    <CodeContractsCustomRewriterClass />
+    <CodeContractsLibPaths />
+    <CodeContractsExtraRewriteOptions />
+    <CodeContractsExtraAnalysisOptions />
+    <CodeContractsSQLServerOption />
+    <CodeContractsBaseLineFile />
+    <CodeContractsCacheAnalysisResults>True</CodeContractsCacheAnalysisResults>
+    <CodeContractsSkipAnalysisIfCannotConnectToCache>False</CodeContractsSkipAnalysisIfCannotConnectToCache>
+    <CodeContractsFailBuildOnWarnings>False</CodeContractsFailBuildOnWarnings>
+    <CodeContractsBeingOptimisticOnExternal>True</CodeContractsBeingOptimisticOnExternal>
+    <CodeContractsRuntimeCheckingLevel>Full</CodeContractsRuntimeCheckingLevel>
+    <CodeContractsReferenceAssembly>DoNotBuild</CodeContractsReferenceAssembly>
+    <CodeContractsAnalysisWarningLevel>0</CodeContractsAnalysisWarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="TenIRu\TenIRuCity.cs" />
+    <Compile Include="TenIRu\TenIRuCompany.cs" />
+    <Compile Include="TenIRu\TenIRuConstants.cs" />
+    <Compile Include="TenIRu\TenIRuWebPageType.cs" />
+    <Compile Include="TenIRu\TenIRuWebSite.cs" />
+    <Compile Include="CentrBtRu\CentrBtRuCity.cs" />
+    <Compile Include="CentrBtRu\CentrBtRuCompany.cs" />
+    <Compile Include="CentrBtRu\CentrBtRuConstants.cs" />
+    <Compile Include="CentrBtRu\CentrBtRuWebPageType.cs" />
+    <Compile Include="CentrBtRu\CentrBtRuWebSite.cs" />
+    <Compile Include="CitilinkRu\CitilinkRuCity.cs" />
+    <Compile Include="CitilinkRu\CitilinkRuCompany.cs" />
+    <Compile Include="CitilinkRu\CitilinkRuConstants.cs" />
+    <Compile Include="CitilinkRu\CitilinkRuWebPageType.cs" />
+    <Compile Include="CitilinkRu\CitilinkRuWebSite.cs" />
+    <Compile Include="CorpCentreRu\CorpCentreRuCity.cs" />
+    <Compile Include="CorpCentreRu\CorpCentreRuCompany.cs" />
+    <Compile Include="CorpCentreRu\CorpCentreRuConstants.cs" />
+    <Compile Include="CorpCentreRu\CorpCentreRuWebPageType.cs" />
+    <Compile Include="CorpCentreRu\CorpCentreRuWebSite.cs" />
+    <Compile Include="DnsShopRu\DnsShopRuCity.cs" />
+    <Compile Include="DnsShopRu\DnsShopRuCompany.cs" />
+    <Compile Include="DnsShopRu\DnsShopRuConstants.cs" />
+    <Compile Include="DnsShopRu\DnsShopRuWebPageType.cs" />
+    <Compile Include="DnsShopRu\DnsShopRuWebSite.cs" />
+    <Compile Include="DomoRu\DomoRuCity.cs" />
+    <Compile Include="DomoRu\DomoRuCompany.cs" />
+    <Compile Include="DomoRu\DomoRuConstants.cs" />
+    <Compile Include="DomoRu\DomoRuWebPageType.cs" />
+    <Compile Include="DomoRu\DomoRuWebSite.cs" />
+    <Compile Include="DostavkaRu\DostavkaRuCompany.cs" />
+    <Compile Include="DostavkaRu\DostavkaRuConstants.cs" />
+    <Compile Include="DostavkaRu\DostavkaRuWebPageType.cs" />
+    <Compile Include="DostavkaRu\DostavkaRuWebSite.cs" />
+    <Compile Include="EldoradoRu\EldoradoRuConstants.cs" />
+    <Compile Include="EldoradoRu\EldoradoRuWebPageType.cs" />
+    <Compile Include="EldoradoRu\EldoradoRuCity.cs" />
+    <Compile Include="EldoradoRu\EldoradoRuCompany.cs" />
+    <Compile Include="EldoradoRu\EldoradoRuWebSite.cs" />
+    <Compile Include="ElectrovenikRu\ElectrovenikRuCity.cs" />
+    <Compile Include="ElectrovenikRu\ElectrovenikRuCompany.cs" />
+    <Compile Include="ElectrovenikRu\ElectrovenikRuConstants.cs" />
+    <Compile Include="ElectrovenikRu\ElectrovenikRuPageType.cs" />
+    <Compile Include="ElectrovenikRu\ElectrovenikRuWebSite.cs" />
+    <Compile Include="EnterRu\EnterRuCity.cs" />
+    <Compile Include="EnterRu\EnterRuCompany.cs" />
+    <Compile Include="EnterRu\EnterRuConstants.cs" />
+    <Compile Include="EnterRu\EnterRuWebPageType.cs" />
+    <Compile Include="EnterRu\EnterRuWebSite.cs" />
+    <Compile Include="EnumerableExtensions.cs" />
+    <Compile Include="EurosetRu\EurosetRuCity.cs" />
+    <Compile Include="EurosetRu\EurosetRuCompany.cs" />
+    <Compile Include="EurosetRu\EurosetRuConstants.cs" />
+    <Compile Include="EurosetRu\EurosetRuWebPageType.cs" />
+    <Compile Include="EurosetRu\EurosetRuWebSite.cs" />
+    <Compile Include="HolodilnikRu\HolodilnikRuCity.cs" />
+    <Compile Include="HolodilnikRu\HolodilnikRuCompany.cs" />
+    <Compile Include="HolodilnikRu\HolodilnikRuConstants.cs" />
+    <Compile Include="HolodilnikRu\HolodilnikRuWebPageType.cs" />
+    <Compile Include="HolodilnikRu\HolodolnikRuWebSite.cs" />
+    <Compile Include="IonRu\IonRuCompany.cs" />
+    <Compile Include="IonRu\IonRuConstants.cs" />
+    <Compile Include="IonRu\IonRuWebPageType.cs" />
+    <Compile Include="IonRu\IonRuWebSite.cs" />
+    <Compile Include="JustRu\JustRuCity.cs" />
+    <Compile Include="JustRu\JustRuCompany.cs" />
+    <Compile Include="JustRu\JustRuConstants.cs" />
+    <Compile Include="JustRu\JustRuWebPageType.cs" />
+    <Compile Include="JustRu\JustRuWebSite.cs" />
+    <Compile Include="KeyRu\KeyRuCompany.cs" />
+    <Compile Include="KeyRu\KeyRuCity.cs" />
+    <Compile Include="KeyRu\KeyRuConstants.cs" />
+    <Compile Include="KeyRu\KeyRuWebPageType.cs" />
+    <Compile Include="KeyRu\KeyRuWebSite.cs" />
+    <Compile Include="LogoRu\LogoRuCity.cs" />
+    <Compile Include="LogoRu\LogoRuCompany.cs" />
+    <Compile Include="LogoRu\LogoRuConstants.cs" />
+    <Compile Include="LogoRu\LogoRuWebPageType.cs" />
+    <Compile Include="LogoRu\LogoRuWebSite.cs" />
+    <Compile Include="MtsRu\MtsRuCity.cs" />
+    <Compile Include="MtsRu\MtsRuCompany.cs" />
+    <Compile Include="MtsRu\MtsRuConstants.cs" />
+    <Compile Include="MtsRu\MtsRuWebPageType.cs" />
+    <Compile Include="MtsRu\MtsRuWebSite.cs" />
+    <Compile Include="MvideoRu\MvideoRuCompany.cs" />
+    <Compile Include="MvideoRu\MvideoRuConstants.cs" />
+    <Compile Include="MvideoRu\MvideoRuWebPageType.cs" />
+    <Compile Include="MvideoRu\MvideoRuWebSite.cs" />
+    <Compile Include="NewmansRu\NewmansRuCity.cs" />
+    <Compile Include="NewmansRu\NewmansRuCompany.cs" />
+    <Compile Include="NewmansRu\NewmansRuConstants.cs" />
+    <Compile Include="NewmansRu\NewmansRuWebPageType.cs" />
+    <Compile Include="NewmansRu\NewmansRuWebSite.cs" />
+    <Compile Include="Nord24Ru\Nord24RuCity.cs" />
+    <Compile Include="Nord24Ru\Nord24RuCompany.cs" />
+    <Compile Include="Nord24Ru\Nord24RuConstants.cs" />
+    <Compile Include="Nord24Ru\Nord24RuWebPageType.cs" />
+    <Compile Include="Nord24Ru\Nord24RuWebSite.cs" />
+    <Compile Include="NotikRu\NotikRuCity.cs" />
+    <Compile Include="NotikRu\NotikRuCompany.cs" />
+    <Compile Include="NotikRu\NotikRuConstants.cs" />
+    <Compile Include="NotikRu\NotikRuWebPageType.cs" />
+    <Compile Include="NotikRu\NotikRuWebSite.cs" />
+    <Compile Include="OldiRu\OldiRuCity.cs" />
+    <Compile Include="OldiRu\OldiRuCompany.cs" />
+    <Compile Include="OldiRu\OldiRuConstants.cs" />
+    <Compile Include="OldiRu\OldiRuWebPageType.cs" />
+    <Compile Include="OldiRu\OldiRuWebSite.cs" />
+    <Compile Include="OnlinetradeRu\OnlinetradeRuCity.cs" />
+    <Compile Include="OnlinetradeRu\OnlinetradeRuCompany.cs" />
+    <Compile Include="OnlinetradeRu\OnlinetradeRuConstants.cs" />
+    <Compile Include="OnlinetradeRu\OnlinetradeRuWebPageType.cs" />
+    <Compile Include="OnlinetradeRu\OnlinetradeRuWebSite.cs" />
+    <Compile Include="Oo3Ru\Oo3RuCity.cs" />
+    <Compile Include="Oo3Ru\Oo3RuCompany.cs" />
+    <Compile Include="Oo3Ru\Oo3RuConstants.cs" />
+    <Compile Include="Oo3Ru\Oo3RuWebPageType.cs" />
+    <Compile Include="Oo3Ru\Oo3RuWebSite.cs" />
+    <Compile Include="OzonRu\OzonRuCompany.cs" />
+    <Compile Include="OzonRu\OzonRuConstants.cs" />
+    <Compile Include="OzonRu\OzonRuWebPageType.cs" />
+    <Compile Include="OzonRu\OzonRuWebSite.cs" />
+    <Compile Include="PultRu\PultRuCity.cs" />
+    <Compile Include="PultRu\PultRuCompany.cs" />
+    <Compile Include="PultRu\PultRuConstants.cs" />
+    <Compile Include="PultRu\PultRuWebPageType.cs" />
+    <Compile Include="PultRu\PultRuWebSite.cs" />
+    <Compile Include="RbtRu\RbtRuCity.cs" />
+    <Compile Include="RbtRu\RbtRuCompany.cs" />
+    <Compile Include="RbtRu\RbtRuConstants.cs" />
+    <Compile Include="RbtRu\RbtRuWebPageType.cs" />
+    <Compile Include="RbtRu\RbtRuWebSite.cs" />
+    <Compile Include="RegardRu\RegardRuCity.cs" />
+    <Compile Include="RegardRu\RegardRuCompany.cs" />
+    <Compile Include="RegardRu\RegardRuConstants.cs" />
+    <Compile Include="RegardRu\RegardRuWebPageType.cs" />
+    <Compile Include="RegardRu\RegardRuWebSite.cs" />
+    <Compile Include="SvyaznoyRu\SvyaznoyRuCity.cs" />
+    <Compile Include="SvyaznoyRu\SvyaznoyRuCompany.cs" />
+    <Compile Include="SvyaznoyRu\SvyaznoyRuConstants.cs" />
+    <Compile Include="SvyaznoyRu\SvyaznoyRuWebPageType.cs" />
+    <Compile Include="SvyaznoyRu\SvyaznoyRuWebSite.cs" />
+    <Compile Include="TdPoiskRu\TdPoiskRuCity.cs" />
+    <Compile Include="TdPoiskRu\TdPoiskRuCompany.cs" />
+    <Compile Include="TdPoiskRu\TdPoiskRuConstants.cs" />
+    <Compile Include="TdPoiskRu\TdPoiskRuWebPageType.cs" />
+    <Compile Include="TdPoiskRu\TdPoiskRuWebSite.cs" />
+    <Compile Include="TechnonetRu\TechnonetRuCity.cs" />
+    <Compile Include="TechnonetRu\TechnonetRuCompany.cs" />
+    <Compile Include="TechnonetRu\TechnonetRuConstants.cs" />
+    <Compile Include="TechnonetRu\TechnonetRuWebPageType.cs" />
+    <Compile Include="TechnonetRu\TechnonetRuWebSite.cs" />
+    <Compile Include="TechportRu\TechportRuCity.cs" />
+    <Compile Include="TechportRu\TechportRuCompany.cs" />
+    <Compile Include="TechportRu\TechportRuConstants.cs" />
+    <Compile Include="TechportRu\TechportRuWebPageType.cs" />
+    <Compile Include="TechportRu\TechportRuWebSite.cs" />
+    <Compile Include="TehnoparkRu\TehnoparkRuCity.cs" />
+    <Compile Include="TehnoparkRu\TehnoparkRuCompany.cs" />
+    <Compile Include="TehnoparkRu\TehnoparkRuConstants.cs" />
+    <Compile Include="TehnoparkRu\TehnoparkRuWebPageType.cs" />
+    <Compile Include="TehnoparkRu\TehnoparkRuWebSite.cs" />
+    <Compile Include="TehnoshokRu\TehnoshokRuCity.cs" />
+    <Compile Include="TehnoshokRu\TehnoshokRuCompany.cs" />
+    <Compile Include="TehnoshokRu\TehnoshokRuConstants.cs" />
+    <Compile Include="TehnoshokRu\TehnoshokRuWebPageType.cs" />
+    <Compile Include="TehnoshokRu\TehnoshokRuWebSite.cs" />
+    <Compile Include="TehnosilaRu\TehnosilaRuCity.cs" />
+    <Compile Include="TehnosilaRu\TehnosilaRuCompany.cs" />
+    <Compile Include="TehnosilaRu\TehnosilaRuConstants.cs" />
+    <Compile Include="TehnosilaRu\TehnosilaRuWebPageType.cs" />
+    <Compile Include="TehnosilaRu\TehnosilaRuWebSite.cs" />
+    <Compile Include="TelemaksRu\TelemaksRuCity.cs" />
+    <Compile Include="TelemaksRu\TelemaksRuCompany.cs" />
+    <Compile Include="TelemaksRu\TelemaksRuConstants.cs" />
+    <Compile Include="TelemaksRu\TelemaksRuWebPageType.cs" />
+    <Compile Include="TelemaksRu\TelemaksRuWebSite.cs" />
+    <Compile Include="UlmartRu\UlmartRuCity.cs" />
+    <Compile Include="UlmartRu\UlmartRuCompany.cs" />
+    <Compile Include="UlmartRu\UlmartRuConstants.cs" />
+    <Compile Include="UlmartRu\UlmartRuWebPageType.cs" />
+    <Compile Include="UlmartRu\UlmartRuWebSite.cs" />
+    <Compile Include="UtinetRu\UtinetRuCity.cs" />
+    <Compile Include="UtinetRu\UtinetRuCompany.cs" />
+    <Compile Include="UtinetRu\UtinetRuConstants.cs" />
+    <Compile Include="UtinetRu\UtinetRuWebPageType.cs" />
+    <Compile Include="UtinetRu\UtinetRuWebSite.cs" />
+    <Compile Include="VLazerCom\VLazerComCity.cs" />
+    <Compile Include="VLazerCom\VLazerComCompany.cs" />
+    <Compile Include="VLazerCom\VLazerComConstants.cs" />
+    <Compile Include="VLazerCom\VLazerComWebPageType.cs" />
+    <Compile Include="VLazerCom\VLazerComWebSite.cs" />
+    <Compile Include="WebCityStorage.cs" />
+    <Compile Include="WebCities.cs" />
+    <Compile Include="MvideoRu\MvideoRuCity.cs" />
+    <Compile Include="WebCompanies.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebCompanyStorage.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\WebParsingFramework\WebParsingFramework.csproj">
+      <Project>{6D7FA2EB-0AEB-407A-87BB-3C277592D27E}</Project>
+      <Name>WebParsingFramework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

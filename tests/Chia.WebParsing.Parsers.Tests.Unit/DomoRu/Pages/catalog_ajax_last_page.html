@@ -1,0 +1,1343 @@
+﻿<!-- BEGIN CategoryNavigationResults.jsp -->
+<script type="text/javascript" src="/wcsstore/DomoStorefrontAssetStore/javascript/JQuery/jquery.jcarousel.min.js"></script>
+<script type="text/javascript">
+	dojo.subscribe(
+		"ajaxRequestCompleted", 
+		function(){
+			if(0 != jQuery('div.other_views ul:first').size()){
+				jQuery('div.other_views ul:first').addClass('jcarousel-skin-tango');
+				jQuery('div.other_views ul:first').jcarousel(
+					{
+						scroll: 1,
+						itemFallbackDimension: 300
+					}
+				);
+			}
+		}
+	);
+</script>
+
+<!-- BEGIN CategoryNavigationSetup.jspf--><!-- END CategoryNavigationSetup.jspf-->
+
+<script>
+	dojo.addOnLoad(function(){
+		if(!!''){
+			shoppingActionsJS.setSearchTerm('');
+		}	
+		shoppingActionsJS.setCompareReturnName('');
+	});
+</script>
+
+
+<div><!-- BEGIN ESpotInfoPopupDisplay.jspf-->
+	<script type="text/Javascript">
+		function toggleActivityTable(tableId) {
+			var arrowElement = document.getElementById("activityArrowId_" + tableId);
+			var rowElement = document.getElementById("activityTableExpandId_" + tableId);
+			if(arrowElement.className == "expand_arrow") {
+				arrowElement.className = "contract_arrow";
+				rowElement.style.display = "none";
+			}
+			else {
+				arrowElement.className = "expand_arrow";
+				rowElement.style.display = "block";
+			}
+		}
+	</script>
+<!-- Start Popup -->
+
+<div id="ESpotInfo_popup_searchResultSpot" class="espot_dialog_popup" dojoType="dijit.Dialog" role="dialog" style="display: none" title="searchResultSpot">
+
+	<div class="pageinfo_header_top">
+		<div class="header">
+			
+					<div class="header_title">Информация о правиле поиска</div>
+				
+			<a href="javascript:hideESpotInfoPopup('ESpotInfo_popup_searchResultSpot');"><div class="close"></div></a>
+		</div>
+		<div class="whitespace_background">
+			<div class="content_container">
+				<!-- Start Content -->
+				<div class="sub_header">
+					
+							<div class="search_rule"></div>
+							<div class="title_container">
+								<div class="title">Правила поиска</div>
+								<div class="clear_float"></div>
+								<div class="sub_title"></div>
+							</div>
+							
+							<div class="create">
+								<a id='click2create_SearchActivity' href="javascript:void(0)" title='Создать правило поиска' class="click2create_button" onclick="window.parent.callManagementCenter('/cmc/CreateBusinessObject?toolId=marketingManagement&amp;storeId=10151&amp;languageId=-20&amp;storeSelection=prompt&amp;objectType=SearchActivity');">
+									Создать
+								</a>
+							</div>
+						
+				</div>
+				<div class="summary">
+					<div class="description">
+						<div class="content_rec">
+							Для текущего сеанса предварительного просмотра на этой странице перечислены правила поиска, примененные к результатам поиска.
+						</div>
+						
+					</div>
+					<div class="clear_float"></div>
+				</div>
+				
+				
+				
+				<div class="bottom_messages_container">
+					
+				</div>
+				<!-- End Content -->
+			</div>
+			<div class="pagination_container"></div>
+			<div class="clear_float"></div>
+		</div>
+		<div class="clear_float"></div>
+	</div>
+</div>
+<!-- End Popup -->
+<script type="text/javascript" id="script_searchResultSpot">
+	dojo.addOnLoad(function(){
+		var activitiedItem;
+		
+			var espot = dojo.query('.genericESpot',dojo.byId("script_searchResultSpot").parentNode)[0];
+			if (espot != null) {
+				dojo.addClass(espot,'emptyESpot');
+			}
+		
+		parseWidget("ESpotInfo_popup_searchResultSpot");		
+	});
+</script>
+					
+<!-- END ESpotInfoPopupDisplay.jspf--></div>
+
+
+<div class="widget_product_listing_position container_margin_5px">
+	<div class="widget_product_listing">
+		<div class="top">
+			<div class="left_border"></div>
+			<div class="middle_tile"></div>
+			<div class="right_border"></div>
+		</div>
+		<div class="middle">
+			<div class="left_border">
+				<div class="right_border">
+					<div class="content">
+						<div class="header_bar">
+							<div class="title">Товары 
+								<span class="num_products">&#40;&nbsp;
+									121 - 128 из 128
+									&nbsp;&#41;
+								</span>
+							</div>
+
+							
+							<script>
+								dojo.addOnLoad(function(){
+									dojo.subscribe("toggleViewEvent",SearchBasedNavigationDisplayJS,"toggleView");
+									dojo.subscribe("showResultsForPageNumber",SearchBasedNavigationDisplayJS,"showResultsPage");
+									
+								});
+							</script>
+
+							<div class="paging_controls">
+								
+	<div class="divider"></div>
+	
+			<a role="button" wairole="button" class="grid_icon" id="WC_SearchBasedNavigationResults_pagination_link_grid_categoryResults" href='javascript:dojo.publish("toggleViewEvent",[{pageView:"grid",linkId:"WC_SearchBasedNavigationResults_pagination_link_grid_categoryResults"}])' title="Включить режим таблицы">
+				<img src="/wcsstore/DomoStorefrontAssetStore/images/colors/color1/widget_product_listing/grid_icon.png" alt="Включить режим таблицы" 
+				onmouseover="javascript: this.src='/wcsstore/DomoStorefrontAssetStore/images/colors/color1/widget_product_listing/grid_icon_active.png'" 
+				onmouseout="javascript: this.src='/wcsstore/DomoStorefrontAssetStore/images/colors/color1/widget_product_listing/grid_icon.png'"/>
+			</a>
+			<div class="list_icon">
+				<img src="/wcsstore/DomoStorefrontAssetStore/images/colors/color1/widget_product_listing/list_icon_active.png" alt="Включить режим списка" />
+			</div>
+		
+	<div class="divider"></div>
+	
+				<a role="button" wairole="button" class="left_arrow" id = "WC_SearchBasedNavigationResults_pagination_link_left_categoryResults" href='javascript:dojo.publish("showResultsForPageNumber",[{pageNumber:"10",pageSize:"12", linkId:"WC_SearchBasedNavigationResults_pagination_link_left_categoryResults"}])' title="Предыдущая страница"
+					onmouseover="dojo.byId('WC_SearchBasedNavigationResults_pagination_link_left_categoryResults_img').src = '/wcsstore/DomoStorefrontAssetStore/images/colors/color1/widget_product_listing/left_arrow_hover.png'"
+					onmouseout="dojo.byId('WC_SearchBasedNavigationResults_pagination_link_left_categoryResults_img').src = '/wcsstore/DomoStorefrontAssetStore/images/colors/color1/widget_product_listing/left_arrow.png'">
+					<img alt="Предыдущая страница" src="/wcsstore/DomoStorefrontAssetStore/images/colors/color1/widget_product_listing/left_arrow.png" id = "WC_SearchBasedNavigationResults_pagination_link_left_categoryResults_img">
+				</a>
+			
+
+	<div class="pages">
+		<ul id="pages_list_id">
+			
+						<li class="hoverover"><a role="button" wairole="button" href = 'javascript:dojo.publish("showResultsForPageNumber",[{pageNumber:"1",pageSize:"12", linkId:"WC_SearchBasedNavigationResults_pagination_link_1_categoryResults"}])' id="WC_SearchBasedNavigationResults_pagination_link_1_categoryResults" title="Перейти к странице 1">1</a></li>
+					
+						<li>...</li>
+					
+						<li class="hoverover"><a role="button" wairole="button" href = 'javascript:dojo.publish("showResultsForPageNumber",[{pageNumber:"10",pageSize:"12", linkId:"WC_SearchBasedNavigationResults_pagination_link_10_categoryResults"}])' id="WC_SearchBasedNavigationResults_pagination_link_10_categoryResults" title="Перейти к странице 10">10</a></li>
+					
+						<li class="active">11</li>
+					
+		</ul>
+		<script type="text/javascript">
+			dojo.addOnLoad(function() {
+				var pagesList = document.getElementById("pages_list_id");
+				if (pagesList != null && !isAndroid() && !isIOS()) {
+					dojo.addClass(pagesList, "desktop");
+				}
+			});
+		</script>
+	</div>
+	
+							</div>
+
+							<div class="sorting_controls">
+								<span><label for="orderBy">Сортировать по</label>:</span>
+								<select title="Нажмите клавиши со стрелками Вверх или Вниз для сортировки критериев. После изменения критериев сортировки содержимое окна обновляется." id="orderBy" name="orderBy" onChange="javaScript:setCurrentId('orderBy');SearchBasedNavigationDisplayJS.sortResults(this.value)">
+									<option value = "">Релевантность</option>
+									<option value = "1">Торговые марки</option>
+									<option value = "2">Имя</option>
+									
+								</select>
+							</div>
+							
+							<div id="compare_button" class="compare_controls disabled">
+								<div id="compare_button_disabled" class="button_primary">
+									<div class="left_border"></div>
+									<div class="button_text">Сравнить выбранные</div>
+									<div class="right_border"></div>
+								</div>
+								<a id="compare_button_enabled" href="Javascript:setCurrentId('compare_button_enabled');shoppingActionsJS.compareProducts({top_category: &#039;&#039;, parent_category_rn: &#039;&#039;, categoryId: &#039;10103&#039;});" class="button_primary" wairole="button" role="button" style="display:none;">
+									<div class="left_border"></div>
+									<div class="button_text">Сравнить выбранные</div>
+									<div class="right_border"></div>
+								</a>
+							</div>
+
+						</div>
+
+						<div class="product_listing_container">
+							
+										<div class="list_mode">
+										<fieldset>
+											<legend><span class="spanacce">Список товаров</span></legend>
+											<div class="row row_border first_row">
+												<!-- BEGIN CatalogEntryDisplay.jsp --><!-- added --><!-- added -->
+
+<div id="entitledItem_68045" style="display:none;">
+		[
+		
+	
+						{
+						"catentry_id" : "68544",
+						"Attributes" :	{
+							
+							},
+							
+							
+									"ItemImage" : "/wcsstore/DomoExtendedSitesCatalogAssetStore/images/catalog/products/main/1000x1000/0140009.png",
+									"ItemImage467" : "/wcsstore/DomoExtendedSitesCatalogAssetStore/images/catalog/products/main/447x447/0140009.png",
+									"ItemThumbnailImage" : "/wcsstore/DomoExtendedSitesCatalogAssetStore/images/catalog/products/main/160x160/0140009.png"
+									
+						}
+		]
+</div>
+
+
+<div class="product">
+
+		<div class="product_image"
+		
+			onmouseout="if(!dojo.byId('comparebox_68045').checked){
+				hideSection('compare_68045');
+			}"
+		
+			<a id="CatalogEntryDisplayLink_68045" 
+				href="javascript:void(0);"
+				
+					onkeydown="if(!dojo.byId('comparebox_68045').checked){shiftTabHideSection('compare_68045',event);}"
+					onfocus="showSection('compare_68045');"
+				 title="indesit BIA 18 S холодильник">	
+				<img id="productThumbNailImage_68045" src="/wcsstore/DomoExtendedSitesCatalogAssetStore/images/catalog/products/main/160x160/0140009.png" 
+				alt="indesit BIA 18 S холодильник" 
+				border="0"
+				onclick="if (!isAndroid() && !isIOS()) {document.location.href='http://www.domo.ru/catalog/kuhonnaya-tehnika-3/holodilniki-200/indesit-bia-18-s-holodilnik-0140009'} else {void(0);}"
+				ontouchend="if (isAndroid() || isIOS()) {handlePopup('http://www.domo.ru/catalog/kuhonnaya-tehnika-3/holodilniki-200/indesit-bia-18-s-holodilnik-0140009','compare_68045');}"
+				/>
+								
+			</a>
+			
+				<div id="compare_68045" class="compare_target" ontouchstart="if (isIOS()) {shoppingActionsJS.changeCompareBox('comparebox_68045','68045'); event.preventDefault();}">
+					<input id="comparebox_68045" type="checkbox" name="comparebox_68045" onclick="javascript:shoppingActionsJS.addOrRemoveFromCompare('68045',this.checked)">
+					<a id="CompareLink_68045" href="javascript:shoppingActionsJS.changeCompareBox('comparebox_68045','68045');"
+						onkeydown="if(!dojo.byId('comparebox_68045').checked){
+								tabHideSection('compare_68045',event,'CatalogEntryViewDetailsLink_68045');
+							}">
+						<label for="comparebox_68045">Сравнить</label>
+					</a>
+				</div>
+				
+					<script>
+						if(dojo.byId("comparebox_68045").checked){
+							dojo.addOnLoad(function(){
+								dojo.byId("comparebox_68045").checked = '';
+							});
+						}
+					</script>
+				
+		</div>
+
+	<div class="product_info">
+		<div id="product_name_68045" class="product_name">
+			
+			<a id="CatalogEntryViewDetailsLink_68045" href='http://www.domo.ru/catalog/kuhonnaya-tehnika-3/holodilniki-200/indesit-bia-18-s-holodilnik-0140009'>
+				indesit BIA 18 S холодильник
+			</a>
+		</div>
+		<div class="price_block">
+			<div id="price_display_68045" class="product_price">
+				<!-- BEGIN PriceDisplay.jsp -->
+		<span id="offerPrice_68045" class="price" itemprop="price">
+			21 320 руб.
+		</span>
+		<input type="hidden" id="ProductInfoPrice_68045" value="21 320 руб."/>
+	<!-- END PriceDisplay.jsp -->
+				
+				<div class="product_option">
+					
+							<a id="listViewAdd2Cart_68045" href="javascript:setCurrentId('listViewAdd2Cart_68045');shoppingActionsJS.Add2ShopCartAjax('entitledItem_68045',1, false)" class="button_primary" wairole="button" role="button" title="Добавить в корзину">
+								<span class="sprite sprite-cart-white"></span>Добавить в корзину
+							</a>	
+						
+				</div>
+			</div>
+		</div>
+		<div class="product_attr">
+			<ul>
+				
+			</ul>
+		</div>
+		<div class="item_spacer_7px"></div>
+		<div class="clear_float"></div>
+		<input type="hidden" id="ProductInfoName_68045" value="indesit BIA 18 S холодильник"/>
+		<input type="hidden" id="ProductInfoImage_68045" value="/wcsstore/DomoExtendedSitesCatalogAssetStore/images/catalog/products/main/160x160/0140009.png"/>		
+	</div>
+
+
+</div>
+
+<!-- END CatalogEntryDisplay.jsp --><!-- BEGIN CatalogEntryDisplay.jsp --><!-- added --><!-- added -->
+
+<div id="entitledItem_68053" style="display:none;">
+		[
+		
+	
+						{
+						"catentry_id" : "68552",
+						"Attributes" :	{
+							
+							},
+							
+							
+									"ItemImage" : "/wcsstore/DomoExtendedSitesCatalogAssetStore/images/catalog/products/main/1000x1000/0140060.png",
+									"ItemImage467" : "/wcsstore/DomoExtendedSitesCatalogAssetStore/images/catalog/products/main/447x447/0140060.png",
+									"ItemThumbnailImage" : "/wcsstore/DomoExtendedSitesCatalogAssetStore/images/catalog/products/main/160x160/0140060.png"
+									
+						}
+		]
+</div>
+
+
+<div class="product">
+
+		<div class="product_image"
+		
+			onmouseout="if(!dojo.byId('comparebox_68053').checked){
+				hideSection('compare_68053');
+			}"
+		
+			<a id="CatalogEntryDisplayLink_68053" 
+				href="javascript:void(0);"
+				
+					onkeydown="if(!dojo.byId('comparebox_68053').checked){shiftTabHideSection('compare_68053',event);}"
+					onfocus="showSection('compare_68053');"
+				 title="Hauswirt BRS-1114 холодильник">	
+				<img id="productThumbNailImage_68053" src="/wcsstore/DomoExtendedSitesCatalogAssetStore/images/catalog/products/main/160x160/0140060.png" 
+				alt="Hauswirt BRS-1114 холодильник" 
+				border="0"
+				onclick="if (!isAndroid() && !isIOS()) {document.location.href='http://www.domo.ru/catalog/kuhonnaya-tehnika-3/holodilniki-200/hauswirt-brs-1114-holodilnik-0140060'} else {void(0);}"
+				ontouchend="if (isAndroid() || isIOS()) {handlePopup('http://www.domo.ru/catalog/kuhonnaya-tehnika-3/holodilniki-200/hauswirt-brs-1114-holodilnik-0140060','compare_68053');}"
+				/>
+								
+			</a>
+			
+				<div id="compare_68053" class="compare_target" ontouchstart="if (isIOS()) {shoppingActionsJS.changeCompareBox('comparebox_68053','68053'); event.preventDefault();}">
+					<input id="comparebox_68053" type="checkbox" name="comparebox_68053" onclick="javascript:shoppingActionsJS.addOrRemoveFromCompare('68053',this.checked)">
+					<a id="CompareLink_68053" href="javascript:shoppingActionsJS.changeCompareBox('comparebox_68053','68053');"
+						onkeydown="if(!dojo.byId('comparebox_68053').checked){
+								tabHideSection('compare_68053',event,'CatalogEntryViewDetailsLink_68053');
+							}">
+						<label for="comparebox_68053">Сравнить</label>
+					</a>
+				</div>
+				
+					<script>
+						if(dojo.byId("comparebox_68053").checked){
+							dojo.addOnLoad(function(){
+								dojo.byId("comparebox_68053").checked = '';
+							});
+						}
+					</script>
+				
+		</div>
+
+	<div class="product_info">
+		<div id="product_name_68053" class="product_name">
+			
+			<a id="CatalogEntryViewDetailsLink_68053" href='http://www.domo.ru/catalog/kuhonnaya-tehnika-3/holodilniki-200/hauswirt-brs-1114-holodilnik-0140060'>
+				Hauswirt BRS-1114 холодильник
+			</a>
+		</div>
+		<div class="price_block">
+			<div id="price_display_68053" class="product_price">
+				<!-- BEGIN PriceDisplay.jsp -->
+		<span id="offerPrice_68053" class="price" itemprop="price">
+			10 490 руб.
+		</span>
+		<input type="hidden" id="ProductInfoPrice_68053" value="10 490 руб."/>
+	<!-- END PriceDisplay.jsp -->
+				
+				<div class="product_option">
+					
+							<a id="listViewAdd2Cart_68053" href="javascript:setCurrentId('listViewAdd2Cart_68053');shoppingActionsJS.Add2ShopCartAjax('entitledItem_68053',1, false)" class="button_primary" wairole="button" role="button" title="Добавить в корзину">
+								<span class="sprite sprite-cart-white"></span>Добавить в корзину
+							</a>	
+						
+				</div>
+			</div>
+		</div>
+		<div class="product_attr">
+			<ul>
+				
+			</ul>
+		</div>
+		<div class="item_spacer_7px"></div>
+		<div class="clear_float"></div>
+		<input type="hidden" id="ProductInfoName_68053" value="Hauswirt BRS-1114 холодильник"/>
+		<input type="hidden" id="ProductInfoImage_68053" value="/wcsstore/DomoExtendedSitesCatalogAssetStore/images/catalog/products/main/160x160/0140060.png"/>		
+	</div>
+
+
+</div>
+
+<!-- END CatalogEntryDisplay.jsp --><!-- BEGIN CatalogEntryDisplay.jsp --><!-- added --><!-- added -->
+
+<div id="entitledItem_68043" style="display:none;">
+		[
+		
+	
+						{
+						"catentry_id" : "68542",
+						"Attributes" :	{
+							
+							},
+							
+							
+									"ItemImage" : "/wcsstore/DomoExtendedSitesCatalogAssetStore/images/catalog/products/main/1000x1000/0139989.png",
+									"ItemImage467" : "/wcsstore/DomoExtendedSitesCatalogAssetStore/images/catalog/products/main/447x447/0139989.png",
+									"ItemThumbnailImage" : "/wcsstore/DomoExtendedSitesCatalogAssetStore/images/catalog/products/main/160x160/0139989.png"
+									
+						}
+		]
+</div>
+
+
+<div class="product">
+
+		<div class="product_image"
+		
+			onmouseout="if(!dojo.byId('comparebox_68043').checked){
+				hideSection('compare_68043');
+			}"
+		
+			<a id="CatalogEntryDisplayLink_68043" 
+				href="javascript:void(0);"
+				
+					onkeydown="if(!dojo.byId('comparebox_68043').checked){shiftTabHideSection('compare_68043',event);}"
+					onfocus="showSection('compare_68043');"
+				 title="Samsung RF-24HSESBSR холодильник">	
+				<img id="productThumbNailImage_68043" src="/wcsstore/DomoExtendedSitesCatalogAssetStore/images/catalog/products/main/160x160/0139989.png" 
+				alt="Samsung RF-24HSESBSR холодильник" 
+				border="0"
+				onclick="if (!isAndroid() && !isIOS()) {document.location.href='http://www.domo.ru/catalog/kuhonnaya-tehnika-3/holodilniki-200/samsung-rf-24hsesbsr-holodilnik-0139989'} else {void(0);}"
+				ontouchend="if (isAndroid() || isIOS()) {handlePopup('http://www.domo.ru/catalog/kuhonnaya-tehnika-3/holodilniki-200/samsung-rf-24hsesbsr-holodilnik-0139989','compare_68043');}"
+				/>
+								
+			</a>
+			
+				<div id="compare_68043" class="compare_target" ontouchstart="if (isIOS()) {shoppingActionsJS.changeCompareBox('comparebox_68043','68043'); event.preventDefault();}">
+					<input id="comparebox_68043" type="checkbox" name="comparebox_68043" onclick="javascript:shoppingActionsJS.addOrRemoveFromCompare('68043',this.checked)">
+					<a id="CompareLink_68043" href="javascript:shoppingActionsJS.changeCompareBox('comparebox_68043','68043');"
+						onkeydown="if(!dojo.byId('comparebox_68043').checked){
+								tabHideSection('compare_68043',event,'CatalogEntryViewDetailsLink_68043');
+							}">
+						<label for="comparebox_68043">Сравнить</label>
+					</a>
+				</div>
+				
+					<script>
+						if(dojo.byId("comparebox_68043").checked){
+							dojo.addOnLoad(function(){
+								dojo.byId("comparebox_68043").checked = '';
+							});
+						}
+					</script>
+				
+		</div>
+
+	<div class="product_info">
+		<div id="product_name_68043" class="product_name">
+			
+			<a id="CatalogEntryViewDetailsLink_68043" href='http://www.domo.ru/catalog/kuhonnaya-tehnika-3/holodilniki-200/samsung-rf-24hsesbsr-holodilnik-0139989'>
+				Samsung RF-24HSESBSR холодильник
+			</a>
+		</div>
+		<div class="price_block">
+			<div id="price_display_68043" class="product_price">
+				<!-- BEGIN PriceDisplay.jsp -->
+		<span id="offerPrice_68043" class="price" itemprop="price">
+			134 990 руб.
+		</span>
+		<input type="hidden" id="ProductInfoPrice_68043" value="134 990 руб."/>
+	<!-- END PriceDisplay.jsp -->
+				
+				<div class="product_option">
+					
+							<a id="listViewAdd2Cart_68043" href="javascript:setCurrentId('listViewAdd2Cart_68043');shoppingActionsJS.Add2ShopCartAjax('entitledItem_68043',1, false)" class="button_primary" wairole="button" role="button" title="Добавить в корзину">
+								<span class="sprite sprite-cart-white"></span>Добавить в корзину
+							</a>	
+						
+				</div>
+			</div>
+		</div>
+		<div class="product_attr">
+			<ul>
+				
+			</ul>
+		</div>
+		<div class="item_spacer_7px"></div>
+		<div class="clear_float"></div>
+		<input type="hidden" id="ProductInfoName_68043" value="Samsung RF-24HSESBSR холодильник"/>
+		<input type="hidden" id="ProductInfoImage_68043" value="/wcsstore/DomoExtendedSitesCatalogAssetStore/images/catalog/products/main/160x160/0139989.png"/>		
+	</div>
+
+
+</div>
+
+<!-- END CatalogEntryDisplay.jsp --><!-- BEGIN CatalogEntryDisplay.jsp --><!-- added --><!-- added -->
+
+<div id="entitledItem_68051" style="display:none;">
+		[
+		
+	
+						{
+						"catentry_id" : "68550",
+						"Attributes" :	{
+							
+							},
+							
+							
+									"ItemImage" : "/wcsstore/DomoExtendedSitesCatalogAssetStore/images/catalog/products/main/1000x1000/0140056.png",
+									"ItemImage467" : "/wcsstore/DomoExtendedSitesCatalogAssetStore/images/catalog/products/main/447x447/0140056.png",
+									"ItemThumbnailImage" : "/wcsstore/DomoExtendedSitesCatalogAssetStore/images/catalog/products/main/160x160/0140056.png"
+									
+						}
+		]
+</div>
+
+
+<div class="product">
+
+		<div class="product_image"
+		
+			onmouseout="if(!dojo.byId('comparebox_68051').checked){
+				hideSection('compare_68051');
+			}"
+		
+			<a id="CatalogEntryDisplayLink_68051" 
+				href="javascript:void(0);"
+				
+					onkeydown="if(!dojo.byId('comparebox_68051').checked){shiftTabHideSection('compare_68051',event);}"
+					onfocus="showSection('compare_68051');"
+				 title="Hauswirt BRBE-1219N холодильник">	
+				<img id="productThumbNailImage_68051" src="/wcsstore/DomoExtendedSitesCatalogAssetStore/images/catalog/products/main/160x160/0140056.png" 
+				alt="Hauswirt BRBE-1219N холодильник" 
+				border="0"
+				onclick="if (!isAndroid() && !isIOS()) {document.location.href='http://www.domo.ru/catalog/kuhonnaya-tehnika-3/holodilniki-200/hauswirt-brbe-1219n-holodilnik-0140056'} else {void(0);}"
+				ontouchend="if (isAndroid() || isIOS()) {handlePopup('http://www.domo.ru/catalog/kuhonnaya-tehnika-3/holodilniki-200/hauswirt-brbe-1219n-holodilnik-0140056','compare_68051');}"
+				/>
+								
+			</a>
+			
+				<div id="compare_68051" class="compare_target" ontouchstart="if (isIOS()) {shoppingActionsJS.changeCompareBox('comparebox_68051','68051'); event.preventDefault();}">
+					<input id="comparebox_68051" type="checkbox" name="comparebox_68051" onclick="javascript:shoppingActionsJS.addOrRemoveFromCompare('68051',this.checked)">
+					<a id="CompareLink_68051" href="javascript:shoppingActionsJS.changeCompareBox('comparebox_68051','68051');"
+						onkeydown="if(!dojo.byId('comparebox_68051').checked){
+								tabHideSection('compare_68051',event,'CatalogEntryViewDetailsLink_68051');
+							}">
+						<label for="comparebox_68051">Сравнить</label>
+					</a>
+				</div>
+				
+					<script>
+						if(dojo.byId("comparebox_68051").checked){
+							dojo.addOnLoad(function(){
+								dojo.byId("comparebox_68051").checked = '';
+							});
+						}
+					</script>
+				
+		</div>
+
+	<div class="product_info">
+		<div id="product_name_68051" class="product_name">
+			
+			<a id="CatalogEntryViewDetailsLink_68051" href='http://www.domo.ru/catalog/kuhonnaya-tehnika-3/holodilniki-200/hauswirt-brbe-1219n-holodilnik-0140056'>
+				Hauswirt BRBE-1219N холодильник
+			</a>
+		</div>
+		<div class="price_block">
+			<div id="price_display_68051" class="product_price">
+				<!-- BEGIN PriceDisplay.jsp -->
+		<span id="offerPrice_68051" class="price" itemprop="price">
+			15 790 руб.
+		</span>
+		<input type="hidden" id="ProductInfoPrice_68051" value="15 790 руб."/>
+	<!-- END PriceDisplay.jsp -->
+				
+				<div class="product_option">
+					
+							<a id="listViewAdd2Cart_68051" href="javascript:setCurrentId('listViewAdd2Cart_68051');shoppingActionsJS.Add2ShopCartAjax('entitledItem_68051',1, false)" class="button_primary" wairole="button" role="button" title="Добавить в корзину">
+								<span class="sprite sprite-cart-white"></span>Добавить в корзину
+							</a>	
+						
+				</div>
+			</div>
+		</div>
+		<div class="product_attr">
+			<ul>
+				
+			</ul>
+		</div>
+		<div class="item_spacer_7px"></div>
+		<div class="clear_float"></div>
+		<input type="hidden" id="ProductInfoName_68051" value="Hauswirt BRBE-1219N холодильник"/>
+		<input type="hidden" id="ProductInfoImage_68051" value="/wcsstore/DomoExtendedSitesCatalogAssetStore/images/catalog/products/main/160x160/0140056.png"/>		
+	</div>
+
+
+</div>
+
+<!-- END CatalogEntryDisplay.jsp --><!-- BEGIN CatalogEntryDisplay.jsp --><!-- added --><!-- added -->
+
+<div id="entitledItem_68048" style="display:none;">
+		[
+		
+	
+						{
+						"catentry_id" : "68547",
+						"Attributes" :	{
+							
+							},
+							
+							
+									"ItemImage" : "/wcsstore/DomoExtendedSitesCatalogAssetStore/images/catalog/products/main/1000x1000/0140053.png",
+									"ItemImage467" : "/wcsstore/DomoExtendedSitesCatalogAssetStore/images/catalog/products/main/447x447/0140053.png",
+									"ItemThumbnailImage" : "/wcsstore/DomoExtendedSitesCatalogAssetStore/images/catalog/products/main/160x160/0140053.png"
+									
+						}
+		]
+</div>
+
+
+<div class="product">
+
+		<div class="product_image"
+		
+			onmouseout="if(!dojo.byId('comparebox_68048').checked){
+				hideSection('compare_68048');
+			}"
+		
+			<a id="CatalogEntryDisplayLink_68048" 
+				href="javascript:void(0);"
+				
+					onkeydown="if(!dojo.byId('comparebox_68048').checked){shiftTabHideSection('compare_68048',event);}"
+					onfocus="showSection('compare_68048');"
+				 title="Hauswirt BRB-1317 холодильник">	
+				<img id="productThumbNailImage_68048" src="/wcsstore/DomoExtendedSitesCatalogAssetStore/images/catalog/products/main/160x160/0140053.png" 
+				alt="Hauswirt BRB-1317 холодильник" 
+				border="0"
+				onclick="if (!isAndroid() && !isIOS()) {document.location.href='http://www.domo.ru/catalog/kuhonnaya-tehnika-3/holodilniki-200/hauswirt-brb-1317-holodilnik-0140053'} else {void(0);}"
+				ontouchend="if (isAndroid() || isIOS()) {handlePopup('http://www.domo.ru/catalog/kuhonnaya-tehnika-3/holodilniki-200/hauswirt-brb-1317-holodilnik-0140053','compare_68048');}"
+				/>
+								
+			</a>
+			
+				<div id="compare_68048" class="compare_target" ontouchstart="if (isIOS()) {shoppingActionsJS.changeCompareBox('comparebox_68048','68048'); event.preventDefault();}">
+					<input id="comparebox_68048" type="checkbox" name="comparebox_68048" onclick="javascript:shoppingActionsJS.addOrRemoveFromCompare('68048',this.checked)">
+					<a id="CompareLink_68048" href="javascript:shoppingActionsJS.changeCompareBox('comparebox_68048','68048');"
+						onkeydown="if(!dojo.byId('comparebox_68048').checked){
+								tabHideSection('compare_68048',event,'CatalogEntryViewDetailsLink_68048');
+							}">
+						<label for="comparebox_68048">Сравнить</label>
+					</a>
+				</div>
+				
+					<script>
+						if(dojo.byId("comparebox_68048").checked){
+							dojo.addOnLoad(function(){
+								dojo.byId("comparebox_68048").checked = '';
+							});
+						}
+					</script>
+				
+		</div>
+
+	<div class="product_info">
+		<div id="product_name_68048" class="product_name">
+			
+			<a id="CatalogEntryViewDetailsLink_68048" href='http://www.domo.ru/catalog/kuhonnaya-tehnika-3/holodilniki-200/hauswirt-brb-1317-holodilnik-0140053'>
+				Hauswirt BRB-1317 холодильник
+			</a>
+		</div>
+		<div class="price_block">
+			<div id="price_display_68048" class="product_price">
+				<!-- BEGIN PriceDisplay.jsp -->
+		<span id="offerPrice_68048" class="price" itemprop="price">
+			13 190 руб.
+		</span>
+		<input type="hidden" id="ProductInfoPrice_68048" value="13 190 руб."/>
+	<!-- END PriceDisplay.jsp -->
+				
+				<div class="product_option">
+					
+							<a id="listViewAdd2Cart_68048" href="javascript:setCurrentId('listViewAdd2Cart_68048');shoppingActionsJS.Add2ShopCartAjax('entitledItem_68048',1, false)" class="button_primary" wairole="button" role="button" title="Добавить в корзину">
+								<span class="sprite sprite-cart-white"></span>Добавить в корзину
+							</a>	
+						
+				</div>
+			</div>
+		</div>
+		<div class="product_attr">
+			<ul>
+				
+			</ul>
+		</div>
+		<div class="item_spacer_7px"></div>
+		<div class="clear_float"></div>
+		<input type="hidden" id="ProductInfoName_68048" value="Hauswirt BRB-1317 холодильник"/>
+		<input type="hidden" id="ProductInfoImage_68048" value="/wcsstore/DomoExtendedSitesCatalogAssetStore/images/catalog/products/main/160x160/0140053.png"/>		
+	</div>
+
+
+</div>
+
+<!-- END CatalogEntryDisplay.jsp --><!-- BEGIN CatalogEntryDisplay.jsp --><!-- added --><!-- added -->
+
+<div id="entitledItem_68046" style="display:none;">
+		[
+		
+	
+						{
+						"catentry_id" : "68545",
+						"Attributes" :	{
+							
+							},
+							
+							
+									"ItemImage" : "/wcsstore/DomoExtendedSitesCatalogAssetStore/images/catalog/products/main/1000x1000/0140051.png",
+									"ItemImage467" : "/wcsstore/DomoExtendedSitesCatalogAssetStore/images/catalog/products/main/447x447/0140051.png",
+									"ItemThumbnailImage" : "/wcsstore/DomoExtendedSitesCatalogAssetStore/images/catalog/products/main/160x160/0140051.png"
+									
+						}
+		]
+</div>
+
+
+<div class="product">
+
+		<div class="product_image"
+		
+			onmouseout="if(!dojo.byId('comparebox_68046').checked){
+				hideSection('compare_68046');
+			}"
+		
+			<a id="CatalogEntryDisplayLink_68046" 
+				href="javascript:void(0);"
+				
+					onkeydown="if(!dojo.byId('comparebox_68046').checked){shiftTabHideSection('compare_68046',event);}"
+					onfocus="showSection('compare_68046');"
+				 title="Hauswirt BRB-1319 холодильник">	
+				<img id="productThumbNailImage_68046" src="/wcsstore/DomoExtendedSitesCatalogAssetStore/images/catalog/products/main/160x160/0140051.png" 
+				alt="Hauswirt BRB-1319 холодильник" 
+				border="0"
+				onclick="if (!isAndroid() && !isIOS()) {document.location.href='http://www.domo.ru/catalog/kuhonnaya-tehnika-3/holodilniki-200/hauswirt-brb-1319-holodilnik-0140051'} else {void(0);}"
+				ontouchend="if (isAndroid() || isIOS()) {handlePopup('http://www.domo.ru/catalog/kuhonnaya-tehnika-3/holodilniki-200/hauswirt-brb-1319-holodilnik-0140051','compare_68046');}"
+				/>
+								
+			</a>
+			
+				<div id="compare_68046" class="compare_target" ontouchstart="if (isIOS()) {shoppingActionsJS.changeCompareBox('comparebox_68046','68046'); event.preventDefault();}">
+					<input id="comparebox_68046" type="checkbox" name="comparebox_68046" onclick="javascript:shoppingActionsJS.addOrRemoveFromCompare('68046',this.checked)">
+					<a id="CompareLink_68046" href="javascript:shoppingActionsJS.changeCompareBox('comparebox_68046','68046');"
+						onkeydown="if(!dojo.byId('comparebox_68046').checked){
+								tabHideSection('compare_68046',event,'CatalogEntryViewDetailsLink_68046');
+							}">
+						<label for="comparebox_68046">Сравнить</label>
+					</a>
+				</div>
+				
+					<script>
+						if(dojo.byId("comparebox_68046").checked){
+							dojo.addOnLoad(function(){
+								dojo.byId("comparebox_68046").checked = '';
+							});
+						}
+					</script>
+				
+		</div>
+
+	<div class="product_info">
+		<div id="product_name_68046" class="product_name">
+			
+			<a id="CatalogEntryViewDetailsLink_68046" href='http://www.domo.ru/catalog/kuhonnaya-tehnika-3/holodilniki-200/hauswirt-brb-1319-holodilnik-0140051'>
+				Hauswirt BRB-1319 холодильник
+			</a>
+		</div>
+		<div class="price_block">
+			<div id="price_display_68046" class="product_price">
+				<!-- BEGIN PriceDisplay.jsp -->
+		<span id="offerPrice_68046" class="price" itemprop="price">
+			14 690 руб.
+		</span>
+		<input type="hidden" id="ProductInfoPrice_68046" value="14 690 руб."/>
+	<!-- END PriceDisplay.jsp -->
+				
+				<div class="product_option">
+					
+							<a id="listViewAdd2Cart_68046" href="javascript:setCurrentId('listViewAdd2Cart_68046');shoppingActionsJS.Add2ShopCartAjax('entitledItem_68046',1, false)" class="button_primary" wairole="button" role="button" title="Добавить в корзину">
+								<span class="sprite sprite-cart-white"></span>Добавить в корзину
+							</a>	
+						
+				</div>
+			</div>
+		</div>
+		<div class="product_attr">
+			<ul>
+				
+			</ul>
+		</div>
+		<div class="item_spacer_7px"></div>
+		<div class="clear_float"></div>
+		<input type="hidden" id="ProductInfoName_68046" value="Hauswirt BRB-1319 холодильник"/>
+		<input type="hidden" id="ProductInfoImage_68046" value="/wcsstore/DomoExtendedSitesCatalogAssetStore/images/catalog/products/main/160x160/0140051.png"/>		
+	</div>
+
+
+</div>
+
+<!-- END CatalogEntryDisplay.jsp --><!-- BEGIN CatalogEntryDisplay.jsp --><!-- added --><!-- added -->
+
+<div id="entitledItem_67009" style="display:none;">
+		[
+		
+	
+						{
+						"catentry_id" : "67508",
+						"Attributes" :	{
+							
+							},
+							
+							
+									"ItemImage" : "/wcsstore/DomoExtendedSitesCatalogAssetStore/images/catalog/products/main/1000x1000/0139973.png",
+									"ItemImage467" : "/wcsstore/DomoExtendedSitesCatalogAssetStore/images/catalog/products/main/447x447/0139973.png",
+									"ItemThumbnailImage" : "/wcsstore/DomoExtendedSitesCatalogAssetStore/images/catalog/products/main/160x160/0139973.png"
+									
+						}
+		]
+</div>
+
+
+<div class="product">
+
+		<div class="product_image"
+		
+			onmouseout="if(!dojo.byId('comparebox_67009').checked){
+				hideSection('compare_67009');
+			}"
+		
+			<a id="CatalogEntryDisplayLink_67009" 
+				href="javascript:void(0);"
+				
+					onkeydown="if(!dojo.byId('comparebox_67009').checked){shiftTabHideSection('compare_67009',event);}"
+					onfocus="showSection('compare_67009');"
+				 title="Sinbo SR 55 Холодильник">	
+				<img id="productThumbNailImage_67009" src="/wcsstore/DomoExtendedSitesCatalogAssetStore/images/catalog/products/main/160x160/0139973.png" 
+				alt="Sinbo SR 55 Холодильник" 
+				border="0"
+				onclick="if (!isAndroid() && !isIOS()) {document.location.href='http://www.domo.ru/catalog/kuhonnaya-tehnika-3/holodilniki-200/sinbo-sr-55-holodilnik-0139973'} else {void(0);}"
+				ontouchend="if (isAndroid() || isIOS()) {handlePopup('http://www.domo.ru/catalog/kuhonnaya-tehnika-3/holodilniki-200/sinbo-sr-55-holodilnik-0139973','compare_67009');}"
+				/>
+								
+			</a>
+			
+				<div id="compare_67009" class="compare_target" ontouchstart="if (isIOS()) {shoppingActionsJS.changeCompareBox('comparebox_67009','67009'); event.preventDefault();}">
+					<input id="comparebox_67009" type="checkbox" name="comparebox_67009" onclick="javascript:shoppingActionsJS.addOrRemoveFromCompare('67009',this.checked)">
+					<a id="CompareLink_67009" href="javascript:shoppingActionsJS.changeCompareBox('comparebox_67009','67009');"
+						onkeydown="if(!dojo.byId('comparebox_67009').checked){
+								tabHideSection('compare_67009',event,'CatalogEntryViewDetailsLink_67009');
+							}">
+						<label for="comparebox_67009">Сравнить</label>
+					</a>
+				</div>
+				
+					<script>
+						if(dojo.byId("comparebox_67009").checked){
+							dojo.addOnLoad(function(){
+								dojo.byId("comparebox_67009").checked = '';
+							});
+						}
+					</script>
+				
+		</div>
+
+	<div class="product_info">
+		<div id="product_name_67009" class="product_name">
+			
+			<a id="CatalogEntryViewDetailsLink_67009" href='http://www.domo.ru/catalog/kuhonnaya-tehnika-3/holodilniki-200/sinbo-sr-55-holodilnik-0139973'>
+				Sinbo SR 55 Холодильник
+			</a>
+		</div>
+		<div class="price_block">
+			<div id="price_display_67009" class="product_price">
+				<!-- BEGIN PriceDisplay.jsp -->
+		<span id="offerPrice_67009" class="price" itemprop="price">
+			6 290 руб.
+		</span>
+		<input type="hidden" id="ProductInfoPrice_67009" value="6 290 руб."/>
+	<!-- END PriceDisplay.jsp -->
+				
+				<div class="product_option">
+					
+							<a id="listViewAdd2Cart_67009" href="javascript:setCurrentId('listViewAdd2Cart_67009');shoppingActionsJS.Add2ShopCartAjax('entitledItem_67009',1, false)" class="button_primary" wairole="button" role="button" title="Добавить в корзину">
+								<span class="sprite sprite-cart-white"></span>Добавить в корзину
+							</a>	
+						
+				</div>
+			</div>
+		</div>
+		<div class="product_attr">
+			<ul>
+				
+			</ul>
+		</div>
+		<div class="item_spacer_7px"></div>
+		<div class="clear_float"></div>
+		<input type="hidden" id="ProductInfoName_67009" value="Sinbo SR 55 Холодильник"/>
+		<input type="hidden" id="ProductInfoImage_67009" value="/wcsstore/DomoExtendedSitesCatalogAssetStore/images/catalog/products/main/160x160/0139973.png"/>		
+	</div>
+
+
+</div>
+
+<!-- END CatalogEntryDisplay.jsp --><!-- BEGIN CatalogEntryDisplay.jsp --><!-- added --><!-- added -->
+
+<div id="entitledItem_68044" style="display:none;">
+		[
+		
+	
+						{
+						"catentry_id" : "68543",
+						"Attributes" :	{
+							
+							},
+							
+							
+									"ItemImage" : "/wcsstore/DomoExtendedSitesCatalogAssetStore/images/catalog/products/main/1000x1000/0139990.png",
+									"ItemImage467" : "/wcsstore/DomoExtendedSitesCatalogAssetStore/images/catalog/products/main/447x447/0139990.png",
+									"ItemThumbnailImage" : "/wcsstore/DomoExtendedSitesCatalogAssetStore/images/catalog/products/main/160x160/0139990.png"
+									
+						}
+		]
+</div>
+
+
+<div class="product">
+
+		<div class="product_image"
+		
+			onmouseout="if(!dojo.byId('comparebox_68044').checked){
+				hideSection('compare_68044');
+			}"
+		
+			<a id="CatalogEntryDisplayLink_68044" 
+				href="javascript:void(0);"
+				
+					onkeydown="if(!dojo.byId('comparebox_68044').checked){shiftTabHideSection('compare_68044',event);}"
+					onfocus="showSection('compare_68044');"
+				 title="Samsung RH-60H90203L холодильник">	
+				<img id="productThumbNailImage_68044" src="/wcsstore/DomoExtendedSitesCatalogAssetStore/images/catalog/products/main/160x160/0139990.png" 
+				alt="Samsung RH-60H90203L холодильник" 
+				border="0"
+				onclick="if (!isAndroid() && !isIOS()) {document.location.href='http://www.domo.ru/catalog/kuhonnaya-tehnika-3/holodilniki-200/samsungrh-60h90203l-holodilnik-0139990'} else {void(0);}"
+				ontouchend="if (isAndroid() || isIOS()) {handlePopup('http://www.domo.ru/catalog/kuhonnaya-tehnika-3/holodilniki-200/samsungrh-60h90203l-holodilnik-0139990','compare_68044');}"
+				/>
+								
+			</a>
+			
+				<div id="compare_68044" class="compare_target" ontouchstart="if (isIOS()) {shoppingActionsJS.changeCompareBox('comparebox_68044','68044'); event.preventDefault();}">
+					<input id="comparebox_68044" type="checkbox" name="comparebox_68044" onclick="javascript:shoppingActionsJS.addOrRemoveFromCompare('68044',this.checked)">
+					<a id="CompareLink_68044" href="javascript:shoppingActionsJS.changeCompareBox('comparebox_68044','68044');"
+						onkeydown="if(!dojo.byId('comparebox_68044').checked){
+								tabHideSection('compare_68044',event,'CatalogEntryViewDetailsLink_68044');
+							}">
+						<label for="comparebox_68044">Сравнить</label>
+					</a>
+				</div>
+				
+					<script>
+						if(dojo.byId("comparebox_68044").checked){
+							dojo.addOnLoad(function(){
+								dojo.byId("comparebox_68044").checked = '';
+							});
+						}
+					</script>
+				
+		</div>
+
+	<div class="product_info">
+		<div id="product_name_68044" class="product_name">
+			
+			<a id="CatalogEntryViewDetailsLink_68044" href='http://www.domo.ru/catalog/kuhonnaya-tehnika-3/holodilniki-200/samsungrh-60h90203l-holodilnik-0139990'>
+				Samsung RH-60H90203L холодильник
+			</a>
+		</div>
+		<div class="price_block">
+			<div id="price_display_68044" class="product_price">
+				<!-- BEGIN PriceDisplay.jsp -->
+		<span id="offerPrice_68044" class="price" itemprop="price">
+			130 670 руб.
+		</span>
+		<input type="hidden" id="ProductInfoPrice_68044" value="130 670 руб."/>
+	<!-- END PriceDisplay.jsp -->
+				
+				<div class="product_option">
+					
+							<a id="listViewAdd2Cart_68044" href="javascript:setCurrentId('listViewAdd2Cart_68044');shoppingActionsJS.Add2ShopCartAjax('entitledItem_68044',1, false)" class="button_primary" wairole="button" role="button" title="Добавить в корзину">
+								<span class="sprite sprite-cart-white"></span>Добавить в корзину
+							</a>	
+						
+				</div>
+			</div>
+		</div>
+		<div class="product_attr">
+			<ul>
+				
+			</ul>
+		</div>
+		<div class="item_spacer_7px"></div>
+		<div class="clear_float"></div>
+		<input type="hidden" id="ProductInfoName_68044" value="Samsung RH-60H90203L холодильник"/>
+		<input type="hidden" id="ProductInfoImage_68044" value="/wcsstore/DomoExtendedSitesCatalogAssetStore/images/catalog/products/main/160x160/0139990.png"/>		
+	</div>
+
+
+</div>
+
+<!-- END CatalogEntryDisplay.jsp -->
+											</div>											
+										</fieldset>
+										</div>
+									
+						</div>
+
+						
+							<div class="header_bar simple_bar">
+								<div class="paging_controls">
+									
+	<div class="divider"></div>
+	
+			<a role="button" wairole="button" class="grid_icon" id="WC_SearchBasedNavigationResults_pagination_link_grid_categoryResults_bottom" href='javascript:dojo.publish("toggleViewEvent",[{pageView:"grid",linkId:"WC_SearchBasedNavigationResults_pagination_link_grid_categoryResults_bottom"}])' title="Включить режим таблицы">
+				<img src="/wcsstore/DomoStorefrontAssetStore/images/colors/color1/widget_product_listing/grid_icon.png" alt="Включить режим таблицы" 
+				onmouseover="javascript: this.src='/wcsstore/DomoStorefrontAssetStore/images/colors/color1/widget_product_listing/grid_icon_active.png'" 
+				onmouseout="javascript: this.src='/wcsstore/DomoStorefrontAssetStore/images/colors/color1/widget_product_listing/grid_icon.png'"/>
+			</a>
+			<div class="list_icon">
+				<img src="/wcsstore/DomoStorefrontAssetStore/images/colors/color1/widget_product_listing/list_icon_active.png" alt="Включить режим списка" />
+			</div>
+		
+	<div class="divider"></div>
+	
+				<a role="button" wairole="button" class="left_arrow" id = "WC_SearchBasedNavigationResults_pagination_link_left_categoryResults_bottom" href='javascript:dojo.publish("showResultsForPageNumber",[{pageNumber:"10",pageSize:"12", linkId:"WC_SearchBasedNavigationResults_pagination_link_left_categoryResults_bottom"}])' title="Предыдущая страница"
+					onmouseover="dojo.byId('WC_SearchBasedNavigationResults_pagination_link_left_categoryResults_bottom_img').src = '/wcsstore/DomoStorefrontAssetStore/images/colors/color1/widget_product_listing/left_arrow_hover.png'"
+					onmouseout="dojo.byId('WC_SearchBasedNavigationResults_pagination_link_left_categoryResults_bottom_img').src = '/wcsstore/DomoStorefrontAssetStore/images/colors/color1/widget_product_listing/left_arrow.png'">
+					<img alt="Предыдущая страница" src="/wcsstore/DomoStorefrontAssetStore/images/colors/color1/widget_product_listing/left_arrow.png" id = "WC_SearchBasedNavigationResults_pagination_link_left_categoryResults_bottom_img">
+				</a>
+			
+
+	<div class="pages">
+		<ul id="pages_list_id">
+			
+						<li class="hoverover"><a role="button" wairole="button" href = 'javascript:dojo.publish("showResultsForPageNumber",[{pageNumber:"1",pageSize:"12", linkId:"WC_SearchBasedNavigationResults_pagination_link_1_categoryResults_bottom"}])' id="WC_SearchBasedNavigationResults_pagination_link_1_categoryResults_bottom" title="Перейти к странице 1">1</a></li>
+					
+						<li>...</li>
+					
+						<li class="hoverover"><a role="button" wairole="button" href = 'javascript:dojo.publish("showResultsForPageNumber",[{pageNumber:"10",pageSize:"12", linkId:"WC_SearchBasedNavigationResults_pagination_link_10_categoryResults_bottom"}])' id="WC_SearchBasedNavigationResults_pagination_link_10_categoryResults_bottom" title="Перейти к странице 10">10</a></li>
+					
+						<li class="active">11</li>
+					
+		</ul>
+		<script type="text/javascript">
+			dojo.addOnLoad(function() {
+				var pagesList = document.getElementById("pages_list_id");
+				if (pagesList != null && !isAndroid() && !isIOS()) {
+					dojo.addClass(pagesList, "desktop");
+				}
+			});
+		</script>
+	</div>
+	
+								</div>
+							</div>
+						
+					</div>
+				</div>				
+			</div>
+		</div>
+		<div class="bottom">
+			<div class="left_border"></div>
+			<div class="middle_tile"></div>
+			<div class="right_border"></div>
+		</div>
+	</div>
+	
+</div>
+
+
+<div id="facetCounts">
+	<script>
+		function updateFacetCounts() {
+			
+					SearchBasedNavigationDisplayJS.updateFacetCount(
+						"-70000000000000005027671",
+						28, 
+						"ads_f13001_ntk_cs%3A%22LG%22", 
+						"LG",
+						"",
+						"/wcsstore",
+						"ads_f13001_ntk_cs",
+						true);
+				
+					SearchBasedNavigationDisplayJS.updateFacetCount(
+						"-70000000000000005028397109115117110103",
+						17, 
+						"ads_f13001_ntk_cs%3A%22Samsung%22", 
+						"Samsung",
+						"",
+						"/wcsstore",
+						"ads_f13001_ntk_cs",
+						true);
+				
+					SearchBasedNavigationDisplayJS.updateFacetCount(
+						"-70000000000000005026611111599104",
+						15, 
+						"ads_f13001_ntk_cs%3A%22Bosch%22", 
+						"Bosch",
+						"",
+						"/wcsstore",
+						"ads_f13001_ntk_cs",
+						true);
+				
+					SearchBasedNavigationDisplayJS.updateFacetCount(
+						"-700000000000000050266101107111",
+						8, 
+						"ads_f13001_ntk_cs%3A%22Beko%22", 
+						"Beko",
+						"",
+						"/wcsstore",
+						"ads_f13001_ntk_cs",
+						true);
+				
+					SearchBasedNavigationDisplayJS.updateFacetCount(
+						"-700000000000000050280111122105115",
+						8, 
+						"ads_f13001_ntk_cs%3A%22Pozis%22", 
+						"Pozis",
+						"",
+						"/wcsstore",
+						"ads_f13001_ntk_cs",
+						true);
+				
+					SearchBasedNavigationDisplayJS.updateFacetCount(
+						"-70000000000000005096543",
+						51, 
+						"ads_f18001_ntk_cs%3A%22A%2B%22", 
+						"A+",
+						"",
+						"/wcsstore",
+						"ads_f18001_ntk_cs",
+						true);
+				
+					SearchBasedNavigationDisplayJS.updateFacetCount(
+						"-700000000000000050965",
+						50, 
+						"ads_f18001_ntk_cs%3A%22A%22", 
+						"A",
+						"",
+						"/wcsstore",
+						"ads_f18001_ntk_cs",
+						true);
+				
+					SearchBasedNavigationDisplayJS.updateFacetCount(
+						"-700000000000000050966",
+						7, 
+						"ads_f18001_ntk_cs%3A%22B%22", 
+						"B",
+						"",
+						"/wcsstore",
+						"ads_f18001_ntk_cs",
+						true);
+				
+					SearchBasedNavigationDisplayJS.updateFacetCount(
+						"-700000000000000051210571090107210851076107210881090108510991081",
+						67, 
+						"ads_f17501_ntk_cs%3A%22%D0%A1%D1%82%D0%B0%D0%BD%D0%B4%D0%B0%D1%80%D1%82%D0%BD%D1%8B%D0%B9%22", 
+						"Стандартный",
+						"",
+						"/wcsstore",
+						"ads_f17501_ntk_cs",
+						true);
+				
+					SearchBasedNavigationDisplayJS.updateFacetCount(
+						"-700000000000000051210481085107410771088109010861088108510991081",
+						19, 
+						"ads_f17501_ntk_cs%3A%22%D0%98%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80%D0%BD%D1%8B%D0%B9%22", 
+						"Инверторный",
+						"",
+						"/wcsstore",
+						"ads_f17501_ntk_cs",
+						true);
+				
+					SearchBasedNavigationDisplayJS.updateFacetCount(
+						"-700000000000000051149",
+						113, 
+						"adi_f10501%3A%221%22", 
+						"1",
+						"",
+						"/wcsstore",
+						"adi_f10501",
+						false);
+				
+					SearchBasedNavigationDisplayJS.updateFacetCount(
+						"-700000000000000051150",
+						2, 
+						"adi_f10501%3A%222%22", 
+						"2",
+						"",
+						"/wcsstore",
+						"adi_f10501",
+						false);
+				
+					SearchBasedNavigationDisplayJS.updateFacetCount(
+						"-70000000000000005414956534648",
+						24, 
+						"adf_f10501%3A%22185.0%22", 
+						"185.0",
+						"",
+						"/wcsstore",
+						"adf_f10501",
+						true);
+				
+					SearchBasedNavigationDisplayJS.updateFacetCount(
+						"-70000000000000005415048484648",
+						23, 
+						"adf_f10501%3A%22200.0%22", 
+						"200.0",
+						"",
+						"/wcsstore",
+						"adf_f10501",
+						true);
+				
+					SearchBasedNavigationDisplayJS.updateFacetCount(
+						"-70000000000000005414957484648",
+						6, 
+						"adf_f10501%3A%22190.0%22", 
+						"190.0",
+						"",
+						"/wcsstore",
+						"adf_f10501",
+						true);
+				
+					SearchBasedNavigationDisplayJS.updateFacetCount(
+						"-70000000000000005414957484655",
+						6, 
+						"adf_f10501%3A%22190.7%22", 
+						"190.7",
+						"",
+						"/wcsstore",
+						"adf_f10501",
+						true);
+				
+					SearchBasedNavigationDisplayJS.updateFacetCount(
+						"-70000000000000005414956484648",
+						5, 
+						"adf_f10501%3A%22180.0%22", 
+						"180.0",
+						"",
+						"/wcsstore",
+						"adf_f10501",
+						true);
+				
+					SearchBasedNavigationDisplayJS.updateFacetCount(
+						"-700000000000000054010411077108310991081",
+						54, 
+						"ads_f14001_ntk_cs%3A%22%D0%91%D0%B5%D0%BB%D1%8B%D0%B9%22", 
+						"Белый",
+						"",
+						"/wcsstore",
+						"ads_f14001_ntk_cs",
+						true);
+				
+					SearchBasedNavigationDisplayJS.updateFacetCount(
+						"-700000000000000054010571077108810771073108810801089109010991081",
+						40, 
+						"ads_f14001_ntk_cs%3A%22%D0%A1%D0%B5%D1%80%D0%B5%D0%B1%D1%80%D0%B8%D1%81%D1%82%D1%8B%D0%B9%22", 
+						"Серебристый",
+						"",
+						"/wcsstore",
+						"ads_f14001_ntk_cs",
+						true);
+				
+					SearchBasedNavigationDisplayJS.updateFacetCount(
+						"-70000000000000005401041107710781077107410991081",
+						8, 
+						"ads_f14001_ntk_cs%3A%22%D0%91%D0%B5%D0%B6%D0%B5%D0%B2%D1%8B%D0%B9%22", 
+						"Бежевый",
+						"",
+						"/wcsstore",
+						"ads_f14001_ntk_cs",
+						true);
+				
+			var searchTotalCount = $('searchTotalCount');
+			var productTotalCount = $('productTotalCount');
+			if(searchTotalCount != null) {
+				
+				var productCount = 0;
+				var totalCount = productCount + _originalTotalContentCount;
+				var message = '%1 совпадений';
+				searchTotalCount.innerHTML = message.replace("%1", totalCount);
+			}
+			if(productTotalCount != null) {
+				productTotalCount.innerHTML = '128';
+			}
+		}
+	</script>
+</div>
+<!-- END CategoryNavigationResults.jsp -->

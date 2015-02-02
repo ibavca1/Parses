@@ -1,0 +1,459 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{12111EBA-2EB8-4A92-ADA5-3F4A8586468D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Chia.WebParsing.Parsers</RootNamespace>
+    <AssemblyName>Chia.WebParsing.Parsers</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <CodeContractsAssemblyMode>1</CodeContractsAssemblyMode>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;CONTRACTS_FULL</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeContractsEnableRuntimeChecking>True</CodeContractsEnableRuntimeChecking>
+    <CodeContractsRuntimeOnlyPublicSurface>False</CodeContractsRuntimeOnlyPublicSurface>
+    <CodeContractsRuntimeThrowOnFailure>True</CodeContractsRuntimeThrowOnFailure>
+    <CodeContractsRuntimeCallSiteRequires>False</CodeContractsRuntimeCallSiteRequires>
+    <CodeContractsRuntimeSkipQuantifiers>False</CodeContractsRuntimeSkipQuantifiers>
+    <CodeContractsRunCodeAnalysis>False</CodeContractsRunCodeAnalysis>
+    <CodeContractsNonNullObligations>True</CodeContractsNonNullObligations>
+    <CodeContractsBoundsObligations>True</CodeContractsBoundsObligations>
+    <CodeContractsArithmeticObligations>True</CodeContractsArithmeticObligations>
+    <CodeContractsEnumObligations>True</CodeContractsEnumObligations>
+    <CodeContractsRedundantAssumptions>True</CodeContractsRedundantAssumptions>
+    <CodeContractsAssertsToContractsCheckBox>True</CodeContractsAssertsToContractsCheckBox>
+    <CodeContractsRedundantTests>True</CodeContractsRedundantTests>
+    <CodeContractsMissingPublicRequiresAsWarnings>True</CodeContractsMissingPublicRequiresAsWarnings>
+    <CodeContractsMissingPublicEnsuresAsWarnings>False</CodeContractsMissingPublicEnsuresAsWarnings>
+    <CodeContractsInferRequires>True</CodeContractsInferRequires>
+    <CodeContractsInferEnsures>False</CodeContractsInferEnsures>
+    <CodeContractsInferObjectInvariants>False</CodeContractsInferObjectInvariants>
+    <CodeContractsSuggestAssumptions>False</CodeContractsSuggestAssumptions>
+    <CodeContractsSuggestAssumptionsForCallees>False</CodeContractsSuggestAssumptionsForCallees>
+    <CodeContractsSuggestRequires>False</CodeContractsSuggestRequires>
+    <CodeContractsNecessaryEnsures>True</CodeContractsNecessaryEnsures>
+    <CodeContractsSuggestObjectInvariants>False</CodeContractsSuggestObjectInvariants>
+    <CodeContractsSuggestReadonly>True</CodeContractsSuggestReadonly>
+    <CodeContractsRunInBackground>True</CodeContractsRunInBackground>
+    <CodeContractsShowSquigglies>True</CodeContractsShowSquigglies>
+    <CodeContractsUseBaseLine>False</CodeContractsUseBaseLine>
+    <CodeContractsEmitXMLDocs>False</CodeContractsEmitXMLDocs>
+    <CodeContractsCustomRewriterAssembly />
+    <CodeContractsCustomRewriterClass />
+    <CodeContractsLibPaths />
+    <CodeContractsExtraRewriteOptions />
+    <CodeContractsExtraAnalysisOptions />
+    <CodeContractsSQLServerOption />
+    <CodeContractsBaseLineFile />
+    <CodeContractsCacheAnalysisResults>True</CodeContractsCacheAnalysisResults>
+    <CodeContractsSkipAnalysisIfCannotConnectToCache>False</CodeContractsSkipAnalysisIfCannotConnectToCache>
+    <CodeContractsFailBuildOnWarnings>False</CodeContractsFailBuildOnWarnings>
+    <CodeContractsBeingOptimisticOnExternal>True</CodeContractsBeingOptimisticOnExternal>
+    <CodeContractsRuntimeCheckingLevel>Full</CodeContractsRuntimeCheckingLevel>
+    <CodeContractsReferenceAssembly>%28none%29</CodeContractsReferenceAssembly>
+    <CodeContractsAnalysisWarningLevel>0</CodeContractsAnalysisWarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;CONTRACTS_FULL</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeContractsEnableRuntimeChecking>True</CodeContractsEnableRuntimeChecking>
+    <CodeContractsRuntimeOnlyPublicSurface>False</CodeContractsRuntimeOnlyPublicSurface>
+    <CodeContractsRuntimeThrowOnFailure>True</CodeContractsRuntimeThrowOnFailure>
+    <CodeContractsRuntimeCallSiteRequires>False</CodeContractsRuntimeCallSiteRequires>
+    <CodeContractsRuntimeSkipQuantifiers>False</CodeContractsRuntimeSkipQuantifiers>
+    <CodeContractsRunCodeAnalysis>False</CodeContractsRunCodeAnalysis>
+    <CodeContractsNonNullObligations>True</CodeContractsNonNullObligations>
+    <CodeContractsBoundsObligations>True</CodeContractsBoundsObligations>
+    <CodeContractsArithmeticObligations>True</CodeContractsArithmeticObligations>
+    <CodeContractsEnumObligations>True</CodeContractsEnumObligations>
+    <CodeContractsRedundantAssumptions>True</CodeContractsRedundantAssumptions>
+    <CodeContractsAssertsToContractsCheckBox>True</CodeContractsAssertsToContractsCheckBox>
+    <CodeContractsRedundantTests>True</CodeContractsRedundantTests>
+    <CodeContractsMissingPublicRequiresAsWarnings>True</CodeContractsMissingPublicRequiresAsWarnings>
+    <CodeContractsMissingPublicEnsuresAsWarnings>False</CodeContractsMissingPublicEnsuresAsWarnings>
+    <CodeContractsInferRequires>True</CodeContractsInferRequires>
+    <CodeContractsInferEnsures>False</CodeContractsInferEnsures>
+    <CodeContractsInferObjectInvariants>False</CodeContractsInferObjectInvariants>
+    <CodeContractsSuggestAssumptions>False</CodeContractsSuggestAssumptions>
+    <CodeContractsSuggestAssumptionsForCallees>False</CodeContractsSuggestAssumptionsForCallees>
+    <CodeContractsSuggestRequires>False</CodeContractsSuggestRequires>
+    <CodeContractsNecessaryEnsures>True</CodeContractsNecessaryEnsures>
+    <CodeContractsSuggestObjectInvariants>False</CodeContractsSuggestObjectInvariants>
+    <CodeContractsSuggestReadonly>True</CodeContractsSuggestReadonly>
+    <CodeContractsRunInBackground>True</CodeContractsRunInBackground>
+    <CodeContractsShowSquigglies>True</CodeContractsShowSquigglies>
+    <CodeContractsUseBaseLine>False</CodeContractsUseBaseLine>
+    <CodeContractsEmitXMLDocs>False</CodeContractsEmitXMLDocs>
+    <CodeContractsCustomRewriterAssembly />
+    <CodeContractsCustomRewriterClass />
+    <CodeContractsLibPaths />
+    <CodeContractsExtraRewriteOptions />
+    <CodeContractsExtraAnalysisOptions />
+    <CodeContractsSQLServerOption />
+    <CodeContractsBaseLineFile />
+    <CodeContractsCacheAnalysisResults>True</CodeContractsCacheAnalysisResults>
+    <CodeContractsSkipAnalysisIfCannotConnectToCache>False</CodeContractsSkipAnalysisIfCannotConnectToCache>
+    <CodeContractsFailBuildOnWarnings>False</CodeContractsFailBuildOnWarnings>
+    <CodeContractsBeingOptimisticOnExternal>True</CodeContractsBeingOptimisticOnExternal>
+    <CodeContractsRuntimeCheckingLevel>Full</CodeContractsRuntimeCheckingLevel>
+    <CodeContractsReferenceAssembly>%28none%29</CodeContractsReferenceAssembly>
+    <CodeContractsAnalysisWarningLevel>0</CodeContractsAnalysisWarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\..\packages\HtmlAgilityPack.1.4.9\lib\Net40\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Newtonsoft.Json.6.0.7\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="TenIRu\ITenIRuWebPageContentParser.cs" />
+    <Compile Include="TenIRu\TenIRuWebPageContentParser.cs" />
+    <Compile Include="TenIRu\TenIRuCatalogPageContentParser.cs" />
+    <Compile Include="TenIRu\TenIRuMainPageContentParser.cs" />
+    <Compile Include="TenIRu\TenIRuHtmlPageContentParser.cs" />
+    <Compile Include="TenIRu\TenIRuProductPageContentParser.cs" />
+    <Compile Include="TenIRu\TenIRuRazdelPageContentParser.cs" />
+    <Compile Include="CentrBtRu\CentrBtRuCatalogPageContentParser.cs" />
+    <Compile Include="CentrBtRu\CentrBtRuHtmlPageContentParser.cs" />
+    <Compile Include="CentrBtRu\CentrBtRuMainPageContentParser.cs" />
+    <Compile Include="CentrBtRu\CentrBtRuProductPageContentParser.cs" />
+    <Compile Include="CentrBtRu\CentrBtRuRazdelPageContentParser.cs" />
+    <Compile Include="CentrBtRu\CentrBtRuWebPageContentParser.cs" />
+    <Compile Include="CentrBtRu\ICentrBtRuWebPageContentParser.cs" />
+    <Compile Include="CitilinkRu\CitilinkRuCatalogPageContentParser.cs" />
+    <Compile Include="CitilinkRu\CitilinkRuHtmlPageContentParser.cs" />
+    <Compile Include="CitilinkRu\CitilinkRuProductPageContentParser.cs" />
+    <Compile Include="CitilinkRu\CitilinkRuRazdelPageContentParser.cs" />
+    <Compile Include="CitilinkRu\ICitilinkRuWebPageContentParser.cs" />
+    <Compile Include="CitilinkRu\CitilinkRuMainPageContentParser.cs" />
+    <Compile Include="CitilinkRu\CitilinkRuWebPageContentParser.cs" />
+    <Compile Include="CorpCentreRu\CorpCentreRuRazdelPageContentParser.cs" />
+    <Compile Include="CorpCentreRu\CorpCentreRuRazdelsListPageContentParser.cs" />
+    <Compile Include="CorpCentreRu\CorpCentreRuHtmlPageContentParser.cs" />
+    <Compile Include="CorpCentreRu\CorpCentreRuMainPageContentParser.cs" />
+    <Compile Include="CorpCentreRu\CorpCentreRuProductPageContentParser.cs" />
+    <Compile Include="CorpCentreRu\CorpCentreRuCatalogPageContentParser.cs" />
+    <Compile Include="CorpCentreRu\CorpCentreRuShopsListPageContentParser.cs" />
+    <Compile Include="CorpCentreRu\ICorpCentreRuWebPageContentParser.cs" />
+    <Compile Include="CorpCentreRu\CorpCentreRuWebPageContentParser.cs" />
+    <Compile Include="DnsShopRu\DnsShopRuWebPageContentParser.cs" />
+    <Compile Include="DnsShopRu\DnsShopRuRazdelPageContentParser.cs" />
+    <Compile Include="DnsShopRu\DnsShopRuProductPageContentParser.cs" />
+    <Compile Include="DnsShopRu\DnsShopRuCatalogPageContentParser.cs" />
+    <Compile Include="DnsShopRu\DnsShopRuShopPageContentParser.cs" />
+    <Compile Include="DnsShopRu\DnsShopRuShopsListPageContentParser.cs" />
+    <Compile Include="DnsShopRu\DnsShopRuHtmlPageContentParser.cs" />
+    <Compile Include="DnsShopRu\DnsShopRuMainPageContentParser.cs" />
+    <Compile Include="DnsShopRu\IDnsShopRuWebPageContentParser.cs" />
+    <Compile Include="DomoRu\DomoRuCatalogAjaxPageContentParser.cs" />
+    <Compile Include="DomoRu\DomoRuWebPageContentParser.cs" />
+    <Compile Include="DostavkaRu\DostavkaRuWebPageContentParser.cs" />
+    <Compile Include="DostavkaRu\DostavkaRuCatalogPageContentParser.cs" />
+    <Compile Include="DostavkaRu\DostavkaRuProductPageContentParser.cs" />
+    <Compile Include="DostavkaRu\DostavkaRuRazdelPageContentParser.cs" />
+    <Compile Include="DostavkaRu\DostavkaRuMainPageContentParser.cs" />
+    <Compile Include="DostavkaRu\IDostavkaRuWebPageContentParser.cs" />
+    <Compile Include="ElectrovenikRu\ElectrovenikRuWebPageContentParser.cs" />
+    <Compile Include="ElectrovenikRu\ElectrovenikRuCatalogPageContentParser.cs" />
+    <Compile Include="ElectrovenikRu\ElectrovenikRuMainPageContentParser.cs" />
+    <Compile Include="ElectrovenikRu\ElectrovenikRuHtmlPageContentParser.cs" />
+    <Compile Include="ElectrovenikRu\ElectrovenikRuProductPageContentParser.cs" />
+    <Compile Include="ElectrovenikRu\ElectrovenikRuRazdelPageContentParser.cs" />
+    <Compile Include="ElectrovenikRu\IElectrovenikRuWebPageContentParser.cs" />
+    <Compile Include="EnterRu\EnterRuMainPageContentParser.cs" />
+    <Compile Include="EnterRu\EnterRuProductPageContentParser.cs" />
+    <Compile Include="EnterRu\EnterRuCatalogPageContentParser.cs" />
+    <Compile Include="EnterRu\EnterRuRazdelPageContentParser.cs" />
+    <Compile Include="EnterRu\IEnterRuWebPageContentParser.cs" />
+    <Compile Include="EnterRu\EnterRuHtmlPageContentParser.cs" />
+    <Compile Include="EnterRu\EnterRuWebPageContentParser.cs" />
+    <Compile Include="EurosetRu\EurosetRuRazdelPageContentParser.cs" />
+    <Compile Include="EurosetRu\EurosetRuHtmlPageContentParser.cs" />
+    <Compile Include="EurosetRu\EurosetRuMainPageContentParser.cs" />
+    <Compile Include="EurosetRu\EurosetRuProductPageContentParser.cs" />
+    <Compile Include="EurosetRu\EurosetRuCatalogPageContentParser.cs" />
+    <Compile Include="EurosetRu\IEurosetRuWebPageContentParser.cs" />
+    <Compile Include="EurosetRu\EurosetRuWebPageContentParser.cs" />
+    <Compile Include="HolodilnikRu\HolodilnikRuWebPageContentParser.cs" />
+    <Compile Include="HolodilnikRu\HolodilnikRuMainPageContentParser.cs" />
+    <Compile Include="HolodilnikRu\HolodilnikRuCatalogPageContentParser.cs" />
+    <Compile Include="HolodilnikRu\HolodilnikRuHtmlPageContentParser.cs" />
+    <Compile Include="HolodilnikRu\HolodilnikRuProductPageContentParser.cs" />
+    <Compile Include="HolodilnikRu\HolodilnikRuRazdelPageContentParser.cs" />
+    <Compile Include="HolodilnikRu\IHolodilnikRuWebPageContentParser.cs" />
+    <Compile Include="HtmlDataExtensions.cs" />
+    <Compile Include="IonRu\IIonRuWebPageContentParser.cs" />
+    <Compile Include="IonRu\IonRuCatalogPageContentParser.cs" />
+    <Compile Include="IonRu\IonRuMainPageContentParser.cs" />
+    <Compile Include="IonRu\IonRuProductPageContentParser.cs" />
+    <Compile Include="IonRu\IonRuShopsListPageContentParser.cs" />
+    <Compile Include="IonRu\IonRuWebPageContentParser.cs" />
+    <Compile Include="JustRu\JustRuHtmlPageContentParser.cs" />
+    <Compile Include="JustRu\IJustRuWebPageContentParser.cs" />
+    <Compile Include="JustRu\JustRuWebPageContentParser.cs" />
+    <Compile Include="JustRu\JustRuCatalogPageContentParser.cs" />
+    <Compile Include="JustRu\JustRuProductPageContentParser.cs" />
+    <Compile Include="JustRu\JustRuMainPageContentParser.cs" />
+    <Compile Include="LogoRu\ILogoRuWebPageContentParser.cs" />
+    <Compile Include="LogoRu\LogoRuHtmlPageContentParser.cs" />
+    <Compile Include="LogoRu\LogoRuMainPageContentParser.cs" />
+    <Compile Include="LogoRu\LogoRuRazdelPageContentParser.cs" />
+    <Compile Include="LogoRu\LogoRuCatalogPageContentParser.cs" />
+    <Compile Include="LogoRu\LogoRuProductPageContentParser.cs" />
+    <Compile Include="LogoRu\LogoRuWebPageContentParser.cs" />
+    <Compile Include="MtsRu\MtsRuRazdelPageContentParser.cs" />
+    <Compile Include="MtsRu\MtsRuWebPageContentParser.cs" />
+    <Compile Include="MtsRu\MtsRuCatalogPageContentParser.cs" />
+    <Compile Include="MtsRu\MtsRuProductPageContentParser.cs" />
+    <Compile Include="MtsRu\MtsRuMainPageContentParser.cs" />
+    <Compile Include="MtsRu\MtsRuHtmlPageContentParser.cs" />
+    <Compile Include="MtsRu\IMtsRuWebPageContentParser.cs" />
+    <Compile Include="MvideoRu\MvideoRuRazdelPageContentParser.cs" />
+    <Compile Include="MvideoRu\MvideoRuRazdelsListPageContentParser.cs" />
+    <Compile Include="NewmansRu\INewmansRuWebPageContentParser.cs" />
+    <Compile Include="NewmansRu\NewmansRuWebPageContentParser.cs" />
+    <Compile Include="NewmansRu\NewmansRuCatalogPageContentParser.cs" />
+    <Compile Include="NewmansRu\NewmansRuMainPageContentParser.cs" />
+    <Compile Include="NewmansRu\NewmansRuHtmlPageContentParser.cs" />
+    <Compile Include="NewmansRu\NewmansRuProductPageContentParser.cs" />
+    <Compile Include="NewmansRu\NewmansRuRazdelPageContentParser.cs" />
+    <Compile Include="Nord24Ru\Nord24RuWebPageContentParser.cs" />
+    <Compile Include="Nord24Ru\Nord24RuMainPageContentParser.cs" />
+    <Compile Include="Nord24Ru\Nord24RuHtmlPageContentParser.cs" />
+    <Compile Include="Nord24Ru\INord24RuWebPageContentParser.cs" />
+    <Compile Include="Nord24Ru\Nord24RuRazdelPageContentParser.cs" />
+    <Compile Include="Nord24Ru\Nord24RuProductPageContentParser.cs" />
+    <Compile Include="Nord24Ru\Nord24RuCatalogPageContentParser.cs" />
+    <Compile Include="NotikRu\INotikRuWebPageContentParser.cs" />
+    <Compile Include="NotikRu\NotikRuWebPageContentParser.cs" />
+    <Compile Include="NotikRu\NotikRuCatalogPageContentParser.cs" />
+    <Compile Include="NotikRu\NotikRuMainPageContentParser.cs" />
+    <Compile Include="NotikRu\NotikRuHtmlPageContentParser.cs" />
+    <Compile Include="NotikRu\NotikRuProductPageContentParser.cs" />
+    <Compile Include="NotikRu\NotikRuRazdelPageContentParser.cs" />
+    <Compile Include="OldiRu\IOldiRuWebPageContentParser.cs" />
+    <Compile Include="OldiRu\OldiRuProductPageContentParser.cs" />
+    <Compile Include="OldiRu\OldiRuWebPageContentParser.cs" />
+    <Compile Include="OldiRu\OldiRuCatalogPageContentParser.cs" />
+    <Compile Include="OldiRu\OldiRuRazdelPageContentParser.cs" />
+    <Compile Include="OldiRu\OldiRuMainPageContentParser.cs" />
+    <Compile Include="OldiRu\OldiRuHtmlPageContentParser.cs" />
+    <Compile Include="OnlinetradeRu\IOnlinetradeRuWebPageContentParser.cs" />
+    <Compile Include="OnlinetradeRu\OnlinetradeRuRazdelsListPageContentParser.cs" />
+    <Compile Include="OnlinetradeRu\OnlinetradeRuWebPageContentParser.cs" />
+    <Compile Include="OnlinetradeRu\OnlinetradeRuProductPageContentParser.cs" />
+    <Compile Include="OnlinetradeRu\OnlinetradeRuRazdelPageContentParser.cs" />
+    <Compile Include="OnlinetradeRu\OnlinetradeRuHtmlPageContentParser.cs" />
+    <Compile Include="OnlinetradeRu\OnlinetradeRuMainPageContentParser.cs" />
+    <Compile Include="OnlinetradeRu\OnlinetradeRuCatalogPageContentParser.cs" />
+    <Compile Include="Oo3Ru\IOo3RuWebPageContentParser.cs" />
+    <Compile Include="Oo3Ru\Oo3RuWebPageContentParser.cs" />
+    <Compile Include="Oo3Ru\Oo3RuProductPageContentParser.cs" />
+    <Compile Include="Oo3Ru\Oo3RuCatalogPageContentParser.cs" />
+    <Compile Include="Oo3Ru\Oo3RuMainPageContentParser.cs" />
+    <Compile Include="Oo3Ru\Oo3RuHtmlPageContentParser.cs" />
+    <Compile Include="OzonRu\IOzonRuWebPageContentParser.cs" />
+    <Compile Include="OzonRu\OzonRuCatalogPageContentParser.cs" />
+    <Compile Include="OzonRu\OzonRuHtmlPageContentParser.cs" />
+    <Compile Include="OzonRu\OzonRuMainPageContentParser.cs" />
+    <Compile Include="OzonRu\OzonRuProductPageContentParser.cs" />
+    <Compile Include="OzonRu\OzonRuRazdelPageContentParser.cs" />
+    <Compile Include="OzonRu\OzonRuWebPageContentParser.cs" />
+    <Compile Include="PultRu\PultRuWebPageContentParser.cs" />
+    <Compile Include="PultRu\PultRuRazdelPageContentParser.cs" />
+    <Compile Include="PultRu\PultRuHtmlPageContentParser.cs" />
+    <Compile Include="PultRu\IPultRuWebPageContentParser.cs" />
+    <Compile Include="PultRu\PultRuMainPageContentParser.cs" />
+    <Compile Include="PultRu\PultRuProductPageContentParser.cs" />
+    <Compile Include="PultRu\PultRuCatalogPageContentParser.cs" />
+    <Compile Include="RbtRu\IRbtRuWebPageContentParser.cs" />
+    <Compile Include="RbtRu\RbtRuRazdelPageContentParser.cs" />
+    <Compile Include="RbtRu\RbtRuHtmlPageContentParser.cs" />
+    <Compile Include="RbtRu\RbtRuMainPageContentParser.cs" />
+    <Compile Include="RbtRu\RbtRuProductPageContentParser.cs" />
+    <Compile Include="RbtRu\RbtRuCatalogPageContentParser.cs" />
+    <Compile Include="RbtRu\RbtRuWebPageContentParser.cs" />
+    <Compile Include="RegardRu\IRegardRuWebPageContentParser.cs" />
+    <Compile Include="RegardRu\RegardRuWebPageContentParser.cs" />
+    <Compile Include="RegardRu\RegardRuCatalogPageContentParser.cs" />
+    <Compile Include="RegardRu\RegardRuMainPageContentParser.cs" />
+    <Compile Include="RegardRu\RegardRuHtmlPageContentParser.cs" />
+    <Compile Include="RegardRu\RegardRuProductPageContentParser.cs" />
+    <Compile Include="SvyaznoyRu\SvyaznoyRuRazdelPageContentParser.cs" />
+    <Compile Include="SvyaznoyRu\SvyaznoyRuMainPageContentParser.cs" />
+    <Compile Include="SvyaznoyRu\ISvyaznoyRuWebPageContentParser.cs" />
+    <Compile Include="SvyaznoyRu\SvyaznoyRuHtmlPageContentParser.cs" />
+    <Compile Include="SvyaznoyRu\SvyaznoyRuProductPageContentParser.cs" />
+    <Compile Include="SvyaznoyRu\SvyaznoyRuCatalogPageContentParser.cs" />
+    <Compile Include="SvyaznoyRu\SvyaznoyRuWebPageContentParser.cs" />
+    <Compile Include="TdPoiskRu\TdPoiskRuWebPageContentParser.cs" />
+    <Compile Include="TdPoiskRu\TdPoiskRuRazdelPageContentParser.cs" />
+    <Compile Include="TdPoiskRu\TdPoiskRuProductPageContentParser.cs" />
+    <Compile Include="TdPoiskRu\TdPoiskRuCatalogPageContentParser.cs" />
+    <Compile Include="TdPoiskRu\TdPoiskRuShopsListPageContentParser.cs" />
+    <Compile Include="TdPoiskRu\TdPoiskRuMainPageContentParser.cs" />
+    <Compile Include="TdPoiskRu\TdPoiskRuHtmlPageContentParser.cs" />
+    <Compile Include="TdPoiskRu\ITdPoiskRuWebPageContentParser.cs" />
+    <Compile Include="TechnonetRu\ITechnonetRuWebPageContentParser.cs" />
+    <Compile Include="TechnonetRu\TechnonetRuWebPageContentParser.cs" />
+    <Compile Include="TechnonetRu\TechnonetRuProductPageContentParser.cs" />
+    <Compile Include="TechnonetRu\TechnonetRuCatalogPageContentParser.cs" />
+    <Compile Include="TechnonetRu\TechnonetRuRazdelPageContentParser.cs" />
+    <Compile Include="TechnonetRu\TechnonetRuHtmlPageContentParser.cs" />
+    <Compile Include="TechnonetRu\TechnonetRuMainPageContentParser.cs" />
+    <Compile Include="TechnonetRu\TechnonetRuShopsListPageContentParser.cs" />
+    <Compile Include="TechportRu\ITechportRuWebPageContentParser.cs" />
+    <Compile Include="TechportRu\TechportRuWebPageContentParser.cs" />
+    <Compile Include="TechportRu\TechportRuCatalogPageContentParser.cs" />
+    <Compile Include="TechportRu\TechportRuHtmlPageContentParser.cs" />
+    <Compile Include="TechportRu\TechportRuMainPageContentParser.cs" />
+    <Compile Include="TechportRu\TechportRuProductPageContentParser.cs" />
+    <Compile Include="TehnoparkRu\ITehnoparkRuWebPageContentParser.cs" />
+    <Compile Include="TehnoparkRu\TehnoparkRuRazdelPageContentParser.cs" />
+    <Compile Include="TehnoparkRu\TehnoparkRuHtmlPageContentParser.cs" />
+    <Compile Include="TehnoparkRu\TehnoparkRuMainPageContentParser.cs" />
+    <Compile Include="TehnoparkRu\TehnoparkRuProductPageContentParser.cs" />
+    <Compile Include="TehnoparkRu\TehnoparkRuCatalogPageContentParser.cs" />
+    <Compile Include="TehnoparkRu\TehnoparkRuWebPageContentParser.cs" />
+    <Compile Include="TehnoshokRu\ITehnoshokRuWebPageContentParser.cs" />
+    <Compile Include="TehnoshokRu\TehnoshokRuRazdelPageContentParser.cs" />
+    <Compile Include="TehnoshokRu\TehnoshokRuHtmlPageContentParser.cs" />
+    <Compile Include="TehnoshokRu\TehnoshokRuMainPageContentParser.cs" />
+    <Compile Include="TehnoshokRu\TehnoshokRuCatalogPageContentParser.cs" />
+    <Compile Include="TehnoshokRu\TehnoshokRuProductPageContentParser.cs" />
+    <Compile Include="TehnoshokRu\TehnoshokRuShopsListPageContentParser.cs" />
+    <Compile Include="TehnoshokRu\TehnoshokRuWebPageContentParser.cs" />
+    <Compile Include="TehnosilaRu\TehnosilaRuWebPageContentParser.cs" />
+    <Compile Include="TehnosilaRu\TehnosilaRuRazdelPageContentParser.cs" />
+    <Compile Include="TehnosilaRu\TehnosilaRuMainPageContentParser.cs" />
+    <Compile Include="TehnosilaRu\ITehnosilaRuWebPageContentParser.cs" />
+    <Compile Include="TehnosilaRu\TehnosilaRuHtmlPageContentParser.cs" />
+    <Compile Include="TehnosilaRu\TehnosilaRuProductPageContentParser.cs" />
+    <Compile Include="TehnosilaRu\TehnosilaRuCatalogPageContentParser.cs" />
+    <Compile Include="TehnosilaRu\TehnosilaRuShopsListPageContentParser.cs" />
+    <Compile Include="TelemaksRu\TelemaksRuWebPageContentParser.cs" />
+    <Compile Include="TelemaksRu\TelemaksRuRazdelPageContentParser.cs" />
+    <Compile Include="TelemaksRu\TelemaksRuHtmlPageContentParser.cs" />
+    <Compile Include="TelemaksRu\ITelemaksRuWebPageContentParser.cs" />
+    <Compile Include="TelemaksRu\TelemaksRuMainPageContentParser.cs" />
+    <Compile Include="TelemaksRu\TelemaksRuProductPageContentParser.cs" />
+    <Compile Include="TelemaksRu\TelemaksRuCatalogPageContentParser.cs" />
+    <Compile Include="TelemaksRu\TelemaksRuShopsListPageContentParser.cs" />
+    <Compile Include="UlmartRu\IUlmartRuWebPageContentParser.cs" />
+    <Compile Include="UlmartRu\UlmartRuRazdelPageContentParser.cs" />
+    <Compile Include="UlmartRu\UlmartRuShopPageContentParser.cs" />
+    <Compile Include="UlmartRu\UlmartRuWebPageContentParser.cs" />
+    <Compile Include="UlmartRu\UlmartRuHtmlPageContentParser.cs" />
+    <Compile Include="UlmartRu\UlmartRuMainPageContentParser.cs" />
+    <Compile Include="UlmartRu\UlmartRuProductPageContentParser.cs" />
+    <Compile Include="UlmartRu\UlmartRuCatalogPageContentParser.cs" />
+    <Compile Include="UlmartRu\UlmartRuShopsListPageContentParser.cs" />
+    <Compile Include="UtinetRu\IUtinetRuWebPageContentParser.cs" />
+    <Compile Include="UtinetRu\UtinetRuMainPageContentParser.cs" />
+    <Compile Include="UtinetRu\UtinetRuWebPageContentParser.cs" />
+    <Compile Include="UtinetRu\UtinetRuCatalogPageContentParser.cs" />
+    <Compile Include="UtinetRu\UtinetRuHtmlPageContentParser.cs" />
+    <Compile Include="UtinetRu\UtinetRuProductPageContentParser.cs" />
+    <Compile Include="UtinetRu\UtinetRuRazdelPageContentParser.cs" />
+    <Compile Include="VLazerCom\IVLazerComWebPageContentParser.cs" />
+    <Compile Include="VLazerCom\VLazerComWebPageContentParser.cs" />
+    <Compile Include="VLazerCom\VLazerComCatalogPageContentParser.cs" />
+    <Compile Include="VLazerCom\VLazerComMainPageContentParser.cs" />
+    <Compile Include="VLazerCom\VLazerComHtmlPageContentParser.cs" />
+    <Compile Include="VLazerCom\VLazerComProductPageContentParser.cs" />
+    <Compile Include="WebPageContentParserFactory.cs" />
+    <Compile Include="DomoRu\DomoRuRazdelPageContentParser.cs" />
+    <Compile Include="DomoRu\DomoRuProductPageContentParser.cs" />
+    <Compile Include="DomoRu\DomoRuHtmlPageContentParser.cs" />
+    <Compile Include="DomoRu\DomoRuMainPageContentParser.cs" />
+    <Compile Include="DomoRu\DomoRuCatalogPageContentParser.cs" />
+    <Compile Include="DomoRu\IDomoRuWebPageContentParser.cs" />
+    <Compile Include="EldoradoRu\EldoradoRuRazdelPageContentParser.cs" />
+    <Compile Include="EldoradoRu\EldoradoRuWebPageContentParser.cs" />
+    <Compile Include="EldoradoRu\EldoradoRuHtmlPageContentParser.cs" />
+    <Compile Include="EldoradoRu\EldoradoRuMainPageContentParser.cs" />
+    <Compile Include="EldoradoRu\EldoradoRuCatalogPageContentParser.cs" />
+    <Compile Include="EldoradoRu\EldoradoRuProductPageContentParser.cs" />
+    <Compile Include="EldoradoRu\EldoradoRuShopsListPageContentParser.cs" />
+    <Compile Include="EldoradoRu\IEldoradoRuWebPageContentParser.cs" />
+    <Compile Include="HtmlNodeExtensions.cs" />
+    <Compile Include="KeyRu\IKeyRuWebPageContentParser.cs" />
+    <Compile Include="KeyRu\KeyRuRazdelPageContentParser.cs" />
+    <Compile Include="KeyRu\KeyRuHtmlPageContentParser.cs" />
+    <Compile Include="KeyRu\KeyRuMainPageContentParser.cs" />
+    <Compile Include="KeyRu\KeyRuProductPageContentParser.cs" />
+    <Compile Include="KeyRu\KeyRuCatalogAjaxPageContentParser.cs" />
+    <Compile Include="KeyRu\KeyRuCatalogPageContentParser.cs" />
+    <Compile Include="KeyRu\KeyRuShopsListPageContentParser.cs" />
+    <Compile Include="KeyRu\KeyRuWebPageContentParser.cs" />
+    <Compile Include="MhtmlPageContent.cs" />
+    <Compile Include="MvideoRu\MvideoRuMainPageContentParser.cs" />
+    <Compile Include="MvideoRu\IMvideoRuWebPageContentParser.cs" />
+    <Compile Include="MvideoRu\MvideoRuCatalogPageContentParser.cs" />
+    <Compile Include="MvideoRu\MvideoRuProductPageContentParser.cs" />
+    <Compile Include="MvideoRu\MvideoRuShopsListPageContentParser.cs" />
+    <Compile Include="MvideoRu\MvideoRuWebPageContentParser.cs" />
+    <Compile Include="MvideoRu\MvideoRuHtmlPageContentParser.cs" />
+    <Compile Include="HtmlPageContentParser.cs" />
+    <Compile Include="HtmlPageContent.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Chia.WebParsing.Companies\Chia.WebParsing.Companies.csproj">
+      <Project>{6EC6F3B5-D601-4A54-AD31-35A8DDA4E4B8}</Project>
+      <Name>Chia.WebParsing.Companies</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WebParsingFramework\WebParsingFramework.csproj">
+      <Project>{6D7FA2EB-0AEB-407A-87BB-3C277592D27E}</Project>
+      <Name>WebParsingFramework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

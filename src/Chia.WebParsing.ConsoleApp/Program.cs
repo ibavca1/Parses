@@ -1,0 +1,477 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Linq;
+using System.Net;
+using System.Threading;
+using System.Threading.Tasks;
+using Chia.WebParsing.Companies;
+using Chia.WebParsing.Parsers;
+using EnterpriseLibrary.Excel;
+using EnterpriseLibrary.Excel.Services;
+using WebParsingFramework;
+using WebParsingFramework.Runtime.Messaging;
+using WebParsingFramework.Runtime.Messaging.InMemory;
+
+namespace Chia.WebParsing.ConsoleApp
+{
+    public class WebPageParsingTask
+    {
+        private CookieCollection _cookies;
+
+        public int CompanyId { get; set; }
+
+        public int CityId { get; set; }
+
+        public Uri Uri { get; set; }
+
+        public int Type { get; set; }
+
+        public WebSiteMapPath Path { get; set; }
+
+        public WebSiteParsingOptions Options { get; set; }
+
+        public CookieCollection Cookies
+        {
+            get { return _cookies?? (_cookies = new CookieCollection()); }
+            set { _cookies = value; }
+        }
+
+    }
+
+    public static class Program
+    {
+        static Program()
+        {
+            ServicePointManager.DefaultConnectionLimit = 512;
+        }
+
+        public static void ConvertExcel()
+        {
+            const string input = @"C:\1";
+            const string output = @"C:\2";
+
+            var excelService = new ExcelService();
+            string[] files = Directory.GetFiles(input, "*.xlsx");
+            foreach (string file in files)
+            {
+                string name = Path.GetFileNameWithoutExtension(file);
+                string outName = string.Format("{0}.xls", name);
+                string outFile = Path.Combine(output, outName);
+
+                ExcelDocument document = excelService.ReadFile(file);
+                excelService.WriteFile(document, outFile);
+
+                Console.WriteLine(file);
+            }
+        }
+
+        public static void CreateExcludePaths()
+        {
+            const string path = @"M:\temp\filters\KeyRu.xls";
+            const string result = @"C:\paths.txt";
+
+            var lines = new List<string>();
+
+            var service = new ExcelService();
+            var doc = service.ReadFile(path);
+            var rows = doc.Worksheets[2].Rows.ToArray();
+
+            foreach (ExcelRow row in rows)
+            {
+                const int banIndex = 'C' - 'A';
+                if (banIndex >= row.Cells.Count)
+                    continue;
+
+                string banValue = row.Cells[banIndex].ToString();
+                if (string.IsNullOrWhiteSpace(banValue))
+                    continue;
+
+                var elements = row.Cells.Take(banIndex).Select(c => c.ToString()).Where(c => !string.IsNullOrWhiteSpace(c)).ToArray();
+                elements = elements.Select(e => string.Format("\"{0}\"", e)).ToArray();
+                var line = string.Format("new WebSiteMapPath({0}),", string.Join(",", elements));
+                lines.Add(line);
+            }
+
+            File.WriteAllLines(result, lines);
+        }
+
+        public static string[] ReadProxies(string name)
+        {
+            string fileName = string.Format("{0}.txt", name);
+            return File.ReadAllLines(fileName).Where(s => !string.IsNullOrWhiteSpace(s)).ToArray();
+        }
+
+        public static void ParsePage()
+        {
+            WebCity city = WebCities.Ekaterinburg;
+            WebCompany company = WebCompanies.EldoradoRu;
+            var pageType = WebPageType.Catalog;
+            var pageUri = new Uri("http://www.eldorado.ru/cat/1624320/INDESIT/?sort=price&type=asc&list_num=50");
+
+            var parserFactory = new WebPageContentParserFactory();
+            WebSite site = company.GetSite(city);
+            var page = site.GetPage(pageUri, pageType);
+            var proxy = new WebProxy(Proxies.Ttk2.First(), 3128);
+            var context = new WebPageContentParsingContext(proxy);
+            //var context = new WebPageParsingContext(null);
+            //context.Options.ProductArticle = false;
+            context.Options.AvailabiltyInShops = true;
+            context.Options.ProductArticle = true;
+            context.Options.forClient = "techosila";
+            IWebPageContentParser parser = parserFactory.Create(page, context);
+
+            WebPageRequest request = WebPageRequest.Create(page);
+            WebPageContent content = site.LoadPageContent(request, context);
+            WebPageContentParsingResult result = parser.Parse(page, content, context);
+
+            Save(result.Positions, Enumerable.Empty<WebPage>(), "code");
+        }
+
+        public static void Main(string[] args)
+        {
+            //ConvertExcel();
+            //CreateExcludePaths();
+            //ParsePage();
+            //return;
+
+            var cityStorage = new WebCityStorage();
+            var companyStorage = new WebCompanyStorage();
+            var parserFactory = new WebPageContentParserFactory();
+
+            var manager = new InMemoryMessageQueueManager();
+            if (!manager.QueueExists("queue"))
+                manager.CreateQueue("queue");
+            IMessageQueue queue = manager.GetQueue("queue");
+#if DEBUG
+            string[] proxiesIps = Proxies.Ttk1.Union(Proxies.Active1).Union(Proxies.Ertelecom1).ToArray();
+            //string[] proxiesIps = Proxies.Ttk1.Union(Proxies.Ertelecom1).ToArray();
+#else
+            string[] proxiesIps = Proxies.Ttk2.Union(Proxies.Active2).Union(Proxies.Ertelecom2).ToArray();
+            //string[] proxiesIps = Proxies.Ttk2.Union(Proxies.Ertelecom2).ToArray();
+#endif
+            proxiesIps = Proxies.Ttk2.ToArray();
+
+            proxiesIps = Proxies.Ttk1.Union(Proxies.Active1).Union(Proxies.Ertelecom1)
+                .Union(Proxies.Ttk2).Union(Proxies.Active2).Union(Proxies.Ertelecom2).ToArray();
+
+
+            //WebCompany company = WebCompanies.EldoradoRu;
+            //WebCity city = WebCities.Ufa;
+            WebCompany company = WebCompanies.MvideoRu;
+            WebCity city = WebCities.Moscow;
+            string code = "Москва_новый_техносила";
+            string prefix = "";
+
+            if (args.Length != 0)
+            {
+                int companyId = int.Parse(args[0]);
+                int cityId = int.Parse(args[1]);
+                code = args[2];
+                proxiesIps = ReadProxies(args[3]);
+                if (args.Length==5)
+                {
+                    prefix = args[4].ToString();
+                    //Chia.WebParsing.Companies.MvideoRu.MvideoRuConstants.prefix = prefix;
+                    //Console.WriteLine(prefix);
+                }
+                company = companyStorage.Get(companyId);
+                city = cityStorage.Get(cityId);
+            }
+
+            var proxies = proxiesIps.Select(ip => new WebProxy(ip, 3128)).ToList();
+            WebSite site = company.GetSite(city);
+
+            WebPage mainPage = site.GetPage(site.Uri, WebPageType.Main);
+            //var pageUri = new Uri("http://www.domo.ru/catalog/holodilniki-200");
+            //WebPage mainPage = site.GetPage(pageUri, WebPageType.Catalog);
+
+            var task = new WebPageParsingTask
+            {
+                CityId = city.Id,
+                CompanyId = company.Id,
+                Options = new WebSiteParsingOptions
+                {
+                    //ProductArticle = true,
+                    PagesFilter = site.Metadata.PagesFilter,
+                    PriceTypes = site.Metadata.PriceTypes,
+                    //AvailabiltyInShops = true
+                    forClient=prefix,
+
+                },
+                Uri = mainPage.Uri,
+                Type = (int)mainPage.Type,
+                Path = mainPage.Path
+            };
+
+            //Visited.Add(mainPage);
+            var message = new QueueMessage(task);
+            queue.Send(message);
+
+            var tasks =
+               proxies
+                //.Take(1)
+                    .Select(proxy => Task.Factory.StartNew(() => Process(queue, proxy, companyStorage, cityStorage, parserFactory, code)))
+                    .ToArray();
+            Task.WaitAll(tasks);
+
+            Save(Positions, Visited, code);
+            string fileName = string.Format("{0}_back.xls", code);
+            File.Delete(fileName);
+        }
+
+        private static readonly object LockObj = new object();
+        private static readonly HashSet<WebPage> Visited = new HashSet<WebPage>();
+        private static readonly HashSet<WebMonitoringPosition> Positions = new HashSet<WebMonitoringPosition>();
+        private static readonly Dictionary<int, WebPage> PositionsCodes = new Dictionary<int, WebPage>();
+        private static readonly List<WebMonitoringPosition> Doubles = new List<WebMonitoringPosition>();
+        private static int _count;
+        private static int _total;
+
+        private static void Process(IMessageQueue queue, WebProxy proxy,
+            IWebCompanyStorage companyStorage, IWebCityStorage cityStorage, IWebPageContentParserFactory parserFactory, string code)
+        {
+            while (true)
+            {
+                try
+                {
+                    if (queue.Count == 0)
+                        break;
+
+                    QueueMessage message = queue.Receive(TimeSpan.FromMinutes(2));
+                    if (message == null)
+                    {
+                        Thread.Sleep(1000);
+                        continue;
+                    }
+
+                    var task = message.GetBody<WebPageParsingTask>();
+                    Console.WriteLine("{4} - {0} ({1}/{2}) : {3}", DateTime.Now, queue.Count, _total, task.Uri, code);
+
+                    if (message.DeliveryCount > 3)
+                        // если ссылку обрабатывали более 10 раз
+                    {
+                        queue.Complete(message);
+                        continue;
+                    }
+
+                    WebCompany company = companyStorage.Get(task.CompanyId);
+                    WebCity city = cityStorage.Get(task.CityId);
+                    WebSite site = company.GetSite(city);
+                    WebPage page = site.GetPage(task.Uri, task.Type, task.Path);
+                    page.Cookies.Add(task.Cookies);
+                    var context = new WebPageContentParsingContext(proxy) {Options = task.Options};
+                    //context.WebEngine = new AwesomiumWebEngine2();
+
+                    IWebPageContentParser parser = parserFactory.Create(page, context);
+
+                    if (Visited.Contains(page))
+                    {
+                        queue.Complete(message);
+                        continue;
+                    }
+
+                    WebPageRequest request = WebPageRequest.Create(page);
+                    WebPageContent content;
+
+                    try
+                    {
+                       content = site.LoadPageContent(request, context);
+                    }
+                    catch (WebException ex)
+                    {
+                        var response = ex.Response as HttpWebResponse;
+                        if (response != null && response.StatusCode == HttpStatusCode.NotFound)
+                            queue.Complete(message);
+
+                        throw;
+                    }
+
+                    try
+                    {
+                        WebPageContentParsingResult result = parser.Parse(page, content, context);
+
+                        lock (LockObj)
+                        {
+                            foreach (WebPage webPage in result.Pages)
+                            {
+                                if (!task.Options.PagesFilter.Satisfy(webPage.Path))
+                                    continue;
+                                if (Visited.Contains(webPage))
+                                    continue;
+
+                                //Visited.Add(webPage);
+
+                                var t = new WebPageParsingTask
+                                            {
+                                                CityId = task.CityId,
+                                                CompanyId = task.CompanyId,
+                                                Options = task.Options,
+                                                Uri = webPage.Uri,
+                                                Type = (int)webPage.Type,
+                                                Path = webPage.Path,
+                                                //Cookies = content.Cookies
+                                            };
+                                var msg = new QueueMessage(t);
+                                queue.Send(msg);
+                                ++_total;
+                            }
+
+                            foreach (WebMonitoringPosition position in result.Positions)
+                            {
+                                Console.WriteLine("{0} < {1} >", position.Name, position.OnlinePrice);
+
+                                int c = position.GetHashCode();
+                                if (PositionsCodes.ContainsKey(c))
+                                {
+                                    Doubles.Add(position);
+                                    //WebPage path = PositionsCodes[c];
+                                    //Console.WriteLine(path);
+                                }
+                                else
+                                {
+                                    PositionsCodes.Add(c, page);
+                                }
+
+                                Positions.Add(position);
+                            }
+                        }
+
+                        Visited.Add(page);
+                        queue.Complete(message);
+
+                        Thread.Sleep(site.Metadata.ProxyTimeout);
+                    }
+                    catch (Exception ex)
+                    {
+                        string uri = page.Uri.ToString();
+                        string html = content.ReadAsString();
+
+                        throw;
+                    }
+                    finally
+                    {
+                        content.Dispose();
+                    }
+                }
+                catch (WebException ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    Thread.Sleep(5000);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
+                    Thread.Sleep(5000);
+                }
+
+                lock (LockObj)
+                {
+                    _count++;
+
+                    if (++_count >= 500) // сохраняем каждые 500 итераций
+                    {
+                        Save(Positions, Visited, code + "_back");
+
+                        _count = 0;
+                    }
+                }
+            }
+        }
+
+        private static void Save(IEnumerable<WebMonitoringPosition> positions, IEnumerable<WebPage> pages, string code)
+        {
+            var headers = new List<string>
+                              {
+                                  "article",
+                                  "name",
+                                  "online",
+                                  "retail",
+                                  "link",
+                                  "",
+                                  "characteristics",
+                                  ""
+                              };
+
+            WebShop[] shops =
+                positions
+                    .SelectMany(x => x.AvailabilityInShops)
+                    .Select(x => new WebShop(x.ShopName, x.ShopAddress))
+                    .Distinct()
+                    .ToArray();
+
+            headers.AddRange(shops.Select(x => x.Address));
+
+            var headerRow = new ExcelRow(headers.ToArray());
+            var rows = new List<ExcelRow> { headerRow };
+
+            foreach (WebMonitoringPosition position in positions)
+            {
+                var row = new List<string>
+                              {
+                                  position.Article ?? position.Name,
+                                  position.Name,
+                                  position.OnlinePrice.ToString(CultureInfo.InvariantCulture),
+                                  position.RetailPrice.ToString(CultureInfo.InvariantCulture),
+                                  position.Uri.ToString(),
+                                  "",
+                                  position.Characteristics,
+                                  ""
+                              };
+
+                decimal shopPrice = position.RetailPrice != 0 ? position.RetailPrice : position.OnlinePrice;
+
+                for (int i = 0; i < row.Count; i++)
+                {
+                    if (row[i] != null && row[i].Length > 32000)
+                        row[i] = row[i].Substring(32000);
+                }
+
+                foreach (WebShop shop in shops)
+                {
+                    WebProductAvailabilityInShop price = position.AvailabilityInShops.FirstOrDefault(s => Equals(shop.Address, s.ShopAddress));
+                    string value = price != null && price.IsAvailable ? shopPrice.ToString(CultureInfo.InvariantCulture) : "";
+                    row.Add(value);
+                }
+
+                var excelRow = new ExcelRow(row.ToArray());
+                rows.Add(excelRow);
+            }
+
+            foreach (WebPage webPage in pages)
+            {
+                if (webPage == null)
+                {
+                    Console.WriteLine(webPage);
+                }
+            }
+
+            var xx = new List<WebPage>();
+            foreach (WebPage webPage in pages)
+            {
+                if (webPage == null || webPage.Path == null)
+                    Console.WriteLine(webPage);
+                else
+                    xx.Add(webPage);
+            }
+
+            var paths = xx.Select(p => p.Path).Distinct().OrderBy(p => p).ToArray();
+            var pathRows = paths.Select(pagePath => new ExcelRow(pagePath.Elements)).ToList();
+
+            var worksheet1 = new ExcelWorksheet("price", rows.ToArray());
+            var worksheet2 = new ExcelWorksheet("price2", new ExcelRow("2"));
+            var worksheet3 = new ExcelWorksheet("price3", pathRows.ToArray());
+            var document = new ExcelDocument(worksheet1, worksheet2, worksheet3);
+            var service = new ExcelService();
+
+            string fileName = string.Format("{0}.xls", code);
+            if (document.Worksheets.Any(w => w.Rows.Count > 60000))
+            {
+                fileName = string.Format("{0}.xlsx", code);
+            }
+
+            service.WriteFile(document, fileName);
+        }
+    }
+}

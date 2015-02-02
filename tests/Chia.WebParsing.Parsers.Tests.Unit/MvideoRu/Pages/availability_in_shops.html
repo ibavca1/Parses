@@ -1,0 +1,283 @@
+﻿<div class="section">
+  <div class="availability-content">
+      
+	<ul class="nav nav-tabs buttons-view-tabs">
+		<li class="js-collect-from-store active">
+			<a href="#in-store" data-toggle="tab">
+				Забрать<span class="hidden-phone"> в магазине</span>
+			</a>
+		</li>
+		<li class="js-delivery">
+			<a href="#delivery-home" data-toggle="tab">
+				Доставить<span class="hidden-phone"> на дом
+	</a>	</li>	</ul>
+
+      <div class="tab-content">
+		<div id="in-store" data-init="tabsInactive" class="tab-pane active">
+		  
+			<div data-init="productStoresRefresh"
+				data-init-param=".store-locator-list-header h4 a, .store-search-form, .pagination-section a"
+				class="tab-pane-holder">
+				<div class="store-locatot-title">
+					<form action="/sitebuilder/blocks/browse/product-detail/tabs/store-availability-tab-content.jsp"
+							class="store-search-form header-search-form-section" novalidate="novalidate">
+						<div data-init="validationHandler" data-init-param=".store-search-form" class="header-search-form store-search">
+							<input id="frm-search-store" name="query" value="" type="text"
+									placeholder="Введите адрес или станцию метро" autocomplete="off"
+									class="header-search-input store-search-input">
+							<input type="submit" value="Поиск" class="header-search-btn store-search-btn store-search-submit hidden-phone">
+						</div>
+						<input type="hidden" name="productId" value="10006508">
+						<input type="hidden" name="isPickupAvailable" value="true">
+						<input id="store-search-submit-btn" type="submit" value="Поиск" class="btn btn-primary btn-fluid store-search-submit visible-phone">
+					</form>
+				</div>
+				
+				<div class="store-locator-sort visible-phone no-functionality">
+					<p>Сортировать по</p>
+
+					<div class="select">
+						<select>
+							<option selected="selected">по умолчанию</option>
+							<option>1</option>
+							<option>2</option>
+						</select>
+					</div>
+				</div>
+
+
+				
+
+						<div class="store-locator-list-top-info clearfix hidden-phone">
+							
+							<div data-init="map-list-switcher" data-init-param="#switchLink" class="store-locator-map-link">
+								<a href="/sitebuilder/blocks/browse/store/locator/allStoresForProduct.json.jsp?skuId=10006508&currentSiteId=Site_67&currentCityId=CityR_67&searchQuery=&isPickupAvailable=true&isCheckLeadtime=true"
+								   id="switchLink" data-other-text="Показать список">
+									<i class="font-icon icon-empty-drop"></i>
+									<strong>Показать на карте</strong>
+								</a>
+							</div>
+						</div>
+						<div class="store-locator-list">
+						<ul>
+							<li class="store-locator-list-header">
+								<div class="name">
+									<h4>Адрес</h4>
+								</div>
+								<div class="metro">
+									<h4>Станция метро
+										<i class="font-icon icon-bottom-open no-functionality"></i>
+									</h4>
+								</div>
+								<div class="stock">
+									<h4>Наличие
+										<i class="font-icon icon-bottom-open no-functionality"></i>
+									</h4>
+								</div>
+								<div class="pickup">
+									<h4>Забрать
+										<i class="font-icon icon-bottom-open no-functionality"></i>
+									</h4>
+								</div>
+								<div class="hours">
+									<h4>Режим работы
+										<i class="font-icon icon-bottom-open no-functionality"></i>
+									</h4>
+								</div>
+							</li>
+							
+						<li class="store-locator-list-item">
+							<div class="name">
+								<ul>
+									<li class="shop-icon">
+										
+												<div class="div"><span></span></div>
+											
+									</li>
+								</ul>
+								<h3><a href="/shops/S321/">ул. Ленинского комсомола</a></h3>	<p>ул. Ленинского комсомола, 21а, ТЦ «Мадагаскар»</p>
+							</div>
+							<div class="metro"><p></p></div>	
+							<div class="stock">
+								
+									<i class="ico ico-stock-level-normal"></i>
+								
+							</div>
+							<div class="pickup">
+								<p><strong class="visible-phone">Заказать:</strong><span>Сегодня</span>
+								</p>
+							</div>
+							<div class="hours">
+								<p>
+									<strong class="visible-phone">
+										Режим работы:	</strong>	<span>	Ежедневно с 10:00 до 22:00
+									</span>
+								</p>
+							</div>
+							<div class="store">
+								<form id="S321" action="/add-to-basket?productId=10006508&skuId=10006508&_DARGS=/sitebuilder/blocks/browse/product-detail/tabs/store-availability-tab-content.jsp.S321" class="" method="post"><input name="_dyncharset" value="utf-8" type="hidden"></input><input name="_dynSessConf" value="-3198991311046514290" type="hidden"></input><input name="/atg/commerce/order/purchase/CartModifierFormHandler.addItemCount" value="1" type="hidden"><input name="_D:/atg/commerce/order/purchase/CartModifierFormHandler.addItemCount" value=" " type="hidden"><input name="/atg/commerce/order/purchase/CartModifierFormHandler.items[0].catalogRefId" value="10006508" type="hidden"><input name="_D:/atg/commerce/order/purchase/CartModifierFormHandler.items[0].catalogRefId" value=" " type="hidden"><input name="/atg/commerce/order/purchase/CartModifierFormHandler.items[0].productId" value="10006508" type="hidden"><input name="_D:/atg/commerce/order/purchase/CartModifierFormHandler.items[0].productId" value=" " type="hidden"><input name="/atg/commerce/order/purchase/CartModifierFormHandler.items[0].quantity" value="1" type="hidden"><input name="_D:/atg/commerce/order/purchase/CartModifierFormHandler.items[0].quantity" value=" " type="hidden"><input name="/atg/commerce/order/purchase/CartModifierFormHandler.items[0].siteId" value="Site_67" type="hidden"><input name="_D:/atg/commerce/order/purchase/CartModifierFormHandler.items[0].siteId" value=" " type="hidden"><input name="/atg/commerce/order/purchase/CartModifierFormHandler.storeId" value="S321" type="hidden"><input name="_D:/atg/commerce/order/purchase/CartModifierFormHandler.storeId" value=" " type="hidden"><input name="/atg/commerce/order/purchase/CartModifierFormHandler.leadTime" value="0" type="hidden"><input name="_D:/atg/commerce/order/purchase/CartModifierFormHandler.leadTime" value=" " type="hidden"><input name="/atg/commerce/order/purchase/CartModifierFormHandler.possiblePayment" value="payInStore" type="hidden"><input name="_D:/atg/commerce/order/purchase/CartModifierFormHandler.possiblePayment" value=" " type="hidden"><input name="/atg/commerce/order/purchase/CartModifierFormHandler.addItemToOrderSuccessURL" value="/add-to-basket?productId=10006508&skuId=10006508" type="hidden"><input name="_D:/atg/commerce/order/purchase/CartModifierFormHandler.addItemToOrderSuccessURL" value=" " type="hidden"><input name="/atg/commerce/order/purchase/CartModifierFormHandler.addItemToOrderErrorURL" value="/products/fotoapparat-zerkalnyi-nikon-d3200-kit-18-55vrii-black-10006508?ssb_block=availabilityContentBlockContainer&ajax=true" type="hidden"><input name="_D:/atg/commerce/order/purchase/CartModifierFormHandler.addItemToOrderErrorURL" value=" " type="hidden"><input id="addToCart_store_S321" name="/atg/commerce/order/purchase/CartModifierFormHandler.addItemToOrder" value="Выбрать" class="btn" type="submit"><input name="_D:/atg/commerce/order/purchase/CartModifierFormHandler.addItemToOrder" value=" " type="hidden"><input name="_DARGS" value="/sitebuilder/blocks/browse/product-detail/tabs/store-availability-tab-content.jsp.S321" type="hidden"></input></form>
+	</div>	</li>	
+						<li class="store-locator-list-item">
+							<div class="name">
+								<ul>
+									<li class="shop-icon">
+										
+												<div class="div"><span></span></div>
+											
+									</li>
+								</ul>
+								<h3><a href="/shops/S393/">ул К. Маркса</a></h3>	<p>ул. К.Маркса, 52, к.1, ТЦ «Карусель»</p>
+							</div>
+							<div class="metro"><p></p></div>	
+							<div class="stock">
+								
+									<i class="ico ico-stock-level-none"></i>
+								
+							</div>
+							<div class="pickup">
+								<p><strong class="visible-phone">Заказать:</strong><span>14.12.2014</span>
+								</p>
+							</div>
+							<div class="hours">
+								<p>
+									<strong class="visible-phone">
+										Режим работы:	</strong>	<span>	Ежедневно с 9:00 до 21:00
+									</span>
+								</p>
+							</div>
+							<div class="store">
+								<form id="S393" action="/add-to-basket?productId=10006508&skuId=10006508&_DARGS=/sitebuilder/blocks/browse/product-detail/tabs/store-availability-tab-content.jsp.S393" class="" method="post"><input name="_dyncharset" value="utf-8" type="hidden"></input><input name="_dynSessConf" value="-3198991311046514290" type="hidden"></input><input name="/atg/commerce/order/purchase/CartModifierFormHandler.addItemCount" value="1" type="hidden"><input name="_D:/atg/commerce/order/purchase/CartModifierFormHandler.addItemCount" value=" " type="hidden"><input name="/atg/commerce/order/purchase/CartModifierFormHandler.items[0].catalogRefId" value="10006508" type="hidden"><input name="_D:/atg/commerce/order/purchase/CartModifierFormHandler.items[0].catalogRefId" value=" " type="hidden"><input name="/atg/commerce/order/purchase/CartModifierFormHandler.items[0].productId" value="10006508" type="hidden"><input name="_D:/atg/commerce/order/purchase/CartModifierFormHandler.items[0].productId" value=" " type="hidden"><input name="/atg/commerce/order/purchase/CartModifierFormHandler.items[0].quantity" value="1" type="hidden"><input name="_D:/atg/commerce/order/purchase/CartModifierFormHandler.items[0].quantity" value=" " type="hidden"><input name="/atg/commerce/order/purchase/CartModifierFormHandler.items[0].siteId" value="Site_67" type="hidden"><input name="_D:/atg/commerce/order/purchase/CartModifierFormHandler.items[0].siteId" value=" " type="hidden"><input name="/atg/commerce/order/purchase/CartModifierFormHandler.storeId" value="S393" type="hidden"><input name="_D:/atg/commerce/order/purchase/CartModifierFormHandler.storeId" value=" " type="hidden"><input name="/atg/commerce/order/purchase/CartModifierFormHandler.leadTime" value="12" type="hidden"><input name="_D:/atg/commerce/order/purchase/CartModifierFormHandler.leadTime" value=" " type="hidden"><input name="/atg/commerce/order/purchase/CartModifierFormHandler.possiblePayment" value="prepayOnSite" type="hidden"><input name="_D:/atg/commerce/order/purchase/CartModifierFormHandler.possiblePayment" value=" " type="hidden"><input name="/atg/commerce/order/purchase/CartModifierFormHandler.addItemToOrderSuccessURL" value="/add-to-basket?productId=10006508&skuId=10006508" type="hidden"><input name="_D:/atg/commerce/order/purchase/CartModifierFormHandler.addItemToOrderSuccessURL" value=" " type="hidden"><input name="/atg/commerce/order/purchase/CartModifierFormHandler.addItemToOrderErrorURL" value="/products/fotoapparat-zerkalnyi-nikon-d3200-kit-18-55vrii-black-10006508?ssb_block=availabilityContentBlockContainer&ajax=true" type="hidden"><input name="_D:/atg/commerce/order/purchase/CartModifierFormHandler.addItemToOrderErrorURL" value=" " type="hidden"><input id="addToCart_store_S393" name="/atg/commerce/order/purchase/CartModifierFormHandler.addItemToOrder" value="Выбрать" class="btn" type="submit"><input name="_D:/atg/commerce/order/purchase/CartModifierFormHandler.addItemToOrder" value=" " type="hidden"><input name="_DARGS" value="/sitebuilder/blocks/browse/product-detail/tabs/store-availability-tab-content.jsp.S393" type="hidden"></input></form>
+	</div>	</li>	
+	</ul>	</div> 
+					<div class="map-container">
+						<div id="primaryMap" class="store-map"></div>
+					</div>
+
+				
+	</div>	
+		</div>
+		<div id="delivery-home" class="tab-pane">
+          
+<div class="delivery-details-information">
+	<div class="section-column">
+		                          
+	<div class="section-title"><i class="font-icon icon-packed-box"></i>
+		<h2>Экспресс доставка</h2>	</div>
+
+		<div class="two-column-holder">
+			<div class="two-column">
+				
+	<h3>Стоимость доставки</h3>
+	<div class="column-text">
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+	
+			<div class="lazy-load-image-holder">
+		
+
+		<img data-original="/assets/img/delivery-details-map.jpg" alt="Map" class="lazy delivery-details-map">
+
+		
+	</div>	
+	
+
+
+	</div>
+
+
+		
+	<div class="column-text">
+		
+				<table class="delivery-details-table">
+					<thead>
+						<tr>
+							<th class="first">Стоимость доставки</th>	
+								<th class="middle"><span class="middle-inner-first">
+										до
+								</span><span class="middle-inner-second">5&nbsp;кг</span></th>	
+								<th class="middle"><span class="middle-inner-first">
+										до
+								</span><span class="middle-inner-second">10&nbsp;кг</span></th>	
+								<th class="middle"><span class="middle-inner-first">
+										до
+								</span><span class="middle-inner-second">30&nbsp;кг</span></th>	
+							<th class="last">Примерное время доставки</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="first">Чувашия респ.</td>	
+								<td class="middle">590</td>	
+								<td class="middle">790</td>	
+								<td class="middle">1790</td>	
+		
+							<td class="last">05.12.2014</td>	</tr>	</tbody>	</table>	 	</div>
+<h3>Оформление заказа</h3>
+                                <p class="column-text">
+                                  Добавьте в корзину товары, отмеченные значком 
+                                  Укажите город доставки. В зависимости от этого будут рассчитаны сроки и стоимость доставки.
+                                  Зарегистрируйтесь или зайдите на сайт под своим логином. 
+                                  Укажите корректный адрес электронной почты и полный почтовый адрес доставки.
+                                  Проверите все данные и оформите заказ. На электронную почту вам будет прислан номер заказа.
+                                </p>
+                                <h3>Оплата заказа</h3>
+                                <p class="column-text">Экспресс-доставка возможна после 100% оплаты. Оплатить заказ можно</p>
+                                <h3>Пластиковой картой (online)</h3>
+                                <p class="column-text">
+                                  Если вы оплатили заказ пластиковой картой, 
+                                  то на следующий день мы передадим товар курьерской компании для доставки по указанному вами адресу.
+                                </p>
+                                <h3>Банковским переводом</h3>
+                                <p class="column-text">
+                                  Если вы оплатили заказ «Банковским переводом», 
+                                  то в течение суток на ваш электронный адрес будут высланы счета на оплату заказа.
+                                </p>
+                                <p class="column-text">
+                                  Для частных лиц – перевод денег через банк. Оплата производится в рублях, 
+                                  через Сбербанк (ставка Сбербанка за перевод 3%) или любой другой банк, 
+                                  предоставляющий аналогичные услуги. Для юридических ли? a?? ?±?µ?·???°?»??N????°N? ?????»?°N??° N? N??°N?N??µN????????? N?N??µN??° ???°N??µ?? ??N????°?????·?°N?????.
+                                </p>
+                                <p class="column-text">
+                                  ????N??»?µ ?·?°N???N??»?µ????N? ???° ???°N? N??°N?N?N?N???N??? N?N?N?N? ??N??µ?? N?N?????N? ???? ?????»?°N??µ ?·?°???°?·?° ?? ????N?N??°??????, ?? N??µ?? ??N? N??????±N????? ???°?? ???? e-mail, 
+                                  N??????°N? ?±N????µN? ???µN??µ???°?? ??N?N?N??µN?N??????? ?????????°?????? ???»N? ????N?N??°?????? ???? N????°?·?°????????N? ???°???? ?°??N??µN?N?.
+                                </p>
+                                <h3>??N??????? ????N?N??°??????</h3>
+                                <p class="column-text">
+                                  ??N????? ????N?N??°?????? ?·?°????N???N? ??N? ????????N??µN????????? N??µ?????????°. ??N??????µN???N?N? N?N??°N?N?N? ????N?N??°?????? ?·?°???°?·?° ?????¶???? ???° ????N??µN????µN?-N??°??N??µ 
+                                  ?????? A«??????? -?­??????? ??????A» ???? N????????°?»N???????N? ???????µN?N? ???°N??µ???? ??N???N??°???»?µ????N?. ???° ???°N? e-mail ?±N????µN? ??N?N??»?°?? ???????µN? ???°N??µ???? ??N???N??°???»?µ????N? 
+                                  ??N??? ???µN??µ???°N??µ N??????°N??° N? ???°N??µ???? N????»?°???° ???° N????»?°?? ??N?N?N??µN?N??????? ?????????°??????.
+                                </p>
+
+			</div>
+			<div class="two-column">
