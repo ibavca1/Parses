@@ -107,7 +107,6 @@ namespace Chia.WebParsing.Parsers.EldoradoRu
             page.Uri = _uri;
             WebPageRequest request = WebPageRequest.Create(page);
             WebPageContent content = site.LoadPageContent(request, context);
-            //Получили страницу с товаром
             var _doc = new HtmlDocument();
             _doc.LoadHtml(content.ReadAsString());
             var _node = _doc.DocumentNode.SelectSingleNode(@"//meta[@itemtype='http://schema.org/ItemAvailability']");
